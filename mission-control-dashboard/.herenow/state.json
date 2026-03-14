@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "silver-quartz-a6ky": {
+      "siteUrl": "https://silver-quartz-a6ky.here.now/",
+      "claimToken": "9de7ffacfee32e8800ad77c308f301b1c5ec184daa0b5390032ff507c020589f",
+      "claimUrl": "https://here.now/claim?slug=silver-quartz-a6ky&token=9de7ffacfee32e8800ad77c308f301b1c5ec184daa0b5390032ff507c020589f",
+      "expiresAt": "2026-03-15T12:00:08.173Z"
+    }
+  }
+}

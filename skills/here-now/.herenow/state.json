@@ -1,0 +1,22 @@
+{
+  "publishes": {
+    "brave-harbor-tqzj": {
+      "siteUrl": "https://brave-harbor-tqzj.here.now/",
+      "claimToken": "904d65c06674641608ebbb68923faf12084504344367d7bc2e53b0b19fb92a4d",
+      "claimUrl": "https://here.now/claim?slug=brave-harbor-tqzj&token=904d65c06674641608ebbb68923faf12084504344367d7bc2e53b0b19fb92a4d",
+      "expiresAt": "2026-03-15T13:13:47.840Z"
+    },
+    "mellow-onyx-vmes": {
+      "siteUrl": "https://mellow-onyx-vmes.here.now/",
+      "claimToken": "90064516dcf0bf7bf46fe8cda839bb62b12fcfbbcd087cdc7cd903a7f478a5a4",
+      "claimUrl": "https://here.now/claim?slug=mellow-onyx-vmes&token=90064516dcf0bf7bf46fe8cda839bb62b12fcfbbcd087cdc7cd903a7f478a5a4",
+      "expiresAt": "2026-03-15T15:39:08.502Z"
+    },
+    "centered-buddha-xgx2": {
+      "siteUrl": "https://centered-buddha-xgx2.here.now/",
+      "claimToken": "5135016e887312ba7f37dcb63139351c4da1840444a9a9be384cbaa01ebf0898",
+      "claimUrl": "https://here.now/claim?slug=centered-buddha-xgx2&token=5135016e887312ba7f37dcb63139351c4da1840444a9a9be384cbaa01ebf0898",
+      "expiresAt": "2026-03-15T18:41:51.012Z"
+    }
+  }
+}

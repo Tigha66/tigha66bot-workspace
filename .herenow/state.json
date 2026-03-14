@@ -5,6 +5,18 @@
       "claimToken": "757baafba457ffb14d825ee28cbe0530e4dea47c6114b1cb9f29285ec929dcd2",
       "claimUrl": "https://here.now/claim?slug=mossy-gazebo-ee52&token=757baafba457ffb14d825ee28cbe0530e4dea47c6114b1cb9f29285ec929dcd2",
       "expiresAt": "2026-03-14T23:04:52.994Z"
+    },
+    "lemon-rosette-9q4c": {
+      "siteUrl": "https://lemon-rosette-9q4c.here.now/",
+      "claimToken": "ccbb46c070e384080ccdfff8c99d26245aad40a03ae03d8d3db62c17ab22c496",
+      "claimUrl": "https://here.now/claim?slug=lemon-rosette-9q4c&token=ccbb46c070e384080ccdfff8c99d26245aad40a03ae03d8d3db62c17ab22c496",
+      "expiresAt": "2026-03-15T13:16:55.662Z"
+    },
+    "open-badge-8g9d": {
+      "siteUrl": "https://open-badge-8g9d.here.now/",
+      "claimToken": "a33674a2fe4703929be0fa7f9ad221052c2bd61889bfa13950dc3f26cf19e9e8",
+      "claimUrl": "https://here.now/claim?slug=open-badge-8g9d&token=a33674a2fe4703929be0fa7f9ad221052c2bd61889bfa13950dc3f26cf19e9e8",
+      "expiresAt": "2026-03-15T14:07:11.172Z"
     }
   }
 }

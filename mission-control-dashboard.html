@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Mission Control Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 40px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { background: white; border-radius: 20px; padding: 40px; margin-bottom: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); text-align: center; }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .header p { color: #666; font-size: 1.2rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-bottom: 30px; }
+        .card { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        .card h2 { font-size: 1.5rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .card h2 .icon { font-size: 2rem; }
+        .stat { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 15px; }
+        .stat .number { font-size: 2rem; font-weight: bold; }
+        .stat .label { font-size: 0.9rem; opacity: 0.9; margin-top: 5px; }
+        .link { display: block; background: #f8f9fa; padding: 15px 20px; border-radius: 10px; margin-bottom: 10px; text-decoration: none; color: #333; border-left: 4px solid #667eea; transition: all 0.3s; }
+        .link:hover { background: #667eea; color: white; transform: translateX(5px); }
+        .link .url { font-size: 0.85rem; color: #666; margin-top: 5px; word-break: break-all; }
+        .link:hover .url { color: rgba(255,255,255,0.9); }
+        .status { display: inline-block; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+        .status.live { background: #10b981; color: white; }
+        .status.ready { background: #f59e0b; color: white; }
+        .badge { display: inline-block; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; margin-right: 10px; margin-bottom: 10px; }
+        .badge.purple { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .badge.green { background: #10b981; color: white; }
+        .badge.blue { background: #3b82f6; color: white; }
+        .section { background: white; border-radius: 20px; padding: 30px; margin-bottom: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        .footer { text-align: center; color: white; padding: 20px; opacity: 0.9; }
+        code { background: #f1f5f9; padding: 2px 8px; border-radius: 5px; font-size: 0.9em; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎯 Mission Control Dashboard</h1>
+            <p>AI Agent Orchestration Platform by builderz-labs</p>
+            <div style="margin-top: 20px;">
+                <span class="badge purple">Next.js App</span>
+                <span class="badge green">200+ API Endpoints</span>
+                <span class="badge blue">Real-time SSE/WebSocket</span>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid">
+            <div class="card">
+                <h2><span class="icon">📊</span> Platform Stats</h2>
+                <div class="stat"><div class="number">200+</div><div class="label">API Endpoints</div></div>
+                <div class="stat"><div class="number">100+</div><div class="label">React Components</div></div>
+                <div class="stat"><div class="number">50+</div><div class="label">Test Files</div></div>
+                <div class="stat"><div class="number">Full</div><div class="label">RBAC System</div></div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🚀</span> Features</h2>
+                <div style="line-height: 2;">
+                    ✅ Agent Registry & Management<br>
+                    ✅ Task Management System<br>
+                    ✅ Skill Registry<br>
+                    ✅ Real-time Events (SSE/WebSocket)<br>
+                    ✅ RBAC (Viewer/Operator/Admin)<br>
+                    ✅ Authentication System<br>
+                    ✅ Gateway Health Monitoring<br>
+                    ✅ Security Audit Tools
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="section">
+            <h2 style="margin-bottom: 25px;">🔗 Quick Access</h2>
+            
+            <a href="https://github.com/Tigha66/tigha66bot-workspace/tree/master/mission-control" target="_blank" class="link">
+                <strong>📦 Mission Control Source Code (GitHub)</strong> <span class="status live">LIVE</span>
+                <div class="url">https://github.com/Tigha66/tigha66bot-workspace/tree/master/mission-control</div>
+            </a>
+
+            <a href="https://github.com/builderz-labs/mission-control" target="_blank" class="link">
+                <strong>🌐 Original Repository (builderz-labs)</strong> <span class="status live">LIVE</span>
+                <div class="url">https://github.com/builderz-labs/mission-control</div>
+            </a>
+
+            <a href="https://rosy-meadow-sqqc.here.now/" target="_blank" class="link">
+                <strong>📁 Full Workspace (here.now)</strong> <span class="status live">LIVE</span>
+                <div class="url">https://rosy-meadow-sqqc.here.now/</div>
+            </a>
+
+            <a href="https://lemon-rosette-9q4c.here.now/" target="_blank" class="link">
+                <strong>📊 Main Dashboard</strong> <span class="status live">LIVE</span>
+                <div class="url">https://lemon-rosette-9q4c.here.now/</div>
+            </a>
+        </div>
+
+        <!-- API Endpoints -->
+        <div class="section">
+            <h2 style="margin-bottom: 25px;">⚡ Key API Endpoints</h2>
+            <div class="grid">
+                <div>
+                    <code style="display:block; padding: 10px; margin-bottom: 10px; background: #1e293b; color: #10b981;">POST /api/adapters</code>
+                    <p style="color: #666;">Register agents, send heartbeats</p>
+                </div>
+                <div>
+                    <code style="display:block; padding: 10px; margin-bottom: 10px; background: #1e293b; color: #10b981;">POST /api/agents/register</code>
+                    <p style="color: #666;">Self-register new agents</p>
+                </div>
+                <div>
+                    <code style="display:block; padding: 10px; margin-bottom: 10px; background: #1e293b; color: #10b981;">GET /api/agents</code>
+                    <p style="color: #666;">List all registered agents</p>
+                </div>
+                <div>
+                    <code style="display:block; padding: 10px; margin-bottom: 10px; background: #1e293b; color: #10b981;">GET /api/tasks</code>
+                    <p style="color: #666;">List all tasks</p>
+                </div>
+                <div>
+                    <code style="display:block; padding: 10px; margin-bottom: 10px; background: #1e293b; color: #10b981;">GET /api/sessions</code>
+                    <p style="color: #666;">List all sessions</p>
+                </div>
+                <div>
+                    <code style="display:block; padding: 10px; margin-bottom: 10px; background: #1e293b; color: #10b981;">POST /api/auth/login</code>
+                    <p style="color: #666;">User authentication</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Start -->
+        <div class="section">
+            <h2 style="margin-bottom: 25px;">🚀 Quick Start</h2>
+            <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 20px;">
+                <h3 style="margin-bottom: 15px;">1. Register Your Agent:</h3>
+                <code style="display: block; padding: 15px; background: #1e293b; color: #10b981; border-radius: 8px; overflow-x: auto; font-size: 0.85rem;">
+curl -X POST http://localhost:3000/api/adapters \<br>
+  -H "Content-Type: application/json" \<br>
+  -H "x-api-key: YOUR_API_KEY" \<br>
+  -d '{<br>
+    "framework": "generic",<br>
+    "action": "register",<br>
+    "payload": { "agentId": "tigha66bot", "name": "Tigha66bot" }<br>
+  }'
+                </code>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 25px; border-radius: 12px;">
+                <h3 style="margin-bottom: 15px;">2. Send Heartbeat (every 5 min):</h3>
+                <code style="display: block; padding: 15px; background: #1e293b; color: #10b981; border-radius: 8px; overflow-x: auto; font-size: 0.85rem;">
+curl -X POST http://localhost:3000/api/adapters \<br>
+  -H "Content-Type: application/json" \<br>
+  -H "x-api-key: YOUR_API_KEY" \<br>
+  -d '{<br>
+    "framework": "generic",<br>
+    "action": "heartbeat",<br>
+    "payload": { "agentId": "tigha66bot", "status": "online" }<br>
+  }'
+                </code>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>🎯 Mission Control by builderz-labs</strong></p>
+            <p style="margin-top: 10px;">AI Agent Orchestration Platform</p>
+            <p style="margin-top: 10px;">GitHub: https://github.com/builderz-labs/mission-control</p>
+            <p style="margin-top: 10px;">Deployed: March 14, 2026</p>
+        </div>
+    </div>
+</body>
+</html>

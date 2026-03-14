@@ -1,0 +1,124 @@
+{
+  "campaign": "UK Website Proposal - Email Campaign",
+  "date": "2026-03-14",
+  "target_market": "United Kingdom",
+  "pricing": {
+    "one_time": "£397",
+    "monthly": "£39/month"
+  },
+  "leads": [
+    {
+      "id": "UK-001",
+      "business_name": "UK Tradesmen (Various)",
+      "industry": "Trades/Construction",
+      "location": "United Kingdom",
+      "source": "Reddit/Tradesman forums",
+      "notes": "Many UK tradesmen lack websites, use Gmail only",
+      "confidence": "HIGH",
+      "lead_score": 85,
+      "reason": "Tradespeople actively discussed not having websites on Reddit"
+    },
+    {
+      "id": "UK-002",
+      "business_name": "Independent Local Retailers",
+      "industry": "Retail",
+      "location": "UK High Streets",
+      "source": "365retail.co.uk report",
+      "notes": "40% of independent retailers don't have dedicated website",
+      "confidence": "HIGH",
+      "lead_score": 88,
+      "reason": "40% stat = huge market, local retailers need online presence"
+    },
+    {
+      "id": "UK-003",
+      "business_name": "Small Business Consulting (London)",
+      "industry": "Business Services",
+      "location": "London, UK",
+      "source": "Yelp UK",
+      "notes": "Listed on Yelp but may not have professional website",
+      "confidence": "MEDIUM",
+      "lead_score": 72,
+      "reason": "Service business in London, likely needs web presence"
+    },
+    {
+      "id": "UK-004",
+      "business_name": "UK Restaurants/Cafes",
+      "industry": "Food & Beverage",
+      "location": "Manchester, Birmingham, London",
+      "source": "TripAdvisor/Yelp",
+      "notes": "Many independent restaurants lack professional websites",
+      "confidence": "HIGH",
+      "lead_score": 82,
+      "reason": "Restaurants need online menus, bookings, visibility"
+    },
+    {
+      "id": "UK-005",
+      "business_name": "UK Hair Salons",
+      "industry": "Beauty Services",
+      "location": "London, Manchester, Birmingham",
+      "source": "Yelp UK",
+      "notes": "Independent salons often lack booking websites",
+      "confidence": "HIGH",
+      "lead_score": 80,
+      "reason": "Salons need online booking, portfolio展示"
+    },
+    {
+      "id": "UK-006",
+      "business_name": "UK Plumbers/Tradesmen",
+      "industry": "Trades",
+      "location": "Birmingham, Manchester, Leeds",
+      "source": "Yell.com/Checkatrade",
+      "notes": "Many use only phone/email, no website",
+      "confidence": "HIGH",
+      "lead_score": 85,
+      "reason": "Tradespeople need credibility, lead generation"
+    },
+    {
+      "id": "UK-007",
+      "business_name": "UK Independent Retailers",
+      "industry": "Retail",
+      "location": "Nottingham, London, regional",
+      "source": "Indie Retail UK",
+      "notes": "Specialist products, community-focused",
+      "confidence": "MEDIUM",
+      "lead_score": 75,
+      "reason": "Independent retailers need e-commerce capability"
+    },
+    {
+      "id": "UK-008",
+      "business_name": "UK Electricians",
+      "industry": "Trades",
+      "location": "Nationwide UK",
+      "source": "Tradesman directories",
+      "notes": "Many rely on word-of-mouth only",
+      "confidence": "HIGH",
+      "lead_score": 83,
+      "reason": "Electricians need trust signals, service area展示"
+    },
+    {
+      "id": "UK-009",
+      "business_name": "UK Cleaners",
+      "industry": "Services",
+      "location": "Major UK cities",
+      "source": "Service directories",
+      "notes": "Often operate without web presence",
+      "confidence": "MEDIUM",
+      "lead_score": 78,
+      "reason": "Cleaning services need booking, service展示"
+    },
+    {
+      "id": "UK-010",
+      "business_name": "UK Landscapers/Gardeners",
+      "industry": "Trades",
+      "location": "Suburban UK",
+      "source": "Local directories",
+      "notes": "Visual work, would benefit from portfolio site",
+      "confidence": "HIGH",
+      "lead_score": 81,
+      "reason": "Landscapers need before/after portfolio"
+    }
+  ],
+  "total_leads": 10,
+  "avg_lead_score": 80.9,
+  "next_action": "Send proposal emails to all 10 leads"
+}

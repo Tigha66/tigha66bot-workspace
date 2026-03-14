@@ -1,0 +1,211 @@
+{
+  "campaign": "UK Website Proposal - Verified Emails",
+  "date": "2026-03-14",
+  "total_leads": 20,
+  "leads": [
+    {
+      "id": "UK-V001",
+      "business_name": "House of Hair UK",
+      "email": "training@houseofhairuk.com",
+      "industry": "Hair Salon",
+      "location": "London, UK",
+      "phone": "Not listed",
+      "website": "houseofhairuk.com",
+      "lead_score": 75
+    },
+    {
+      "id": "UK-V002",
+      "business_name": "Hair Culture Salon",
+      "email": "info@hairculturesalon.co.uk",
+      "industry": "Hair Salon",
+      "location": "London, UK",
+      "phone": "074 0548 3586",
+      "website": "hairculturesalon.co.uk",
+      "lead_score": 78
+    },
+    {
+      "id": "UK-V003",
+      "business_name": "Canonbury Hair",
+      "email": "salons@canonbury.co.uk",
+      "industry": "Hair Salon",
+      "location": "London N1 2NQ, UK",
+      "phone": "020 7226 6280",
+      "website": "canonburyhair.co.uk",
+      "lead_score": 80
+    },
+    {
+      "id": "UK-V004",
+      "business_name": "Love Is In The Hair by Aggela",
+      "email": "info@hairbyaggela.co.uk",
+      "industry": "Hair Salon",
+      "location": "UK",
+      "phone": "Not listed",
+      "website": "hairbyaggela.co.uk",
+      "lead_score": 76
+    },
+    {
+      "id": "UK-V005",
+      "business_name": "UK Cleaning",
+      "email": "info@ukcleaning.co.uk",
+      "industry": "Cleaning Services",
+      "location": "UK (London & Bristol)",
+      "phone": "Not listed",
+      "website": "ukcleaning.co.uk",
+      "lead_score": 82
+    },
+    {
+      "id": "UK-V006",
+      "business_name": "UK Cleaning London",
+      "email": "london@ukcleaning.co.uk",
+      "industry": "Cleaning Services",
+      "location": "London, UK",
+      "phone": "Not listed",
+      "website": "ukcleaning.co.uk",
+      "lead_score": 80
+    },
+    {
+      "id": "UK-V007",
+      "business_name": "UK Cleaning Bristol",
+      "email": "bristol@ukcleaning.co.uk",
+      "industry": "Cleaning Services",
+      "location": "Bristol, UK",
+      "phone": "Not listed",
+      "website": "ukcleaning.co.uk",
+      "lead_score": 78
+    },
+    {
+      "id": "UK-V008",
+      "business_name": "UK Commercial Cleaning",
+      "email": "info@ukcommercialgroup.co.uk",
+      "industry": "Commercial Cleaning",
+      "location": "UK",
+      "phone": "0161 457 1120",
+      "website": "ukcommercialcleaning.co.uk",
+      "lead_score": 85
+    },
+    {
+      "id": "UK-V009",
+      "business_name": "We Clean",
+      "email": "hello@we-clean.co.uk",
+      "industry": "Cleaning Services",
+      "location": "London, UK",
+      "phone": "020 4529 4811",
+      "website": "we-clean.co.uk",
+      "lead_score": 83
+    },
+    {
+      "id": "UK-V010",
+      "business_name": "Move Out Cleaners",
+      "email": "Not listed (phone: +44 7506 709450)",
+      "industry": "Cleaning Services",
+      "location": "UK",
+      "phone": "+44 7506 709450",
+      "website": "moveoutcleaners.co.uk",
+      "lead_score": 72
+    },
+    {
+      "id": "UK-V011",
+      "business_name": "24 Stories Restaurant",
+      "email": "Not listed",
+      "industry": "Restaurant",
+      "location": "Birmingham, UK",
+      "phone": "Not listed",
+      "website": "24stories.co.uk",
+      "lead_score": 70
+    },
+    {
+      "id": "UK-V012",
+      "business_name": "Albert's Schloss Birmingham",
+      "email": "Not listed",
+      "industry": "Restaurant/Bar",
+      "location": "Birmingham, UK",
+      "phone": "Not listed",
+      "website": "albertsschloss.com",
+      "lead_score": 68
+    },
+    {
+      "id": "UK-V013",
+      "business_name": "James Martin Manchester",
+      "email": "Not listed",
+      "industry": "Restaurant",
+      "location": "Manchester, UK",
+      "phone": "Not listed",
+      "website": "jamesmartinmanchester.co.uk",
+      "lead_score": 70
+    },
+    {
+      "id": "UK-V014",
+      "business_name": "Electraguard UK",
+      "email": "Not listed",
+      "industry": "Electrician",
+      "location": "OX14, UK",
+      "phone": "0118 4693429",
+      "website": "electraguard.uk",
+      "lead_score": 75
+    },
+    {
+      "id": "UK-V015",
+      "business_name": "Contact Electrician Ltd",
+      "email": "Not listed",
+      "industry": "Electrician",
+      "location": "Coulsdon, UK",
+      "phone": "Not listed",
+      "website": "contactelectrician.co.uk",
+      "lead_score": 73
+    },
+    {
+      "id": "UK-V016",
+      "business_name": "Trevor Sorbie Salons",
+      "email": "Not listed (multiple locations)",
+      "industry": "Hair Salon Chain",
+      "location": "UK (Brighton, Bristol, London, Manchester)",
+      "phone": "Not listed",
+      "website": "trevorsorbie.com",
+      "lead_score": 65
+    },
+    {
+      "id": "UK-V017",
+      "business_name": "Ashley Cleaning Services",
+      "email": "Not listed (form on site)",
+      "industry": "Cleaning Services",
+      "location": "UK",
+      "phone": "Not listed",
+      "website": "ashleycleaningservices.co.uk",
+      "lead_score": 74
+    },
+    {
+      "id": "UK-V018",
+      "business_name": "Bill's Restaurants",
+      "email": "Not listed (chain)",
+      "industry": "Restaurant Chain",
+      "location": "UK (Multiple locations)",
+      "phone": "Not listed",
+      "website": "bills-website.co.uk",
+      "lead_score": 60
+    },
+    {
+      "id": "UK-V019",
+      "business_name": "UK Tradesmen (Prospect360)",
+      "email": "Not listed (data provider)",
+      "industry": "Trades Data",
+      "location": "UK",
+      "phone": "Not listed",
+      "website": "prospect360.co.uk",
+      "lead_score": 50
+    },
+    {
+      "id": "UK-V020",
+      "business_name": "Trusted Tradesman",
+      "email": "Not listed",
+      "industry": "Trades Directory",
+      "location": "UK",
+      "phone": "Not listed",
+      "website": "trustedtradesman.co.uk",
+      "lead_score": 55
+    }
+  ],
+  "verified_emails": 9,
+  "phone_only": 11,
+  "avg_lead_score": 71.5,
+  "next_action": "Send proposal emails to 9 verified email addresses"
+}

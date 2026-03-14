@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "name": "tigha66bot-lead-gen-batch-001",
+  "builds": [
+    { "src": "demo-sites/**/index.html", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/rcj-cleaning/?", "dest": "/demo-sites/rcj-cleaning/index.html" },
+    { "src": "/victorias-housekeeping/?", "dest": "/demo-sites/victorias-housekeeping/index.html" },
+    { "src": "/cotton-brothers/?", "dest": "/demo-sites/cotton-brothers/index.html" },
+    { "src": "/mh-mechanic/?", "dest": "/demo-sites/mh-mechanic/index.html" },
+    { "src": "/dog-ipanema/?", "dest": "/demo-sites/dog-ipanema/index.html" },
+    { "src": "/emilys-maids/?", "dest": "/demo-sites/emilys-maids/index.html" },
+    { "src": "/alex-auto/?", "dest": "/demo-sites/alex-auto/index.html" },
+    { "src": "/titos-grooming/?", "dest": "/demo-sites/titos-grooming/index.html" },
+    { "src": "/bubbles-grooming/?", "dest": "/demo-sites/bubbles-grooming/index.html" },
+    { "src": "/dokis-grooming/?", "dest": "/demo-sites/dokis-grooming/index.html" },
+    { "src": "/(.*)", "dest": "/campaign-dashboard-batch-1.md" }
+  ]
+}

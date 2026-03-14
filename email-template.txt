@@ -1,0 +1,16 @@
+Subject: Quick question about {{company}}
+
+Hi {{company}} team,
+
+I came across {{company}} while researching innovative SaaS companies in San Francisco, and I'm impressed by what you're building in the {{category}} space.
+
+I'm reaching out because I believe there might be a great opportunity for us to collaborate.
+
+Would you be open to a quick 15-minute chat next week to explore this?
+
+Best regards,
+Abdelhaq
+tigha66@gmail.com
+
+---
+P.S. If you're not the right person to talk to, could you point me in the right direction?

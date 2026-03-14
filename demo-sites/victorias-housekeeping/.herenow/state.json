@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "orchid-zephyr-jbwx": {
+      "siteUrl": "https://orchid-zephyr-jbwx.here.now/",
+      "claimToken": "7eeb891d780d2acfcc3977351240accc5fb641f0803d14c9c7c5def98faeb670",
+      "claimUrl": "https://here.now/claim?slug=orchid-zephyr-jbwx&token=7eeb891d780d2acfcc3977351240accc5fb641f0803d14c9c7c5def98faeb670",
+      "expiresAt": "2026-03-15T06:24:39.101Z"
+    }
+  }
+}

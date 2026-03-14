@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "waxen-ginger-3wga": {
+      "siteUrl": "https://waxen-ginger-3wga.here.now/",
+      "claimToken": "b6bec846485be52a0a67222c859914637c7b5bc1b3eb39a9feb5590bcdb2a459",
+      "claimUrl": "https://here.now/claim?slug=waxen-ginger-3wga&token=b6bec846485be52a0a67222c859914637c7b5bc1b3eb39a9feb5590bcdb2a459",
+      "expiresAt": "2026-03-15T06:28:20.488Z"
+    }
+  }
+}

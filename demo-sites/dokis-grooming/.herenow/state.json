@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "emerald-quiche-4g6d": {
+      "siteUrl": "https://emerald-quiche-4g6d.here.now/",
+      "claimToken": "b4016572d7c0f484eb7ad7b981a29487ee14f8e47e71d3a6c6fee152bf9b26b8",
+      "claimUrl": "https://here.now/claim?slug=emerald-quiche-4g6d&token=b4016572d7c0f484eb7ad7b981a29487ee14f8e47e71d3a6c6fee152bf9b26b8",
+      "expiresAt": "2026-03-15T06:28:27.316Z"
+    }
+  }
+}

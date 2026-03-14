@@ -1,0 +1,47 @@
+{
+  "search_query": "SaaS startups San Francisco contact email",
+  "search_date": "2026-03-14",
+  "leads": [
+    {
+      "company": "Talkdesk",
+      "description": "Cloud-based contact center software",
+      "website": "https://getlatka.com/blog/top-san-francisco-saas-companies/",
+      "location": "San Francisco, CA",
+      "category": "SaaS - Contact Center"
+    },
+    {
+      "company": "Gong",
+      "description": "Privately-held technology company",
+      "website": "https://getlatka.com/blog/top-san-francisco-saas-companies/",
+      "location": "San Francisco, CA",
+      "category": "SaaS - Revenue Intelligence"
+    },
+    {
+      "company": "SaaS Startups Database",
+      "description": "14,140+ funded SaaS startups with verified contacts",
+      "website": "https://growthlist.co/list-of-funded-saas-startups/",
+      "location": "San Francisco, CA",
+      "category": "SaaS Database"
+    },
+    {
+      "company": "F6S SaaS Companies",
+      "description": "100 Top SaaS Companies in San Francisco",
+      "website": "https://www.f6s.com/companies/saas/united-states/california/san-francisco/co",
+      "location": "San Francisco, CA",
+      "category": "SaaS Directory"
+    },
+    {
+      "company": "Seamless.AI SaaS List",
+      "description": "Verified cell phones, emails, and direct dials",
+      "website": "https://seamless.ai/search-companies?industry=software-development-or-saas&state=california&city=san-francisco",
+      "location": "San Francisco, CA",
+      "category": "SaaS - Contact Data"
+    }
+  ],
+  "next_steps": [
+    "Visit company websites to extract contact emails",
+    "Use agent-browser to scrape contact pages",
+    "Build personalized email sequence",
+    "Send cold outreach emails"
+  ]
+}

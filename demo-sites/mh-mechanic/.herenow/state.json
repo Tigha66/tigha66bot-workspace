@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "russet-quasar-s3hq": {
+      "siteUrl": "https://russet-quasar-s3hq.here.now/",
+      "claimToken": "c0ae944c597342bea13d556c4dcb03d9fa064ff18375c30b34161f8216629e8e",
+      "claimUrl": "https://here.now/claim?slug=russet-quasar-s3hq&token=c0ae944c597342bea13d556c4dcb03d9fa064ff18375c30b34161f8216629e8e",
+      "expiresAt": "2026-03-15T06:24:43.388Z"
+    }
+  }
+}

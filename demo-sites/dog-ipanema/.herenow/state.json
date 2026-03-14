@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "chilly-marsh-tx9e": {
+      "siteUrl": "https://chilly-marsh-tx9e.here.now/",
+      "claimToken": "f92408d4aa13c398d5c1f469b71da17d60eb4d425d258e299df77ce30cd64550",
+      "claimUrl": "https://here.now/claim?slug=chilly-marsh-tx9e&token=f92408d4aa13c398d5c1f469b71da17d60eb4d425d258e299df77ce30cd64550",
+      "expiresAt": "2026-03-15T06:24:45.916Z"
+    }
+  }
+}

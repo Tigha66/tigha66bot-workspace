@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "minty-moment-bq3v": {
+      "siteUrl": "https://minty-moment-bq3v.here.now/",
+      "claimToken": "466c5e1e48f9d19a789cc9beec87fe947f3212e10685aaaf890485b6ca317e30",
+      "claimUrl": "https://here.now/claim?slug=minty-moment-bq3v&token=466c5e1e48f9d19a789cc9beec87fe947f3212e10685aaaf890485b6ca317e30",
+      "expiresAt": "2026-03-15T06:23:47.133Z"
+    }
+  }
+}

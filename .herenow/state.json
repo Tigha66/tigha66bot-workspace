@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "mossy-gazebo-ee52": {
+      "siteUrl": "https://mossy-gazebo-ee52.here.now/",
+      "claimToken": "757baafba457ffb14d825ee28cbe0530e4dea47c6114b1cb9f29285ec929dcd2",
+      "claimUrl": "https://here.now/claim?slug=mossy-gazebo-ee52&token=757baafba457ffb14d825ee28cbe0530e4dea47c6114b1cb9f29285ec929dcd2",
+      "expiresAt": "2026-03-14T23:04:52.994Z"
+    }
+  }
+}

@@ -16,6 +16,8 @@ _Learn about the person you're helping. Update this as you go._
   - GitHub token: saved in secure config
   - Vercel: https://vercel.com/tigha66s-projects
   - Vercel token: saved in secure config
+  - FireCrawl: https://www.firecrawl.dev/app (key saved)
+  - Tavily: https://app.tavily.com/home (key saved)
 
 ## Context
 

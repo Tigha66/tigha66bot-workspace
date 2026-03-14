@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "bold-cipher-vxhv": {
+      "siteUrl": "https://bold-cipher-vxhv.here.now/",
+      "claimToken": "dd5171b66cba61632ce9e9e944eb44d5f8c1b7a80688dc237267afed700b1156",
+      "claimUrl": "https://here.now/claim?slug=bold-cipher-vxhv&token=dd5171b66cba61632ce9e9e944eb44d5f8c1b7a80688dc237267afed700b1156",
+      "expiresAt": "2026-03-15T06:28:18.241Z"
+    }
+  }
+}

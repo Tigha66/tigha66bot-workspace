@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "misty-cedar-afph": {
+      "siteUrl": "https://misty-cedar-afph.here.now/",
+      "claimToken": "9ecd8f55b757cfcc00d54908c1d4e0eb2d4554b868efb168d3f018e1a64ebb4c",
+      "claimUrl": "https://here.now/claim?slug=misty-cedar-afph&token=9ecd8f55b757cfcc00d54908c1d4e0eb2d4554b868efb168d3f018e1a64ebb4c",
+      "expiresAt": "2026-03-15T06:28:24.812Z"
+    }
+  }
+}

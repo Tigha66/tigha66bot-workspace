@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Postcard Front - MH Mechanic</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { width: 6in; height: 4in; font-family: system-ui, sans-serif; position: relative; }
+        .front { background: linear-gradient(135deg, #e94560 0%, #0f3460 100%); height: 100%; padding: 40px; color: white; display: flex; flex-direction: column; justify-content: center; }
+        .headline { font-size: 32px; font-weight: bold; margin-bottom: 15px; }
+        .subhead { font-size: 18px; opacity: 0.95; margin-bottom: 30px; }
+        .website-preview { background: white; border-radius: 10px; padding: 20px; margin-bottom: 20px; }
+        .preview-text { color: #e94560; font-size: 14px; font-weight: bold; }
+        .qr-section { display: flex; align-items: center; gap: 15px; }
+        .qr-placeholder { width: 100px; height: 100px; background: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #e94560; font-size: 12px; text-align: center; }
+        .qr-text { font-size: 14px; }
+        .business-name { position: absolute; bottom: 30px; left: 40px; font-size: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="front">
+        <div class="headline">We Built Your Business a Website! 🎉</div>
+        <div class="subhead">See what M&H Mobile Mechanic could look like online</div>
+        <div class="website-preview">
+            <div class="preview-text">🌐 Preview: russet-quasar-s3hq.here.now</div>
+        </div>
+        <div class="qr-section">
+            <div class="qr-placeholder">[QR CODE]<br>Scan to View</div>
+            <div class="qr-text">Scan to see<br>your website</div>
+        </div>
+        <div class="business-name">M&H International Mobile Mechanic</div>
+    </div>
+</body>
+</html>

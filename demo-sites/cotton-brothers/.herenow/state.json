@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "lunar-moment-bqte": {
+      "siteUrl": "https://lunar-moment-bqte.here.now/",
+      "claimToken": "40ccbf67c1277f30410cc553eb0e159e31fc02e1a96dcc6c4320754ddaea6dc3",
+      "claimUrl": "https://here.now/claim?slug=lunar-moment-bqte&token=40ccbf67c1277f30410cc553eb0e159e31fc02e1a96dcc6c4320754ddaea6dc3",
+      "expiresAt": "2026-03-15T06:24:41.315Z"
+    }
+  }
+}

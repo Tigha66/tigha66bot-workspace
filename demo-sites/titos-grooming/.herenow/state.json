@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "brave-trellis-jtvw": {
+      "siteUrl": "https://brave-trellis-jtvw.here.now/",
+      "claimToken": "9148bd14fd7d958f59439c9e28c274b0583c71006a02ec4552ad53c17510740d",
+      "claimUrl": "https://here.now/claim?slug=brave-trellis-jtvw&token=9148bd14fd7d958f59439c9e28c274b0583c71006a02ec4552ad53c17510740d",
+      "expiresAt": "2026-03-15T06:28:22.782Z"
+    }
+  }
+}

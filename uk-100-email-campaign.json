@@ -1,0 +1,35 @@
+{
+  "campaign": "UK Website Proposal - 100 Email Scale-Up",
+  "date": "2026-03-14",
+  "status": "PREPARING",
+  "target": "100 UK businesses",
+  "sources": [
+    "Yell.com",
+    "Google Business Profile UK",
+    "Bing Places UK",
+    "ThomsonLocal",
+    "FreeIndex",
+    "192.com",
+    "UK Business Directory",
+    "B2B Email Databases (More Than Words, LeadsMunch, Infinity DB, Prospect360)"
+  ],
+  "industries": [
+    "Hair Salons (20)",
+    "Cleaning Services (20)",
+    "Restaurants/Cafes (20)",
+    "Plumbers (15)",
+    "Electricians (15)",
+    "Estate Agents (10)"
+  ],
+  "offer": {
+    "one_time": "£397",
+    "monthly": "£39/month"
+  },
+  "expected_response_rate": "10-30%",
+  "revenue_projection": {
+    "conservative": "£397-£794",
+    "moderate": "£1,588-£3,176",
+    "optimistic": "£3,970-£7,940"
+  },
+  "next_action": "Extract 100 emails from directories and send proposal emails"
+}

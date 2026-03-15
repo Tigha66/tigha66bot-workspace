@@ -17,6 +17,12 @@
       "claimToken": "a33674a2fe4703929be0fa7f9ad221052c2bd61889bfa13950dc3f26cf19e9e8",
       "claimUrl": "https://here.now/claim?slug=open-badge-8g9d&token=a33674a2fe4703929be0fa7f9ad221052c2bd61889bfa13950dc3f26cf19e9e8",
       "expiresAt": "2026-03-15T14:07:11.172Z"
+    },
+    "quick-urchin-jafk": {
+      "siteUrl": "https://quick-urchin-jafk.here.now/",
+      "claimToken": "88f33158a23be9a3946661a89e349410da6340ed412efc2e9c2c81577621e34f",
+      "claimUrl": "https://here.now/claim?slug=quick-urchin-jafk&token=88f33158a23be9a3946661a89e349410da6340ed412efc2e9c2c81577621e34f",
+      "expiresAt": "2026-03-16T00:55:17.610Z"
     }
   }
 }

@@ -1,0 +1,40 @@
+{
+  "campaign": "UK Website Proposal - 100 Email Scale-Up",
+  "date": "2026-03-15",
+  "status": "PREPARING",
+  "target": "100 UK businesses",
+  "sources_identified": [
+    "industrylists.co.uk (35,100+ beauty salons)",
+    "spherescout.io (3,600+ hair salons)",
+    "ukmarketingmanagement.com (3,000+ cleaning companies)",
+    "prospect360.co.uk (2,208 restaurants)",
+    "morethanwordsuk.co.uk (34,565 restaurants)",
+    "data-broker.co.uk (UK restaurant lists)"
+  ],
+  "extraction_plan": {
+    "hair_salons": 25,
+    "cleaning_companies": 25,
+    "restaurants_cafes": 25,
+    "plumbers": 10,
+    "electricians": 10,
+    "estate_agents": 5
+  },
+  "email_template": "uk-proposal-email-template.txt",
+  "offer": {
+    "one_time": "£397",
+    "monthly": "£39/month"
+  },
+  "send_schedule": {
+    "batch_1": "25 emails (now)",
+    "batch_2": "25 emails (1 hour)",
+    "batch_3": "25 emails (2 hours)",
+    "batch_4": "25 emails (3 hours)"
+  },
+  "expected_response_rate": "10-30%",
+  "revenue_projection": {
+    "conservative_10pct": "£3,970 one-time OR £390/month",
+    "moderate_20pct": "£7,940 one-time OR £780/month",
+    "optimistic_30pct": "£11,910 one-time OR £1,170/month"
+  },
+  "next_action": "Extract emails from identified sources and send in batches"
+}

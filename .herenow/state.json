@@ -47,6 +47,12 @@
       "claimToken": "0cf20267f671f4e4a3cbf825687230249994b276f73e7865d2d991fcefd5e9d4",
       "claimUrl": "https://here.now/claim?slug=golden-island-969v&token=0cf20267f671f4e4a3cbf825687230249994b276f73e7865d2d991fcefd5e9d4",
       "expiresAt": "2026-03-17T19:19:42.515Z"
+    },
+    "cozy-crest-3b2g": {
+      "siteUrl": "https://cozy-crest-3b2g.here.now/",
+      "claimToken": "bd5a25de8e44a9a1b4f78a9d93be847a7f7288ef12eec682c1cb87d728c26ee5",
+      "claimUrl": "https://here.now/claim?slug=cozy-crest-3b2g&token=bd5a25de8e44a9a1b4f78a9d93be847a7f7288ef12eec682c1cb87d728c26ee5",
+      "expiresAt": "2026-03-17T19:28:10.797Z"
     }
   }
 }

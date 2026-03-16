@@ -53,6 +53,12 @@
       "claimToken": "bd5a25de8e44a9a1b4f78a9d93be847a7f7288ef12eec682c1cb87d728c26ee5",
       "claimUrl": "https://here.now/claim?slug=cozy-crest-3b2g&token=bd5a25de8e44a9a1b4f78a9d93be847a7f7288ef12eec682c1cb87d728c26ee5",
       "expiresAt": "2026-03-17T19:28:10.797Z"
+    },
+    "hidden-marsh-79kp": {
+      "siteUrl": "https://hidden-marsh-79kp.here.now/",
+      "claimToken": "c716d13a519f8390f3fef6485a2d3aa7ca33ff237df6478caf2ed5ab8b6a1a17",
+      "claimUrl": "https://here.now/claim?slug=hidden-marsh-79kp&token=c716d13a519f8390f3fef6485a2d3aa7ca33ff237df6478caf2ed5ab8b6a1a17",
+      "expiresAt": "2026-03-17T20:52:56.591Z"
     }
   }
 }

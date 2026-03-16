@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Receptionist Pro — 24/7 Call Answering & Appointment Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        success: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'fade-in': 'fadeIn 1s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(40px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-dark {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mesh-gradient {
+            background-color: #f0f9ff;
+            background-image: 
+                radial-gradient(at 40% 20%, hsla(215,98%,73%,0.4) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(255,87%,75%,0.4) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(195,86%,76%,0.4) 0px, transparent 50%),
+                radial-gradient(at 80% 50%, hsla(220,89%,73%,0.4) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(202,94%,73%,0.4) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, hsla(242,95%,74%,0.4) 0px, transparent 50%),
+                radial-gradient(at 0% 0%, hsla(213,93%,74%,0.4) 0px, transparent 50%);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+            transition: left 0.3s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 0;
+        }
+
+        .btn-primary > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .feature-icon {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+        }
+
+        .check-icon {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .phone-mockup {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 3px solid rgba(255,255,255,0.2);
+            border-radius: 3rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Animated Background -->
+    <div class="fixed inset-0 mesh-gradient -z-10"></div>
+    
+    <!-- Floating Blobs -->
+    <div class="fixed top-20 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 blob -z-10"></div>
+    <div class="fixed top-40 right-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 blob animation-delay-2000 -z-10"></div>
+    <div class="fixed bottom-20 left-1/2 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 blob animation-delay-4000 -z-10"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-dark border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center shadow-lg">
+                        <i class="fas fa-phone text-2xl text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold text-white">AI Receptionist Pro</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-300 hover:text-white transition-all duration-300 font-medium">Features</a>
+                    <a href="#demo" class="text-gray-300 hover:text-white transition-all duration-300 font-medium">Demo</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-white transition-all duration-300 font-medium">Pricing</a>
+                    <a href="#contact" class="btn-primary text-white px-6 py-3 rounded-xl font-bold hover:shadow-2xl transition-all duration-300">
+                        Start Free Trial
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center space-x-2 glass-dark px-6 py-3 rounded-full mb-8 animate-slide-up">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        <span class="text-gray-300 font-medium">📞 24/7 AI Call Answering</span>
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight animate-slide-up" style="animation-delay: 0.1s;">
+                        Never Miss a
+                        <span class="gradient-text block">Customer Call</span>
+                        Again
+                    </h1>
+
+                    <!-- Subheadline -->
+                    <p class="text-xl text-gray-300 mb-8 max-w-2xl animate-slide-up" style="animation-delay: 0.2s;">
+                        AI Receptionist answers calls 24/7, books appointments automatically, 
+                        and sends you instant notifications. 
+                        <span class="text-green-400 font-bold">One extra call pays for 3 months.</span>
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8 animate-slide-up" style="animation-delay: 0.3s;">
+                        <a href="#contact" class="btn-primary text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 w-full sm:w-auto">
+                            🚀 Start 14-Day Free Trial
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#demo" class="glass text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all duration-300 w-full sm:w-auto border border-white/30">
+                            <i class="fas fa-play-circle mr-2"></i>
+                            Hear Demo
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-gray-400 text-sm animate-fade-in" style="animation-delay: 0.4s;">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span>No credit card required</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span>Setup in 24 hours</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span>Cancel anytime</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phone Mockup -->
+                <div class="relative animate-slide-up" style="animation-delay: 0.5s;">
+                    <div class="phone-mockup max-w-sm mx-auto p-6">
+                        <div class="bg-gray-900 rounded-[2.5rem] p-6">
+                            <!-- Call UI -->
+                            <div class="text-center mb-8">
+                                <div class="w-24 h-24 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-robot text-4xl text-white"></i>
+                                </div>
+                                <h3 class="text-white text-xl font-bold mb-2">AI Receptionist</h3>
+                                <p class="text-green-400 font-semibold">Calling you...</p>
+                            </div>
+                            
+                            <!-- Call Stats -->
+                            <div class="space-y-4 mb-8">
+                                <div class="bg-gray-800 rounded-xl p-4">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-400">Calls Answered</span>
+                                        <span class="text-white font-bold">287</span>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-800 rounded-xl p-4">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-400">Appointments Booked</span>
+                                        <span class="text-white font-bold">43</span>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-800 rounded-xl p-4">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-gray-400">Revenue Added</span>
+                                        <span class="text-green-400 font-bold">£8,400</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Call Button -->
+                            <div class="flex justify-center space-x-4">
+                                <button class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone-slash text-2xl text-white"></i>
+                                </button>
+                                <button class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone text-2xl text-white"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="stat-card rounded-2xl p-8 text-center card-hover animate-slide-up">
+                    <div class="text-5xl md:text-6xl font-black gradient-text mb-3">60%</div>
+                    <div class="text-gray-600 font-semibold">Calls Go to Voicemail</div>
+                </div>
+                <div class="stat-card rounded-2xl p-8 text-center card-hover animate-slide-up" style="animation-delay: 0.1s;">
+                    <div class="text-5xl md:text-6xl font-black gradient-text mb-3">80%</div>
+                    <div class="text-gray-600 font-semibold">Call Competitor Instead</div>
+                </div>
+                <div class="stat-card rounded-2xl p-8 text-center card-hover animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="text-5xl md:text-6xl font-black gradient-text mb-3">100%</div>
+                    <div class="text-gray-600 font-semibold">Calls Answered (AI)</div>
+                </div>
+                <div class="stat-card rounded-2xl p-8 text-center card-hover animate-slide-up" style="animation-delay: 0.3s;">
+                    <div class="text-5xl md:text-6xl font-black gradient-text mb-3">10-30x</div>
+                    <div class="text-gray-600 font-semibold">ROI in Month 1</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-black text-gray-900 mb-6">
+                    You're Losing
+                    <span class="gradient-text">Money Every Day</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Missed calls = missed appointments = missed revenue.
+                    <br/>It's that simple.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 card-hover shadow-xl border-2 border-red-200 animate-slide-up">
+                    <div class="text-6xl mb-6">😰</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Missed Calls</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        60% of callers hang up if not answered. They don't leave voicemail. 
+                        They call your competitor.
+                    </p>
+                    <div class="mt-6 bg-red-50 rounded-xl p-4">
+                        <div class="text-red-600 font-bold">Lost: £600-£4,500/month</div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-8 card-hover shadow-xl border-2 border-orange-200 animate-slide-up" style="animation-delay: 0.1s;">
+                    <div class="text-6xl mb-6">📅</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">No-Shows</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        15-30% of customers don't show up. No reminder system. 
+                        Lost revenue, wasted time.
+                    </p>
+                    <div class="mt-6 bg-orange-50 rounded-xl p-4">
+                        <div class="text-orange-600 font-bold">Lost: £400-£2,000/month</div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-8 card-hover shadow-xl border-2 border-yellow-200 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="text-6xl mb-6">🕐</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">After Hours</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Calls at 8 PM, weekends, holidays go unanswered. 
+                        Emergency customers call the next number.
+                    </p>
+                    <div class="mt-6 bg-yellow-50 rounded-xl p-4">
+                        <div class="text-yellow-600 font-bold">Lost: £1,000-£10,000/month</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 mesh-gradient relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-black text-gray-900 mb-6">
+                    Your 24/7 AI
+                    <span class="gradient-text">Employee</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Never takes a break. Never misses a call. Always professional.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-2xl p-8 card-hover shadow-xl animate-slide-up">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-phone text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">24/7 Call Answering</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Answers every call, even at 3 AM on Sundays. Professional greeting. 
+                        Never puts customers on hold.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-2xl p-8 card-hover shadow-xl animate-slide-up" style="animation-delay: 0.1s;">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);">
+                        <i class="fas fa-calendar-check text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Auto Booking</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Books appointments directly into your calendar. Checks availability. 
+                        Sends confirmations automatically.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-2xl p-8 card-hover shadow-xl animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);">
+                        <i class="fas fa-bell text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">SMS Alerts</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Get instant SMS for hot leads. "New booking: John Smith, 
+                        leaky pipe, tomorrow 10 AM."
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white rounded-2xl p-8 card-hover shadow-xl animate-slide-up" style="animation-delay: 0.3s;">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                        <i class="fas fa-file-alt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Call Transcripts</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        See every conversation. Full transcripts. Quality assurance. 
+                        Know exactly what was discussed.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-white rounded-2xl p-8 card-hover shadow-xl animate-slide-up" style="animation-delay: 0.4s;">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
+                        <i class="fas fa-chart-line text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Analytics Dashboard</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Track calls, bookings, conversion rates. See ROI in real-time. 
+                        Beautiful reports.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-white rounded-2xl p-8 card-hover shadow-xl animate-slide-up" style="animation-delay: 0.5s;">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                        <i class="fab fa-whatsapp text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">WhatsApp Support</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Customers prefer texting? AI handles WhatsApp too. Same 
+                        professional service, different channel.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-20 w-96 h-96 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-screen filter blur-3xl animate-float-delayed"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-black text-white mb-6">
+                    Hear It In Action
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Call our demo line or listen to a sample conversation
+                </p>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="glass-dark rounded-3xl overflow-hidden shadow-2xl border border-white/20">
+                    <div class="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative group cursor-pointer">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 border-2 border-white/30">
+                                <i class="fas fa-play-circle text-5xl text-white"></i>
+                            </div>
+                            <p class="text-gray-300 text-lg mb-2">Demo call recording</p>
+                            <p class="text-gray-500 mb-6">Or call: 020 XXXX XXXX</p>
+                            <a href="#contact" class="inline-block btn-primary text-white px-8 py-4 rounded-xl font-bold hover:shadow-2xl transition-all duration-300">
+                                Start Free Trial →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="py-24 mesh-gradient relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-black text-gray-900 mb-6">
+                    Real Results from
+                    <span class="gradient-text">Real Businesses</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Don't take our word for it. Here's what business owners are achieving.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Case Study 1 -->
+                <div class="bg-white rounded-3xl p-10 shadow-xl border-2 border-blue-200 card-hover animate-slide-up">
+                    <div class="flex items-center mb-8">
+                        <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center text-white text-3xl font-bold mr-6 shadow-lg">
+                            <i class="fas fa-wrench text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Emergency Plumber</h3>
+                            <p class="text-gray-600">Manchester, 4 employees</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-black gradient-text mb-2">287</div>
+                            <div class="text-sm text-gray-600 font-semibold">Calls Answered</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black gradient-text mb-2">43</div>
+                            <div class="text-sm text-gray-600 font-semibold">Bookings</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black gradient-text mb-2">£8.4K</div>
+                            <div class="text-sm text-gray-600 font-semibold">Revenue Added</div>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 text-lg italic mb-6 leading-relaxed">
+                        "We were missing 8-12 calls/day because we were on jobs. 
+                        Started using AI Receptionist, now answer 100% of calls. 
+                        Added £8K/month in revenue. Best investment ever."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="text-yellow-500 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-4 text-gray-700 font-bold">— Plumber, Manchester</span>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="bg-white rounded-3xl p-10 shadow-xl border-2 border-purple-200 card-hover animate-slide-up" style="animation-delay: 0.1s;">
+                    <div class="flex items-center mb-8">
+                        <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-3xl font-bold mr-6 shadow-lg">
+                            <i class="fas fa-tooth text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Dental Practice</h3>
+                            <p class="text-gray-600">Leeds, 6 employees</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-black gradient-text mb-2">156</div>
+                            <div class="text-sm text-gray-600 font-semibold">Calls Answered</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black gradient-text mb-2">28</div>
+                            <div class="text-sm text-gray-600 font-semibold">Appointments</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black gradient-text mb-2">£5.2K</div>
+                            <div class="text-sm text-gray-600 font-semibold">Revenue Added</div>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 text-lg italic mb-6 leading-relaxed">
+                        "No-shows dropped 80% with automated reminders. 
+                        After-hours calls finally get answered. 
+                        Patients love the instant booking. ROI in week 1."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="text-yellow-500 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-4 text-gray-700 font-bold">— Dentist, Leeds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-40 left-40 w-96 h-96 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl animate-float"></div>
+            <div class="absolute bottom-40 right-40 w-96 h-96 bg-purple-500 rounded-full mix-blend-screen filter blur-3xl animate-float-delayed"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-black text-white mb-6">
+                    Simple, Transparent Pricing
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Choose the plan that fits your business. ROI guaranteed in month 1.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Pay Per Call -->
+                <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border-2 border-white/20 pricing-card animate-slide-up">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-3">Pay Per Call</h3>
+                        <p class="text-gray-300">High volume, flexible</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <div class="text-6xl font-black text-white mb-2">£0.50</div>
+                        <div class="text-gray-300 text-lg">per call</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <div class="check-icon w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">£0 setup fee</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="check-icon w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">No monthly commitment</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="check-icon w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">Pay only for answered calls</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="check-icon w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">All features included</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full bg-white text-blue-900 text-center py-4 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300">
+                        Start Free Trial
+                    </a>
+                    <p class="text-center text-gray-400 text-sm mt-4">Best for 200+ calls/month</p>
+                </div>
+
+                <!-- Setup + Monthly (Featured) -->
+                <div class="pricing-card bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 rounded-3xl p-8 border-4 border-blue-500 transform scale-105 animate-slide-up relative shadow-2xl">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-bold text-sm whitespace-nowrap shadow-lg">
+                        ⭐ BEST VALUE
+                    </div>
+                    <div class="text-center mb-8 mt-4">
+                        <h3 class="text-2xl font-bold text-white mb-3">Setup + Monthly</h3>
+                        <p class="text-gray-300">Most popular</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <div class="text-6xl font-black text-white mb-2">£297</div>
+                        <div class="text-gray-300 text-lg">setup + £99/mo</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <div class="check-icon w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">Professional setup</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="check-icon w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">500 calls/month included</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="check-icon w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">£0.20 per call after 500</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="check-icon w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">Calendar integration</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="check-icon w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">SMS notifications</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="check-icon w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">Dashboard access</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full btn-primary text-white py-4 rounded-xl font-bold hover:shadow-2xl transition-all duration-300">
+                        Start Free Trial
+                    </a>
+                    <p class="text-center text-blue-300 font-semibold text-sm mt-4">ROI in week 1 with 1-2 jobs</p>
+                </div>
+
+                <!-- All-In Monthly -->
+                <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border-2 border-white/20 pricing-card animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-3">All-In Monthly</h3>
+                        <p class="text-gray-300">No upfront cost</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <div class="text-6xl font-black text-white mb-2">£149</div>
+                        <div class="text-gray-300 text-lg">per month</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <div class="check-icon w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">£0 setup fee</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="check-icon w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">Unlimited calls</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="check-icon w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">All features included</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="check-icon w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">Cancel anytime</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="check-icon w-6 h-6 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">Perfect for testing</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full bg-white text-blue-900 text-center py-4 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300">
+                        Start Free Trial
+                    </a>
+                    <p class="text-center text-gray-400 text-sm mt-4">No credit card required</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-black text-white mb-6">
+                    Start Your 14-Day Free Trial
+                </h2>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto">
+                    No credit card required. Setup in 24 hours. Cancel anytime.
+                    <br/>One extra call pays for 3 months.
+                </p>
+            </div>
+            <div class="glass-dark rounded-3xl p-10 border border-white/20 shadow-2xl">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-white font-semibold mb-3">Your Name</label>
+                            <input type="text" class="w-full px-5 py-4 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-white focus:outline-none transition-all duration-300" placeholder="John Smith">
+                        </div>
+                        <div>
+                            <label class="block text-white font-semibold mb-3">Business Name</label>
+                            <input type="text" class="w-full px-5 py-4 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-white focus:outline-none transition-all duration-300" placeholder="ABC Plumbing Ltd">
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-white font-semibold mb-3">Phone</label>
+                            <input type="tel" class="w-full px-5 py-4 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-white focus:outline-none transition-all duration-300" placeholder="+44 7700 900000">
+                        </div>
+                        <div>
+                            <label class="block text-white font-semibold mb-3">Email</label>
+                            <input type="email" class="w-full px-5 py-4 bg-white/10 border-2 border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-white focus:outline-none transition-all duration-300" placeholder="john@business.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-white font-semibold mb-3">Business Type</label>
+                        <select class="w-full px-5 py-4 bg-white/10 border-2 border-white/20 rounded-xl text-white focus:border-white focus:outline-none transition-all duration-300">
+                            <option class="text-gray-900">Plumber</option>
+                            <option class="text-gray-900">Electrician</option>
+                            <option class="text-gray-900">Locksmith</option>
+                            <option class="text-gray-900">HVAC</option>
+                            <option class="text-gray-900">Dentist</option>
+                            <option class="text-gray-900">Hair Salon</option>
+                            <option class="text-gray-900">Gym/Personal Trainer</option>
+                            <option class="text-gray-900">Vet</option>
+                            <option class="text-gray-900">Law Firm</option>
+                            <option class="text-gray-900">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-white font-semibold mb-3">Average Calls Per Day</label>
+                        <select class="w-full px-5 py-4 bg-white/10 border-2 border-white/20 rounded-xl text-white focus:border-white focus:outline-none transition-all duration-300">
+                            <option class="text-gray-900">0-10 calls/day</option>
+                            <option class="text-gray-900">10-20 calls/day</option>
+                            <option class="text-gray-900">20-50 calls/day</option>
+                            <option class="text-gray-900">50+ calls/day</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full btn-primary text-white py-5 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                        🚀 Start 14-Day Free Trial
+                    </button>
+                    <p class="text-center text-gray-400 text-sm">
+                        No credit card required • Setup in 24 hours • Zero risk
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-phone text-2xl text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">AI Receptionist Pro</span>
+                    </div>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6 max-w-md">
+                        24/7 AI call answering and appointment booking for service businesses.
+                        Never miss a customer call again.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/Tigha66" class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Product</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#features" class="hover:text-white transition-all duration-300">Features</a></li>
+                        <li><a href="#demo" class="hover:text-white transition-all duration-300">Demo</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-all duration-300">Pricing</a></li>
+                        <li><a href="#results" class="hover:text-white transition-all duration-300">Results</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Contact</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope"></i>
+                            <span>abdelhaq@tigha66.com</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone"></i>
+                            <span>+44 7XXX XXXXXX</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>United Kingdom</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-gray-400">
+                <p class="mb-2">&copy; 2026 AI Receptionist Pro. All rights reserved.</p>
+                <p class="text-sm">Built by Tigha66 | 294+ AI Projects on GitHub</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-gray-900/95');
+            } else {
+                nav.classList.remove('bg-gray-900/95');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ Tigha66bot Sales Command Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        success: '#10b981',
+                        warning: '#f59e0b',
+                        danger: '#ef4444'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        .pulse-dot {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="text-4xl">⚡</div>
+                    <div>
+                        <h1 class="text-3xl font-bold">Tigha66bot Sales Command</h1>
+                        <p class="text-indigo-200">Monday, March 16, 2026 — Let's close some deals!</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <div class="text-sm text-indigo-200">Revenue Target Today</div>
+                    <div class="text-3xl font-bold">£1,500+</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Emails Sent</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-1">64</p>
+                        <p class="text-green-600 text-sm mt-2"><i class="fas fa-check-circle"></i> 58 delivered</p>
+                    </div>
+                    <div class="bg-indigo-100 p-4 rounded-full">
+                        <i class="fas fa-envelope text-2xl text-indigo-600"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Responses</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-1" id="responses">0</p>
+                        <p class="text-gray-400 text-sm mt-2">Expected: 12-16</p>
+                    </div>
+                    <div class="bg-yellow-100 p-4 rounded-full">
+                        <i class="fas fa-reply text-2xl text-yellow-600"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Payments</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-1" id="payments">0</p>
+                        <p class="text-gray-400 text-sm mt-2">Target: 3-6</p>
+                    </div>
+                    <div class="bg-green-100 p-4 rounded-full">
+                        <i class="fas fa-pound-sign text-2xl text-green-600"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all duration-300">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Revenue</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-1" id="revenue">£0</p>
+                        <p class="text-green-600 text-sm mt-2">Potential: £1,776+</p>
+                    </div>
+                    <div class="bg-purple-100 p-4 rounded-full">
+                        <i class="fas fa-chart-line text-2xl text-purple-600"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Priority Actions -->
+        <div class="bg-gradient-to-r from-red-500 to-orange-500 rounded-xl shadow-lg p-6 mb-8 text-white">
+            <h2 class="text-2xl font-bold mb-4"><i class="fas fa-bolt"></i> Priority Actions — Do These NOW</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <button onclick="checkInbox()" class="bg-white text-red-600 px-6 py-4 rounded-lg font-semibold hover:bg-red-50 transition-all card-hover">
+                    <i class="fas fa-inbox text-2xl mb-2"></i>
+                    <div>Check Gmail Inbox</div>
+                    <div class="text-sm font-normal mt-1">Look for responses</div>
+                </button>
+                <button onclick="checkStripe()" class="bg-white text-red-600 px-6 py-4 rounded-lg font-semibold hover:bg-red-50 transition-all card-hover">
+                    <i class="fas fa-credit-card text-2xl mb-2"></i>
+                    <div>Check Stripe</div>
+                    <div class="text-sm font-normal mt-1">Any payments?</div>
+                </button>
+                <button onclick="sendFollowUps()" class="bg-white text-red-600 px-6 py-4 rounded-lg font-semibold hover:bg-red-50 transition-all card-hover">
+                    <i class="fas fa-paper-plane text-2xl mb-2"></i>
+                    <div>Send Follow-Ups</div>
+                    <div class="text-sm font-normal mt-1">51 non-responders</div>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Campaign Status -->
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-4"><i class="fas fa-rocket text-indigo-600"></i> Active Campaigns</h3>
+                
+                <div class="space-y-4">
+                    <div class="border-l-4 border-green-500 pl-4 py-2">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="font-semibold text-gray-900">ReviewFlow Pro</p>
+                                <p class="text-sm text-gray-500">UK Hair Salons + Cleaners</p>
+                            </div>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">45 sent</span>
+                        </div>
+                        <div class="mt-2 bg-gray-200 rounded-full h-2">
+                            <div class="bg-green-500 h-2 rounded-full" style="width: 70%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Expected: 9-12 responses</p>
+                    </div>
+
+                    <div class="border-l-4 border-blue-500 pl-4 py-2">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="font-semibold text-gray-900">AI Lead Agent</p>
+                                <p class="text-sm text-gray-500">UK Roofers</p>
+                            </div>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">19 sent</span>
+                        </div>
+                        <div class="mt-2 bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 70%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Expected: 4-5 responses</p>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 pl-4 py-2">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="font-semibold text-gray-900">New Niches (Batch 4)</p>
+                                <p class="text-sm text-gray-500">Dentists, Vets, Gyms, Restaurants, Estate Agents</p>
+                            </div>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">50 ready</span>
+                        </div>
+                        <div class="mt-2 bg-gray-200 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 0%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Start: Tuesday March 17</p>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <button onclick="viewCampaigns()" class="w-full bg-indigo-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-all">
+                        <i class="fas fa-eye"></i> View All Campaign Details
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-4"><i class="fas fa-bolt text-yellow-600"></i> Quick Actions</h3>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="openFile('follow-up-emails-50-nonresponders.md')" class="bg-gray-50 hover:bg-gray-100 px-4 py-3 rounded-lg text-left transition-all">
+                        <i class="fas fa-envelope text-indigo-600 mb-1"></i>
+                        <div class="font-medium text-sm">Follow-Up Emails</div>
+                        <div class="text-xs text-gray-500">51 templates</div>
+                    </button>
+
+                    <button onclick="openFile('whatsapp-pitch-templates.md')" class="bg-gray-50 hover:bg-gray-100 px-4 py-3 rounded-lg text-left transition-all">
+                        <i class="fab fa-whatsapp text-green-600 mb-1"></i>
+                        <div class="font-medium text-sm">WhatsApp Pitches</div>
+                        <div class="text-xs text-gray-500">20+ templates</div>
+                    </button>
+
+                    <button onclick="openFile('phone-closing-script.md')" class="bg-gray-50 hover:bg-gray-100 px-4 py-3 rounded-lg text-left transition-all">
+                        <i class="fas fa-phone text-blue-600 mb-1"></i>
+                        <div class="font-medium text-sm">Phone Script</div>
+                        <div class="text-xs text-gray-500">Close calls</div>
+                    </button>
+
+                    <button onclick="openFile('new-leads-batch4-50-niches.md')" class="bg-gray-50 hover:bg-gray-100 px-4 py-3 rounded-lg text-left transition-all">
+                        <i class="fas fa-users text-purple-600 mb-1"></i>
+                        <div class="font-medium text-sm">New Leads</div>
+                        <div class="text-xs text-gray-500">50 businesses</div>
+                    </button>
+
+                    <button onclick="openFile('response-tracker.csv')" class="bg-gray-50 hover:bg-gray-100 px-4 py-3 rounded-lg text-left transition-all">
+                        <i class="fas fa-table text-orange-600 mb-1"></i>
+                        <div class="font-medium text-sm">Response Tracker</div>
+                        <div class="text-xs text-gray-500">Track all replies</div>
+                    </button>
+
+                    <button onclick="openFile('monday-morning-checklist.md')" class="bg-gray-50 hover:bg-gray-100 px-4 py-3 rounded-lg text-left transition-all">
+                        <i class="fas fa-list-check text-red-600 mb-1"></i>
+                        <div class="font-medium text-sm">Monday Checklist</div>
+                        <div class="text-xs text-gray-500">Hour-by-hour plan</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Follow-Up Schedule -->
+        <div class="bg-white rounded-xl shadow-md p-6 mt-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-4"><i class="fas fa-calendar text-green-600"></i> Follow-Up Schedule</h3>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-gray-50">
+                            <th class="text-left px-4 py-3 font-semibold text-gray-700">Follow-Up</th>
+                            <th class="text-left px-4 py-3 font-semibold text-gray-700">Date</th>
+                            <th class="text-left px-4 py-3 font-semibold text-gray-700">Time</th>
+                            <th class="text-left px-4 py-3 font-semibold text-gray-700">Recipients</th>
+                            <th class="text-left px-4 py-3 font-semibold text-gray-700">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t">
+                            <td class="px-4 py-3">
+                                <div class="font-medium">Follow-Up #1</div>
+                                <div class="text-sm text-gray-500">"Quick Bump"</div>
+                            </td>
+                            <td class="px-4 py-3">Mon Mar 16</td>
+                            <td class="px-4 py-3">2:00 PM</td>
+                            <td class="px-4 py-3">51 non-responders</td>
+                            <td class="px-4 py-3">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium pulse-dot">Pending</span>
+                            </td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="px-4 py-3">
+                                <div class="font-medium">Follow-Up #2</div>
+                                <div class="text-sm text-gray-500">"Social Proof"</div>
+                            </td>
+                            <td class="px-4 py-3">Thu Mar 19</td>
+                            <td class="px-4 py-3">9:00 AM</td>
+                            <td class="px-4 py-3">~35 still no response</td>
+                            <td class="px-4 py-3">
+                                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm font-medium">Scheduled</span>
+                            </td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="px-4 py-3">
+                                <div class="font-medium">Follow-Up #3</div>
+                                <div class="text-sm text-gray-500">"The Breakup"</div>
+                            </td>
+                            <td class="px-4 py-3">Mon Mar 23</td>
+                            <td class="px-4 py-3">9:00 AM</td>
+                            <td class="px-4 py-3">~25 still no response</td>
+                            <td class="px-4 py-3">
+                                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm font-medium">Scheduled</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Revenue Pipeline -->
+        <div class="bg-white rounded-xl shadow-md p-6 mt-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-4"><i class="fas fa-funnel-dollar text-green-600"></i> Revenue Pipeline</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <div class="text-center p-4 bg-indigo-50 rounded-lg">
+                    <div class="text-3xl font-bold text-indigo-600">64</div>
+                    <div class="text-sm text-gray-600 mt-1">Emails Sent</div>
+                </div>
+                <div class="text-center p-4 bg-yellow-50 rounded-lg">
+                    <div class="text-3xl font-bold text-yellow-600">12-16</div>
+                    <div class="text-sm text-gray-600 mt-1">Expected Responses</div>
+                </div>
+                <div class="text-center p-4 bg-blue-50 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-600">6-8</div>
+                    <div class="text-sm text-gray-600 mt-1">Expected Demos</div>
+                </div>
+                <div class="text-center p-4 bg-green-50 rounded-lg">
+                    <div class="text-3xl font-bold text-green-600">3-6</div>
+                    <div class="text-sm text-gray-600 mt-1">Expected Sales</div>
+                </div>
+                <div class="text-center p-4 bg-purple-50 rounded-lg">
+                    <div class="text-3xl font-bold text-purple-600">£1,776+</div>
+                    <div class="text-sm text-gray-600 mt-1">Revenue Potential</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Link -->
+        <div class="bg-gradient-to-r from-green-500 to-teal-500 rounded-xl shadow-lg p-6 mt-8 text-white">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="text-2xl font-bold"><i class="fas fa-link"></i> Stripe Payment Link</h3>
+                    <p class="text-green-100 mt-1">Share this with interested customers</p>
+                </div>
+                <button onclick="copyPaymentLink()" class="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-all">
+                    <i class="fas fa-copy"></i> Copy Link
+                </button>
+            </div>
+            <div class="mt-4 bg-white bg-opacity-20 rounded-lg p-3 font-mono text-sm break-all">
+                https://buy.stripe.com/28EdR9ciX5sf75laB7e09
+            </div>
+        </div>
+
+        <!-- Demo Links -->
+        <div class="bg-white rounded-xl shadow-md p-6 mt-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-4"><i class="fas fa-desktop text-blue-600"></i> Live Demos</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <a href="https://granite-mirage-xgmd.here.now/" target="_blank" class="border-2 border-indigo-200 rounded-lg p-4 hover:border-indigo-600 transition-all card-hover">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-chart-bar text-2xl text-indigo-600"></i>
+                        <div>
+                            <div class="font-semibold text-gray-900">ReviewFlow Pro</div>
+                            <div class="text-sm text-gray-500">Landing + Dashboard</div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://oaken-fjord-kngs.here.now/" target="_blank" class="border-2 border-blue-200 rounded-lg p-4 hover:border-blue-600 transition-all card-hover">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-robot text-2xl text-blue-600"></i>
+                        <div>
+                            <div class="font-semibold text-gray-900">AI Lead Agent</div>
+                            <div class="text-sm text-gray-500">Roofer Dashboard</div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://cedar-ember-h99g.here.now/" target="_blank" class="border-2 border-purple-200 rounded-lg p-4 hover:border-purple-600 transition-all card-hover">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-star text-2xl text-purple-600"></i>
+                        <div>
+                            <div class="font-semibold text-gray-900">Review Dashboard</div>
+                            <div class="text-sm text-gray-500">Live Demo</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- GitHub + Deploy -->
+        <div class="bg-gray-900 text-white rounded-xl shadow-lg p-6 mt-8">
+            <h3 class="text-xl font-bold mb-4"><i class="fab fa-github"></i> Deploy & Sync</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <button onclick="pushToGitHub()" class="bg-gray-800 hover:bg-gray-700 px-6 py-4 rounded-lg font-semibold transition-all flex items-center space-x-3">
+                    <i class="fab fa-github text-2xl"></i>
+                    <div>
+                        <div>Push to GitHub</div>
+                        <div class="text-sm text-gray-400">Tigha66/tigha66bot-workspace</div>
+                    </div>
+                </button>
+
+                <button onclick="deployToHereNow()" class="bg-indigo-600 hover:bg-indigo-700 px-6 py-4 rounded-lg font-semibold transition-all flex items-center space-x-3">
+                    <i class="fas fa-cloud-upload-alt text-2xl"></i>
+                    <div>
+                        <div>Deploy to here.now</div>
+                        <div class="text-sm text-indigo-200">Instant live URL</div>
+                    </div>
+                </button>
+            </div>
+
+            <div class="mt-4 bg-gray-800 rounded-lg p-4">
+                <div class="text-sm text-gray-400 mb-2">Repository Status</div>
+                <div class="flex items-center space-x-2">
+                    <span class="bg-green-500 w-3 h-3 rounded-full pulse-dot"></span>
+                    <span class="text-green-400">Ready to sync</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="text-2xl mb-2">⚡</div>
+            <p class="text-gray-400">Tigha66bot Sales Command Center</p>
+            <p class="text-gray-500 text-sm mt-2">Built with ❤️ by Abdelhaq | Monday, March 16, 2026</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="https://github.com/Tigha66" target="_blank" class="text-gray-400 hover:text-white transition-all">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://vercel.com/tigha66s-projects" target="_blank" class="text-gray-400 hover:text-white transition-all">
+                    <i class="fab fa-vercel text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function checkInbox() {
+            window.open('https://mail.google.com', '_blank');
+        }
+
+        function checkStripe() {
+            window.open('https://dashboard.stripe.com/payments', '_blank');
+        }
+
+        function sendFollowUps() {
+            alert('📧 Opening follow-up email templates...\n\n1. Open: follow-up-emails-50-nonresponders.md\n2. Copy Follow-Up #1 template\n3. Personalize with business names\n4. Send in batches of 10');
+            openFile('follow-up-emails-50-nonresponders.md');
+        }
+
+        function openFile(filename) {
+            alert(`📁 Opening: ${filename}\n\nThis file is in your workspace at:\n/data/.openclaw/workspace/${filename}`);
+            // In production, this would open the actual file
+        }
+
+        function viewCampaigns() {
+            alert('📊 Campaign Details:\n\nReviewFlow Pro: 45 emails sent\nAI Lead Agent: 19 emails sent\nNew Niches: 50 leads ready\n\nCheck response-tracker.csv for full details!');
+        }
+
+        function copyPaymentLink() {
+            navigator.clipboard.writeText('https://buy.stripe.com/28EdR9ciX5sf75laB7e09');
+            alert('✅ Payment link copied to clipboard!\n\nhttps://buy.stripe.com/28EdR9ciX5sf75laB7e09');
+        }
+
+        function pushToGitHub() {
+            alert('🚀 Pushing to GitHub...\n\nThis would run:\n1. git add .\n2. git commit -m "Sales dashboard + all campaign files"\n3. git push origin master\n\nGitHub: Tigha66/tigha66bot-workspace');
+        }
+
+        function deployToHereNow() {
+            alert('☁️ Deploying to here.now...\n\nThis would upload the entire workspace and generate a live URL.\n\nExpected: https://[random-name].here.now/');
+        }
+
+        // Update stats dynamically (in production, this would fetch real data)
+        function updateStats() {
+            // These would be fetched from actual data sources
+            const responses = 0; // Would fetch from Gmail API
+            const payments = 0; // Would fetch from Stripe API
+            const revenue = payments * 296;
+
+            document.getElementById('responses').textContent = responses;
+            document.getElementById('payments').textContent = payments;
+            document.getElementById('revenue').textContent = '£' + revenue;
+        }
+
+        // Auto-update stats every 30 seconds
+        setInterval(updateStats, 30000);
+        updateStats();
+    </script>
+</body>
+</html>

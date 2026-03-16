@@ -23,6 +23,18 @@
       "claimToken": "88f33158a23be9a3946661a89e349410da6340ed412efc2e9c2c81577621e34f",
       "claimUrl": "https://here.now/claim?slug=quick-urchin-jafk&token=88f33158a23be9a3946661a89e349410da6340ed412efc2e9c2c81577621e34f",
       "expiresAt": "2026-03-16T00:55:17.610Z"
+    },
+    "indigo-garnet-2xag": {
+      "siteUrl": "https://indigo-garnet-2xag.here.now/",
+      "claimToken": "2d3aefe3ee79e99a263b37cd73ef80fb7dadaa3f9f4960d39b464712015955f1",
+      "claimUrl": "https://here.now/claim?slug=indigo-garnet-2xag&token=2d3aefe3ee79e99a263b37cd73ef80fb7dadaa3f9f4960d39b464712015955f1",
+      "expiresAt": "2026-03-16T04:37:36.781Z"
+    },
+    "united-urchin-bzwj": {
+      "siteUrl": "https://united-urchin-bzwj.here.now/",
+      "claimToken": "ec1c2a62ddae6870400709f5be574e98e1c63b6359148d06169dd9f165bad26f",
+      "claimUrl": "https://here.now/claim?slug=united-urchin-bzwj&token=ec1c2a62ddae6870400709f5be574e98e1c63b6359148d06169dd9f165bad26f",
+      "expiresAt": "2026-03-16T04:37:45.967Z"
     }
   }
 }

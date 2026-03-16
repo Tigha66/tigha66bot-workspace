@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandra Lucy | Luxury Mobile Hair Styling</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        header { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 80px 0; text-align: center; }
+        header h1 { font-size: 3.5rem; margin-bottom: 10px; font-weight: 300; }
+        header p { font-size: 1.4rem; opacity: 0.95; }
+        
+        nav { background: #2d3748; padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; }
+        nav a { color: white; text-decoration: none; font-weight: 500; }
+        nav a:hover { color: #f5576c; }
+        
+        section { padding: 70px 0; }
+        .bg-light { background: #f7fafc; }
+        h2 { font-size: 2.5rem; text-align: center; margin-bottom: 50px; color: #2d3748; }
+        
+        .hero-text { text-align: center; font-size: 1.3rem; max-width: 700px; margin: 0 auto 40px; }
+        
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .service-card { background: white; padding: 35px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+        .service-card h3 { color: #f5576c; margin-bottom: 12px; font-size: 1.4rem; }
+        .service-card p { color: #666; margin-bottom: 15px; }
+        .service-card .price { font-size: 1.6rem; font-weight: bold; color: #f093fb; }
+        
+        .benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .benefit { text-align: center; padding: 30px; }
+        .benefit-icon { font-size: 3rem; margin-bottom: 15px; }
+        .benefit h4 { color: #2d3748; margin-bottom: 10px; }
+        
+        .contact-box { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 50px; border-radius: 20px; text-align: center; }
+        .contact-box h3 { font-size: 2rem; margin-bottom: 20px; }
+        .contact-box p { font-size: 1.3rem; margin: 15px 0; }
+        .btn { display: inline-block; background: white; color: #f5576c; padding: 18px 50px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 25px; font-size: 1.1rem; transition: all 0.3s; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        
+        footer { background: #2d3748; color: white; text-align: center; padding: 30px 0; }
+        
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>✨ Alexandra Lucy</h1>
+            <p>Luxury Hair Styling for Special Occasions</p>
+            <p style="margin-top: 15px; font-size: 1.1rem;">Colour • Cuts • Styling • Event Hair</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose">Why Choose</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="home">
+        <div class="container">
+            <h2>Luxury Hair Styling at Your Doorstep</h2>
+            <p class="hero-text">
+                Welcome to Alexandra Lucy Hair Styling. I bring professional, luxury hair services 
+                directly to you. Perfect for weddings, special events, or when you simply want to 
+                look your best without leaving home.
+            </p>
+        </div>
+    </section>
+    
+    <section id="services" class="bg-light">
+        <div class="container">
+            <h2>My Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>💇‍♀️ Professional Cut</h3>
+                    <p>Precision cutting tailored to your face shape and lifestyle</p>
+                    <div class="price">From £45</div>
+                </div>
+                <div class="service-card">
+                    <h3>🎨 Hair Colouring</h3>
+                    <p>Full colour, root touch-ups, balayage & highlights</p>
+                    <div class="price">From £60</div>
+                </div>
+                <div class="service-card">
+                    <h3>👰 Bridal & Event Hair</h3>
+                    <p>Stunning styles for your special day</p>
+                    <div class="price">From £85</div>
+                </div>
+                <div class="service-card">
+                    <h3>✨ Special Occasion</h3>
+                    <p>Prom, parties, graduations & more</p>
+                    <div class="price">From £55</div>
+                </div>
+                <div class="service-card">
+                    <h3>💆‍♀️ Blow Dry & Style</h3>
+                    <p>Professional blow dry for any occasion</p>
+                    <div class="price">From £35</div>
+                </div>
+                <div class="service-card">
+                    <h3>🏠 Mobile Service</h3>
+                    <p>I come to you - home or venue</p>
+                    <div class="price">Travel included</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="why-choose">
+        <div class="container">
+            <h2>Why Choose Alexandra Lucy?</h2>
+            <div class="benefits">
+                <div class="benefit">
+                    <div class="benefit-icon">🏠</div>
+                    <h4>Mobile Service</h4>
+                    <p>I come to your home or venue</p>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">⭐</div>
+                    <h4>Luxury Quality</h4>
+                    <p>Professional products & techniques</p>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">💝</div>
+                    <h4>Personalised</h4>
+                    <p>Tailored to your unique style</p>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">🕐</div>
+                    <h4>Flexible Hours</h4>
+                    <p>Evening & weekend appointments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="bg-light">
+        <div class="container">
+            <div class="contact-box">
+                <h3>Book Your Appointment</h3>
+                <p>📞 <strong>Call/Text:</strong> 07581 473979</p>
+                <p>📧 <strong>Email:</strong> [Your Email]</p>
+                <p>📍 <strong>Service Area:</strong> [Your Area]</p>
+                <p style="margin-top: 25px; font-size: 1.1rem; opacity: 0.9;">
+                    Available for consultations and bookings. Contact me to discuss your hair goals!
+                </p>
+                <a href="tel:07581473979" class="btn">📱 Call Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Alexandra Lucy Hair Styling. All rights reserved.</p>
+            <p>Mobile: 07581 473979</p>
+        </div>
+    </footer>
+</body>
+</html>

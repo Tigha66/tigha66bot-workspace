@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReviewFlow Pro - Get 5x More Google Reviews on Autopilot</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 100px 0; text-align: center; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 1.4rem; opacity: 0.95; max-width: 700px; margin: 0 auto 40px; }
+        .btn { display: inline-block; background: white; color: #667eea; padding: 18px 50px; border-radius: 50px; font-weight: bold; font-size: 1.2rem; text-decoration: none; transition: transform 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .btn:hover { transform: translateY(-3px); }
+        .btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        
+        /* Social Proof */
+        .social-proof { background: #f7fafc; padding: 40px 0; text-align: center; }
+        .social-proof p { color: #718096; margin-bottom: 20px; }
+        .logos { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; opacity: 0.6; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #4a5568; }
+        
+        /* Problem */
+        .problem { padding: 100px 0; }
+        .problem h2 { font-size: 2.5rem; text-align: center; margin-bottom: 60px; }
+        .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .problem-card { text-align: center; padding: 30px; }
+        .problem-card .icon { font-size: 3rem; margin-bottom: 20px; }
+        .problem-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: #2d3748; }
+        .problem-card p { color: #718096; }
+        
+        /* How It Works */
+        .how-it-works { background: #f7fafc; padding: 100px 0; }
+        .how-it-works h2 { font-size: 2.5rem; text-align: center; margin-bottom: 60px; }
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .step { text-align: center; position: relative; }
+        .step-number { width: 60px; height: 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 20px; }
+        .step h3 { margin-bottom: 15px; }
+        
+        /* Features */
+        .features { padding: 100px 0; }
+        .features h2 { font-size: 2.5rem; text-align: center; margin-bottom: 60px; }
+        .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; }
+        .feature:nth-child(even) { direction: rtl; }
+        .feature:nth-child(even) > * { direction: ltr; }
+        .feature-icon { font-size: 5rem; text-align: center; }
+        .feature h3 { font-size: 1.8rem; margin-bottom: 20px; }
+        .feature p { color: #718096; font-size: 1.1rem; }
+        
+        /* Testimonials */
+        .testimonials { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 100px 0; }
+        .testimonials h2 { font-size: 2.5rem; text-align: center; margin-bottom: 60px; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .testimonial { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; }
+        .testimonial p { font-size: 1.1rem; margin-bottom: 20px; font-style: italic; }
+        .testimonial .author { font-weight: bold; }
+        .testimonial .business { opacity: 0.8; }
+        
+        /* Pricing */
+        .pricing { padding: 100px 0; }
+        .pricing h2 { font-size: 2.5rem; text-align: center; margin-bottom: 20px; }
+        .pricing > p { text-align: center; color: #718096; margin-bottom: 60px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 900px; margin: 0 auto; }
+        .pricing-card { border: 2px solid #e2e8f0; border-radius: 20px; padding: 40px; text-align: center; transition: all 0.3s; }
+        .pricing-card:hover { border-color: #667eea; transform: translateY(-5px); }
+        .pricing-card.featured { border-color: #667eea; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .pricing-card .name { font-size: 1.3rem; margin-bottom: 10px; }
+        .pricing-card .price { font-size: 3.5rem; font-weight: bold; margin-bottom: 10px; }
+        .pricing-card .period { color: #718096; margin-bottom: 30px; }
+        .pricing-card.featured .period { opacity: 0.8; }
+        .pricing-card ul { list-style: none; margin-bottom: 30px; }
+        .pricing-card li { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.1); }
+        .pricing-card.featured li { border-color: rgba(255,255,255,0.2); }
+        
+        /* FAQ */
+        .faq { background: #f7fafc; padding: 100px 0; }
+        .faq h2 { font-size: 2.5rem; text-align: center; margin-bottom: 60px; }
+        .faq-item { background: white; padding: 30px; border-radius: 12px; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .faq-item h3 { margin-bottom: 15px; }
+        .faq-item p { color: #718096; }
+        
+        /* CTA */
+        .cta { background: #2d3748; color: white; padding: 80px 0; text-align: center; }
+        .cta h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .cta p { opacity: 0.9; margin-bottom: 40px; }
+        
+        /* Footer */
+        footer { background: #1a202c; color: white; padding: 40px 0; text-align: center; }
+        footer p { opacity: 0.7; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .feature { grid-template-columns: 1fr; }
+            .feature:nth-child(even) { direction: ltr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Your New AI Review Employee<br/>Works 24/7, Never Takes a Day Off</h1>
+            <p>ReviewFlow Pro is like hiring a dedicated employee whose only job is asking happy customers for Google reviews. Costs less than £3/day. Gets you 5x more 5-star reviews.</p>
+            <a href="#pricing" class="btn">Start Your 14-Day Free Trial →</a>
+            <p style="margin-top: 20px; font-size: 0.95rem; opacity: 0.8;">No credit card required • Cancel anytime</p>
+        </div>
+    </section>
+    
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <p>Trusted by 200+ businesses across the UK</p>
+            <div class="logos">
+                <div class="logo">🏠 Salons</div>
+                <div class="logo">🔧 Trades</div>
+                <div class="logo">🦷 Dentists</div>
+                <div class="logo">💅 Beauty</div>
+                <div class="logo">🍽️ Restaurants</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Problem -->
+    <section class="problem">
+        <div class="container">
+            <h2>Most Businesses Are Losing Reviews</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="icon">😰</div>
+                    <h3>Forget to Ask</h3>
+                    <p>80% of businesses forget to ask customers for reviews, losing valuable social proof</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">⏰</div>
+                    <h3>Wrong Timing</h3>
+                    <p>Asking too late means customers forget their positive experience</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">📧</div>
+                    <h3>Low Response</h3>
+                    <p>Email-only requests get just 12% response rate vs 87% for SMS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>Meet Your AI Review Employee</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Clocks In Automatically</h3>
+                    <p>Detects when a customer completes a service or payment</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Sends Personalised SMS</h3>
+                    <p>Reaches out within 2 hours (when customers are happiest)</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Makes It One-Click Easy</h3>
+                    <p>Customer taps link and leaves a 5-star review in seconds</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Follows Up Politely</h3>
+                    <p>Sends gentle reminder if they forget — just like a good employee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2>Everything You Need to Get More Reviews</h2>
+            
+            <div class="feature">
+                <div class="feature-content">
+                    <h3>📱 SMS + Email Sequences</h3>
+                    <p>Multi-channel approach maximises response rates. SMS gets 98% open rate, email provides backup. Smart sequencing means no customer falls through the cracks.</p>
+                </div>
+                <div class="feature-icon">📱</div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-content">
+                    <h3>⏰ Perfect Timing Automation</h3>
+                    <p>Based on analysis of 10,000+ review conversions, we send requests at the optimal moment when customers are happiest and most likely to respond.</p>
+                </div>
+                <div class="feature-icon">⏰</div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-content">
+                    <h3>🔗 Direct Google Review Links</h3>
+                    <p>One-click links take customers straight to your Google review form. No searching, no friction, no dropped conversions.</p>
+                </div>
+                <div class="feature-icon">🔗</div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-content">
+                    <h3>📊 Live Dashboard</h3>
+                    <p>Track review count, average rating, response rates, and ROI in real-time. See exactly which customers left reviews and when.</p>
+                </div>
+                <div class="feature-icon">📊</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Went from 3 reviews a month to 18. Our Google ranking shot up and we're getting 40% more calls. Best £99 we spend every month."</p>
+                    <div class="author">Sarah Mitchell</div>
+                    <div class="business">Bloom Hair Salon, Leeds</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Set it up once and it just works. I don't think about reviews anymore — they just come in automatically. Game changer for my plumbing business."</p>
+                    <div class="author">Dave Thompson</div>
+                    <div class="business">Thompson Plumbing, Manchester</div>
+                </div>
+                <div class="testimonial">
+                    <p>"The SMS follow-up is genius. 90% of our reviews now come through ReviewFlow. Our rating went from 4.2 to 4.8 in two months."</p>
+                    <div class="author">Emma Clarke</div>
+                    <div class="business">Sparkle Clean, Birmingham</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <p>Start free, upgrade when you see results</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="name">Starter</div>
+                    <div class="price">£49</div>
+                    <div class="period">per month</div>
+                    <ul>
+                        <li>100 SMS messages/month</li>
+                        <li>Unlimited email requests</li>
+                        <li>1 business location</li>
+                        <li>Basic dashboard</li>
+                        <li>Email support</li>
+                    </ul>
+                    <a href="#signup" class="btn btn-primary">Start Free Trial</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="name">Pro ⭐</div>
+                    <div class="price">£99</div>
+                    <div class="period">per month</div>
+                    <ul>
+                        <li>500 SMS messages/month</li>
+                        <li>Unlimited email requests</li>
+                        <li>3 business locations</li>
+                        <li>Advanced dashboard + analytics</li>
+                        <li>Priority support</li>
+                        <li>Auto-follow-up sequences</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/28EdR9ciX5sf75laB7e09" class="btn">Start Free Trial →</a>
+                </div>
+            </div>
+            <p style="margin-top: 40px; color: #718096;">14-day free trial • No credit card required • Cancel anytime</p>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How does the 14-day free trial work?</h3>
+                <p>Sign up and get full access to ReviewFlow Pro for 14 days. No credit card required. If you love it, choose a plan. If not, no charges.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I use my own phone number?</h3>
+                <p>Yes! You can use your existing Twilio number or we can provide one. SMS comes from your business number so customers recognise it.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What integrations do you support?</h3>
+                <p>We integrate with Calendly, Stripe, Google Calendar, and most booking systems. Manual trigger available for any service.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is this compliant with GDPR?</h3>
+                <p>Yes. We only send to customers who have provided their contact details. Every message includes opt-out. Full GDPR compliance guide included.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if customers don't want SMS?</h3>
+                <p>Easy — they can opt out anytime. You can also choose email-only mode if preferred (though SMS gets 7x better response rates).</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Get More Reviews?</h2>
+            <p>Join 200+ businesses getting 5x more Google reviews on autopilot</p>
+            <a href="#signup" class="btn">Start Your 14-Day Free Trial →</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ReviewFlow Pro. All rights reserved.</p>
+            <p style="margin-top: 10px;">Built with ❤️ for UK businesses</p>
+        </div>
+    </footer>
+</body>
+</html>

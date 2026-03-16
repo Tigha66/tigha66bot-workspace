@@ -35,6 +35,18 @@
       "claimToken": "ec1c2a62ddae6870400709f5be574e98e1c63b6359148d06169dd9f165bad26f",
       "claimUrl": "https://here.now/claim?slug=united-urchin-bzwj&token=ec1c2a62ddae6870400709f5be574e98e1c63b6359148d06169dd9f165bad26f",
       "expiresAt": "2026-03-16T04:37:45.967Z"
+    },
+    "ebony-reef-8xxq": {
+      "siteUrl": "https://ebony-reef-8xxq.here.now/",
+      "claimToken": "8f636b87cb0020a93fdb1ccf5f7a3071b603024a9b57751080e824c0bd7bbe8f",
+      "claimUrl": "https://here.now/claim?slug=ebony-reef-8xxq&token=8f636b87cb0020a93fdb1ccf5f7a3071b603024a9b57751080e824c0bd7bbe8f",
+      "expiresAt": "2026-03-17T14:25:06.918Z"
+    },
+    "golden-island-969v": {
+      "siteUrl": "https://golden-island-969v.here.now/",
+      "claimToken": "0cf20267f671f4e4a3cbf825687230249994b276f73e7865d2d991fcefd5e9d4",
+      "claimUrl": "https://here.now/claim?slug=golden-island-969v&token=0cf20267f671f4e4a3cbf825687230249994b276f73e7865d2d991fcefd5e9d4",
+      "expiresAt": "2026-03-17T19:19:42.515Z"
     }
   }
 }

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Tenant AI SaaS — White-Label Platform for Agencies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        accent: '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        .pulse-dot {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="text-3xl">🚀</div>
+                    <span class="text-xl font-bold text-gray-900">Multi-Tenant AI SaaS</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-primary transition">Features</a>
+                    <a href="#demo" class="text-gray-600 hover:text-primary transition">Demo</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-primary transition">Pricing</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-primary transition">Testimonials</a>
+                    <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition">Book Demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-block bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    🎯 White-Label AI Platform for Agencies
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                    Launch Your Own AI SaaS Business in 24 Hours
+                </h1>
+                <p class="text-xl md:text-2xl text-indigo-100 mb-8">
+                    Complete white-label AI platform. Your branding. Your pricing. 
+                    <br/>Charge £99-£499/month per client. Keep 80-90% profit margins.
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                    <a href="#contact" class="bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition shadow-lg">
+                        🚀 Start Your Free Trial
+                    </a>
+                    <a href="#demo" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-primary transition">
+                        📺 Watch Demo (2 min)
+                    </a>
+                </div>
+                <p class="text-indigo-200 mt-6 text-sm">
+                    No credit card required • 14-day free trial • Cancel anytime
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white shadow-lg -mt-8 relative z-10 rounded-xl max-w-6xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-8">
+            <div class="text-center">
+                <div class="text-4xl font-bold gradient-text mb-2">£5K-£20K</div>
+                <div class="text-gray-600">Additional Monthly Profit</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-bold gradient-text mb-2">80-90%</div>
+                <div class="text-gray-600">Profit Margins</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-bold gradient-text mb-2">Month 1</div>
+                <div class="text-gray-600">Average ROI</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-bold gradient-text mb-2">Unlimited</div>
+                <div class="text-gray-600">Client Seats</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Agencies Are Missing the AI Gold Rush
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Your clients are asking about AI. Your competitors are offering AI. 
+                    <br/>But you don't have a turnkey solution.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition-all">
+                    <div class="text-4xl mb-4">😰</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Client Pressure</h3>
+                    <p class="text-gray-600">
+                        "Can you help us with AI?" — Clients are asking every day. 
+                        You're losing deals to agencies who say "yes."
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition-all">
+                    <div class="text-4xl mb-4">💸</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Low Margins</h3>
+                    <p class="text-gray-600">
+                        Web design, SEO, PPC — all commoditized. 40-60% margins after 
+                        salaries and overhead. Hard to grow profitably.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition-all">
+                    <div class="text-4xl mb-4">🔄</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Client Churn</h3>
+                    <p class="text-gray-600">
+                        20-30% of clients leave every year. No sticky product. 
+                        Constantly hunting for new business.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    The Complete White-Label AI Platform
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Everything you need to offer AI services to your clients. 
+                    <br/>Fully branded as yours. Fully managed by us.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="border-2 border-indigo-100 rounded-xl p-6 card-hover transition-all">
+                    <div class="bg-indigo-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-robot text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AI Chatbots</h3>
+                    <p class="text-gray-600">
+                        Customer support, lead qualification, FAQ answering. 
+                        Available 24/7. Reduces support costs by 60%.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="border-2 border-purple-100 rounded-xl p-6 card-hover transition-all">
+                    <div class="bg-purple-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-star text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Review Automation</h3>
+                    <p class="text-gray-600">
+                        Automatically ask happy customers for Google reviews. 
+                        5x more reviews. Higher ranking. More customers.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="border-2 border-green-100 rounded-xl p-6 card-hover transition-all">
+                    <div class="bg-green-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-bolt text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Lead Response</h3>
+                    <p class="text-gray-600">
+                        Reply to leads in 60 seconds across web, WhatsApp, Facebook. 
+                        First to respond wins 70% of deals.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="border-2 border-yellow-100 rounded-xl p-6 card-hover transition-all">
+                    <div class="bg-yellow-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar-check text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Booking Automation</h3>
+                    <p class="text-gray-600">
+                        Auto-book appointments, send reminders, reduce no-shows by 80%. 
+                        Integrates with Google Calendar, Calendly.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="border-2 border-red-100 rounded-xl p-6 card-hover transition-all">
+                    <div class="bg-red-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-bar text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Analytics Dashboard</h3>
+                    <p class="text-gray-600">
+                        Track everything: conversations, reviews, leads, bookings. 
+                        Show ROI to clients with beautiful reports.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="border-2 border-blue-100 rounded-xl p-6 card-hover transition-all">
+                    <div class="bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-palette text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Full White-Label</h3>
+                    <p class="text-gray-600">
+                        Your logo, your colors, your domain. Clients never know 
+                        we exist. You own the relationship.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">See It In Action</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Watch how agencies use the platform to add £5K-£20K/month profit
+                </p>
+            </div>
+            <div class="max-w-4xl mx-auto bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+                <div class="aspect-video bg-gray-700 flex items-center justify-center">
+                    <div class="text-center">
+                        <i class="fas fa-play-circle text-6xl text-white mb-4 hover:text-primary transition cursor-pointer"></i>
+                        <p class="text-gray-400">Demo video coming soon</p>
+                        <p class="text-gray-500 text-sm mt-2">Book a live demo instead →</p>
+                        <a href="#contact" class="inline-block mt-4 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
+                            Book Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Real Results from Real Agencies
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Don't take our word for it. Here's what agency owners are achieving.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Case Study 1 -->
+                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-8 border-2 border-indigo-200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+                            DM
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Digital Marketing Agency</h3>
+                            <p class="text-gray-600">Leeds, 15 employees</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 mb-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-indigo-600">32</div>
+                            <div class="text-sm text-gray-600">Clients Onboarded</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-indigo-600">£8.4K</div>
+                            <div class="text-sm text-gray-600">Monthly Revenue</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-indigo-600">60 days</div>
+                            <div class="text-sm text-gray-600">Time to Result</div>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 italic mb-4">
+                        "We were skeptical at first. But within 60 days we onboarded 32 clients 
+                        and added £8K/month recurring revenue. Client churn dropped from 25% to 8%. 
+                        This changed our business."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-3 text-gray-600 font-semibold">— Agency Owner, Leeds</span>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8 border-2 border-green-200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4">
+                            WD
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Web Design Agency</h3>
+                            <p class="text-gray-600">Manchester, 8 employees</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 mb-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-600">18</div>
+                            <div class="text-sm text-gray-600">Clients Onboarded</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-600">£5.2K</div>
+                            <div class="text-sm text-gray-600">Monthly Revenue</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-600">45 days</div>
+                            <div class="text-sm text-gray-600">Time to Result</div>
+                        </div>
+                    </div>
+                    <blockquote class="text-gray-700 italic mb-4">
+                        "We started with the £999/month rental to test. Landed 5 clients in 
+                        week 1, upgraded to license in week 3. Now AI is our fastest-growing 
+                        service. Best investment we made."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-3 text-gray-600 font-semibold">— Agency Owner, Manchester</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Simple, Transparent Pricing
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Choose the model that fits your business. Most agencies ROI in month 1.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Rental -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-gray-200">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Monthly Rental</h3>
+                        <p class="text-gray-600">Perfect for testing</p>
+                    </div>
+                    <div class="text-center mb-6">
+                        <div class="text-5xl font-bold text-gray-900">£999</div>
+                        <div class="text-gray-600">per month</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">£0 setup fee</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">All features included</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Unlimited clients</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Cancel anytime</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Email support</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full bg-gray-900 text-white text-center py-4 rounded-lg font-bold hover:bg-gray-800 transition">
+                        Start Free Trial
+                    </a>
+                    <p class="text-center text-gray-500 text-sm mt-4">No credit card required</p>
+                </div>
+
+                <!-- License (Featured) -->
+                <div class="bg-white rounded-xl shadow-2xl p-8 border-4 border-indigo-600 relative transform scale-105">
+                    <div class="absolute top-0 right-0 bg-indigo-600 text-white px-4 py-2 rounded-bl-lg rounded-tr-lg font-bold text-sm">
+                        MOST POPULAR
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">License Purchase</h3>
+                        <p class="text-gray-600">Best long-term value</p>
+                    </div>
+                    <div class="text-center mb-6">
+                        <div class="text-5xl font-bold text-indigo-600">£4,997</div>
+                        <div class="text-gray-600">one-time + £499/mo</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Own the platform forever</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Unlimited clients</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Full white-label rights</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Priority support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Weekly training calls</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">2 custom integrations</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full bg-indigo-600 text-white text-center py-4 rounded-lg font-bold hover:bg-indigo-700 transition">
+                        Start Free Trial
+                    </a>
+                    <p class="text-center text-indigo-600 font-semibold text-sm mt-4">ROI in month 1 with 5-10 clients</p>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-gray-200">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
+                        <p class="text-gray-600">For scaling agencies</p>
+                    </div>
+                    <div class="text-center mb-6">
+                        <div class="text-5xl font-bold text-gray-900">£9,997</div>
+                        <div class="text-gray-600">one-time + £999/mo</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Everything in License</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Unlimited integrations</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Dedicated account manager</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">White-glove onboarding</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">24/7 priority support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Custom SLA</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full bg-gray-900 text-white text-center py-4 rounded-lg font-bold hover:bg-gray-800 transition">
+                        Contact Sales
+                    </a>
+                    <p class="text-center text-gray-500 text-sm mt-4">For agencies with 50+ clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Calculate Your ROI
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    See how quickly you'll profit with Multi-Tenant AI SaaS
+                </p>
+            </div>
+            <div class="max-w-2xl mx-auto bg-gray-50 rounded-xl p-8">
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Number of Clients</label>
+                        <input type="range" min="1" max="100" value="20" class="w-full h-2 bg-indigo-200 rounded-lg appearance-none cursor-pointer" id="clientSlider">
+                        <div class="text-center text-3xl font-bold text-indigo-600 mt-2" id="clientValue">20 clients</div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Monthly Price Per Client</label>
+                        <input type="range" min="99" max="999" value="299" class="w-full h-2 bg-indigo-200 rounded-lg appearance-none cursor-pointer" id="priceSlider">
+                        <div class="text-center text-3xl font-bold text-indigo-600 mt-2" id="priceValue">£299/month</div>
+                    </div>
+                    <div class="border-t-2 border-gray-200 pt-6">
+                        <div class="flex justify-between mb-4">
+                            <span class="text-gray-600">Revenue:</span>
+                            <span class="text-xl font-bold text-gray-900" id="revenue">£5,980/mo</span>
+                        </div>
+                        <div class="flex justify-between mb-4">
+                            <span class="text-gray-600">Platform Cost:</span>
+                            <span class="text-xl font-bold text-red-600">-£499/mo</span>
+                        </div>
+                        <div class="flex justify-between text-2xl font-bold">
+                            <span class="text-gray-900">Monthly Profit:</span>
+                            <span class="text-green-600" id="profit">£5,481/mo</span>
+                        </div>
+                        <div class="flex justify-between text-xl font-bold mt-4 pt-4 border-t-2 border-gray-200">
+                            <span class="text-gray-900">Annual Profit:</span>
+                            <span class="text-indigo-600" id="annualProfit">£65,772/year</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Ready to Launch Your AI SaaS?</h2>
+                <p class="text-xl text-indigo-100 max-w-3xl mx-auto">
+                    Book a free 15-minute demo call. See the platform. Ask questions. 
+                    <br/>No pressure. No obligation.
+                </p>
+            </div>
+            <div class="max-w-2xl mx-auto bg-white rounded-xl p-8 text-gray-900">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Your Name</label>
+                        <input type="text" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-600 focus:outline-none" placeholder="John Smith">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Agency Name</label>
+                        <input type="text" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-600 focus:outline-none" placeholder="Digital Agency Ltd">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input type="email" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-600 focus:outline-none" placeholder="john@agency.com">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Phone</label>
+                        <input type="tel" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-600 focus:outline-none" placeholder="+44 7700 900000">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Current Monthly Revenue</label>
+                        <select class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-600 focus:outline-none">
+                            <option>Under £10K/month</option>
+                            <option>£10K-£50K/month</option>
+                            <option>£50K-£100K/month</option>
+                            <option>Over £100K/month</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-indigo-700 transition">
+                        🚀 Book Free Demo Call
+                    </button>
+                    <p class="text-center text-gray-500 text-sm">
+                        No credit card required • 15-minute call • Zero pressure
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="text-2xl">🚀</div>
+                        <span class="text-lg font-bold">Multi-Tenant AI SaaS</span>
+                    </div>
+                    <p class="text-gray-400">
+                        White-label AI platform for agencies. Launch your own AI SaaS business in 24 hours.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#features" class="hover:text-white transition">Features</a></li>
+                        <li><a href="#demo" class="hover:text-white transition">Demo</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="#testimonials" class="hover:text-white transition">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">About</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📧 abdelhaq@tigha66.com</li>
+                        <li>📱 +44 7XXX XXXXXX</li>
+                        <li>📍 United Kingdom</li>
+                        <li>
+                            <a href="https://github.com/Tigha66" class="text-gray-400 hover:text-white transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Multi-Tenant AI SaaS. All rights reserved.</p>
+                <p class="text-sm mt-2">Built by Tigha66 | 294+ AI Projects on GitHub</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ROI Calculator
+        const clientSlider = document.getElementById('clientSlider');
+        const priceSlider = document.getElementById('priceSlider');
+        const clientValue = document.getElementById('clientValue');
+        const priceValue = document.getElementById('priceValue');
+        const revenue = document.getElementById('revenue');
+        const profit = document.getElementById('profit');
+        const annualProfit = document.getElementById('annualProfit');
+
+        function updateCalculator() {
+            const clients = parseInt(clientSlider.value);
+            const price = parseInt(priceSlider.value);
+            const platformCost = 499;
+
+            const rev = clients * price;
+            const prof = rev - platformCost;
+            const annual = prof * 12;
+
+            clientValue.textContent = clients + ' clients';
+            priceValue.textContent = '£' + price + '/month';
+            revenue.textContent = '£' + rev.toLocaleString() + '/mo';
+            profit.textContent = '£' + prof.toLocaleString() + '/mo';
+            annualProfit.textContent = '£' + annual.toLocaleString() + '/year';
+        }
+
+        clientSlider.addEventListener('input', updateCalculator);
+        priceSlider.addEventListener('input', updateCalculator);
+
+        updateCalculator();
+    </script>
+</body>
+</html>

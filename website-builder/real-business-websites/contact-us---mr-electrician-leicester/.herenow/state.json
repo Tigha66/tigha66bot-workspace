@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "hearty-fennel-f6va": {
+      "siteUrl": "https://hearty-fennel-f6va.here.now/",
+      "claimToken": "5a533cd5debe303bece9166fb18987772f8e1558c7f37722f53a99dbe8ec0d8b",
+      "claimUrl": "https://here.now/claim?slug=hearty-fennel-f6va&token=5a533cd5debe303bece9166fb18987772f8e1558c7f37722f53a99dbe8ec0d8b",
+      "expiresAt": "2026-03-20T00:47:59.838Z"
+    }
+  }
+}

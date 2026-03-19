@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "centered-falcon-aqvs": {
+      "siteUrl": "https://centered-falcon-aqvs.here.now/",
+      "claimToken": "349f46f522a3cb0735dfd8d9b44d5aa682f55574c96d60ca7d6bb3a081a01ff7",
+      "claimUrl": "https://here.now/claim?slug=centered-falcon-aqvs&token=349f46f522a3cb0735dfd8d9b44d5aa682f55574c96d60ca7d6bb3a081a01ff7",
+      "expiresAt": "2026-03-20T00:47:22.446Z"
+    }
+  }
+}

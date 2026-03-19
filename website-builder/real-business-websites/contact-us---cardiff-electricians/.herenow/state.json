@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "vivid-knoll-j6ht": {
+      "siteUrl": "https://vivid-knoll-j6ht.here.now/",
+      "claimToken": "1910d410f637199c060cc38b424b83ec6959e3c53892f2dea68580495380ac67",
+      "claimUrl": "https://here.now/claim?slug=vivid-knoll-j6ht&token=1910d410f637199c060cc38b424b83ec6959e3c53892f2dea68580495380ac67",
+      "expiresAt": "2026-03-20T00:47:36.529Z"
+    }
+  }
+}

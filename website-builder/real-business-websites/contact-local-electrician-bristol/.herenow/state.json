@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "mystic-reef-8ak5": {
+      "siteUrl": "https://mystic-reef-8ak5.here.now/",
+      "claimToken": "81272179e76b961d93cf3ba87504fdb07063a306440f4d91b13620b9f291bc56",
+      "claimUrl": "https://here.now/claim?slug=mystic-reef-8ak5&token=81272179e76b961d93cf3ba87504fdb07063a306440f4d91b13620b9f291bc56",
+      "expiresAt": "2026-03-20T00:47:20.371Z"
+    }
+  }
+}

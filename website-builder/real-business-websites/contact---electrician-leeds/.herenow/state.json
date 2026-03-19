@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "whimsy-jasper-ws2a": {
+      "siteUrl": "https://whimsy-jasper-ws2a.here.now/",
+      "claimToken": "7611d7a8dc9f4b2b5fc900aa4bdc6fcedc0fed60de93e1b73829084bac92e8b5",
+      "claimUrl": "https://here.now/claim?slug=whimsy-jasper-ws2a&token=7611d7a8dc9f4b2b5fc900aa4bdc6fcedc0fed60de93e1b73829084bac92e8b5",
+      "expiresAt": "2026-03-20T00:46:50.954Z"
+    }
+  }
+}

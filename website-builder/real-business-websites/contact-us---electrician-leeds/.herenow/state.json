@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "earthy-rocket-y4k9": {
+      "siteUrl": "https://earthy-rocket-y4k9.here.now/",
+      "claimToken": "8f3b03da174981be51bccd4da10636758181c8bf65cf1c158136b6e90ee82280",
+      "claimUrl": "https://here.now/claim?slug=earthy-rocket-y4k9&token=8f3b03da174981be51bccd4da10636758181c8bf65cf1c158136b6e90ee82280",
+      "expiresAt": "2026-03-20T00:47:43.877Z"
+    }
+  }
+}

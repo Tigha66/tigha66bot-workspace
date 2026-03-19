@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "kindly-nutmeg-qnyr": {
+      "siteUrl": "https://kindly-nutmeg-qnyr.here.now/",
+      "claimToken": "fbe71e4f1398c26ccb5ba2e93be2e47f61a0ac841fa7413be99c4b36ff463085",
+      "claimUrl": "https://here.now/claim?slug=kindly-nutmeg-qnyr&token=fbe71e4f1398c26ccb5ba2e93be2e47f61a0ac841fa7413be99c4b36ff463085",
+      "expiresAt": "2026-03-20T00:46:55.669Z"
+    }
+  }
+}

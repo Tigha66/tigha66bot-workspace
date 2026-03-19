@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "orchid-opera-y2hz": {
+      "siteUrl": "https://orchid-opera-y2hz.here.now/",
+      "claimToken": "a4824d94a8bcfd10e81901bba8244662d4b7970f9469988ae89a91e68f4f4ead",
+      "claimUrl": "https://here.now/claim?slug=orchid-opera-y2hz&token=a4824d94a8bcfd10e81901bba8244662d4b7970f9469988ae89a91e68f4f4ead",
+      "expiresAt": "2026-03-20T00:46:58.071Z"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "olive-sandal-abbn": {
+      "siteUrl": "https://olive-sandal-abbn.here.now/",
+      "claimToken": "5a30e2bdb7e9710993bb9731afc603062c0767dcec10e11f246e8e756d2a4a9b",
+      "claimUrl": "https://here.now/claim?slug=olive-sandal-abbn&token=5a30e2bdb7e9710993bb9731afc603062c0767dcec10e11f246e8e756d2a4a9b",
+      "expiresAt": "2026-03-20T00:47:57.502Z"
+    }
+  }
+}

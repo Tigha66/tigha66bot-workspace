@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "dreamy-sage-p744": {
+      "siteUrl": "https://dreamy-sage-p744.here.now/",
+      "claimToken": "41849a347f4638eb1f20a5dec3ab8726fea0420bbcedf3db068aa8dd89a4f0bb",
+      "claimUrl": "https://here.now/claim?slug=dreamy-sage-p744&token=41849a347f4638eb1f20a5dec3ab8726fea0420bbcedf3db068aa8dd89a4f0bb",
+      "expiresAt": "2026-03-20T00:47:15.641Z"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "united-soul-865q": {
+      "siteUrl": "https://united-soul-865q.here.now/",
+      "claimToken": "39dbcd1a9f092010d8168fbdbaadd004aab010b2481d3285d606064691487d93",
+      "claimUrl": "https://here.now/claim?slug=united-soul-865q&token=39dbcd1a9f092010d8168fbdbaadd004aab010b2481d3285d606064691487d93",
+      "expiresAt": "2026-03-20T00:47:10.516Z"
+    }
+  }
+}

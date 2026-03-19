@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "zippy-tablet-ynrg": {
+      "siteUrl": "https://zippy-tablet-ynrg.here.now/",
+      "claimToken": "cfd99549b5bdd242d776a5ed17dfb20db74e2ca259614329f3f08b43bb8f216a",
+      "claimUrl": "https://here.now/claim?slug=zippy-tablet-ynrg&token=cfd99549b5bdd242d776a5ed17dfb20db74e2ca259614329f3f08b43bb8f216a",
+      "expiresAt": "2026-03-20T00:46:46.330Z"
+    }
+  }
+}

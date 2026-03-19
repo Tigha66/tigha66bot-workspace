@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "woody-willow-37bj": {
+      "siteUrl": "https://woody-willow-37bj.here.now/",
+      "claimToken": "acf3dfcad7fa0e30fc181a11750c99462a39055dd666de22a945385f8499903d",
+      "claimUrl": "https://here.now/claim?slug=woody-willow-37bj&token=acf3dfcad7fa0e30fc181a11750c99462a39055dd666de22a945385f8499903d",
+      "expiresAt": "2026-03-20T00:48:12.256Z"
+    }
+  }
+}

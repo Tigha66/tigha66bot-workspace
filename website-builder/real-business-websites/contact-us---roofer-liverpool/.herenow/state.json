@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "quick-ember-ckpv": {
+      "siteUrl": "https://quick-ember-ckpv.here.now/",
+      "claimToken": "e340f65dab886a010cf2e1adc4c141866f10f6c06bb5fb99b24fcb9329b3a6de",
+      "claimUrl": "https://here.now/claim?slug=quick-ember-ckpv&token=e340f65dab886a010cf2e1adc4c141866f10f6c06bb5fb99b24fcb9329b3a6de",
+      "expiresAt": "2026-03-20T00:48:05.275Z"
+    }
+  }
+}

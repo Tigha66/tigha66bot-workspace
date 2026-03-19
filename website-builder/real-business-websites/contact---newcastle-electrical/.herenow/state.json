@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "lucid-zephyr-zzca": {
+      "siteUrl": "https://lucid-zephyr-zzca.here.now/",
+      "claimToken": "da93aed8eec3da4c3093b964dff519389cdcde4cadd7f076eac8e98e85a9d598",
+      "claimUrl": "https://here.now/claim?slug=lucid-zephyr-zzca&token=da93aed8eec3da4c3093b964dff519389cdcde4cadd7f076eac8e98e85a9d598",
+      "expiresAt": "2026-03-20T00:47:03.345Z"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "rising-osprey-cc9p": {
+      "siteUrl": "https://rising-osprey-cc9p.here.now/",
+      "claimToken": "9bbaae91d67f2ad969876020ce50c1fd8e445c68e132052fa88fe11465fe6ac3",
+      "claimUrl": "https://here.now/claim?slug=rising-osprey-cc9p&token=9bbaae91d67f2ad969876020ce50c1fd8e445c68e132052fa88fe11465fe6ac3",
+      "expiresAt": "2026-03-20T00:47:13.110Z"
+    }
+  }
+}

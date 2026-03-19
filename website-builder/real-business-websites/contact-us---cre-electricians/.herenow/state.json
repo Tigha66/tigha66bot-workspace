@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "urban-sleet-t4e5": {
+      "siteUrl": "https://urban-sleet-t4e5.here.now/",
+      "claimToken": "1c34b4aac3bbf290980ef8fa59ad1cc2a6876c3632b9fe63ad8e61be16557662",
+      "claimUrl": "https://here.now/claim?slug=urban-sleet-t4e5&token=1c34b4aac3bbf290980ef8fa59ad1cc2a6876c3632b9fe63ad8e61be16557662",
+      "expiresAt": "2026-03-20T00:47:38.972Z"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "tender-turret-h9ka": {
+      "siteUrl": "https://tender-turret-h9ka.here.now/",
+      "claimToken": "4fa9e8e2003ad867b213733cbb6f40855a03e1abbfb27b227a97118192f5c986",
+      "claimUrl": "https://here.now/claim?slug=tender-turret-h9ka&token=4fa9e8e2003ad867b213733cbb6f40855a03e1abbfb27b227a97118192f5c986",
+      "expiresAt": "2026-03-20T00:48:09.715Z"
+    }
+  }
+}

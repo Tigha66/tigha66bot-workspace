@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "marine-arbor-pnr4": {
+      "siteUrl": "https://marine-arbor-pnr4.here.now/",
+      "claimToken": "0f852339ba93b3b6570d2932d70fd387b7baa6bd54900e10ad0d7e5d2f103ee1",
+      "claimUrl": "https://here.now/claim?slug=marine-arbor-pnr4&token=0f852339ba93b3b6570d2932d70fd387b7baa6bd54900e10ad0d7e5d2f103ee1",
+      "expiresAt": "2026-03-20T00:47:08.241Z"
+    }
+  }
+}

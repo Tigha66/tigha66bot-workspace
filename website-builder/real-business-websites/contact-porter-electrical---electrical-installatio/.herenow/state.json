@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "presto-truffle-7aqx": {
+      "siteUrl": "https://presto-truffle-7aqx.here.now/",
+      "claimToken": "53ee29a321d15181bd0dda0ed4a10c67ba3a07eea7c0677f1a049612fe02064a",
+      "claimUrl": "https://here.now/claim?slug=presto-truffle-7aqx&token=53ee29a321d15181bd0dda0ed4a10c67ba3a07eea7c0677f1a049612fe02064a",
+      "expiresAt": "2026-03-20T00:47:27.448Z"
+    }
+  }
+}

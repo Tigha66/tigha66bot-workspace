@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "vowful-orbit-zpgh": {
+      "siteUrl": "https://vowful-orbit-zpgh.here.now/",
+      "claimToken": "8ccb8fa96ad6db5a9b6a022a51a7459ed233b36af783cab7512d0181eeddade8",
+      "claimUrl": "https://here.now/claim?slug=vowful-orbit-zpgh&token=8ccb8fa96ad6db5a9b6a022a51a7459ed233b36af783cab7512d0181eeddade8",
+      "expiresAt": "2026-03-20T00:47:55.600Z"
+    }
+  }
+}

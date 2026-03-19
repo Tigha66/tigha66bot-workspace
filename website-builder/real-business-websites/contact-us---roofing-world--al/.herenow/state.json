@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "lilac-breeze-9vqz": {
+      "siteUrl": "https://lilac-breeze-9vqz.here.now/",
+      "claimToken": "42f958ba154919e4dfce9f0a3e340fe23a63eb4e7cf68e056318ee75241562a5",
+      "claimUrl": "https://here.now/claim?slug=lilac-breeze-9vqz&token=42f958ba154919e4dfce9f0a3e340fe23a63eb4e7cf68e056318ee75241562a5",
+      "expiresAt": "2026-03-20T00:48:07.786Z"
+    }
+  }
+}

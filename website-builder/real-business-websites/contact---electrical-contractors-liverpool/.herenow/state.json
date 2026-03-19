@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "quartz-mortar-yr6f": {
+      "siteUrl": "https://quartz-mortar-yr6f.here.now/",
+      "claimToken": "e40f923560f84cf4e73b2aa3ce55c9419c55e47aa8fdcb14952b2b3d767566e1",
+      "claimUrl": "https://here.now/claim?slug=quartz-mortar-yr6f&token=e40f923560f84cf4e73b2aa3ce55c9419c55e47aa8fdcb14952b2b3d767566e1",
+      "expiresAt": "2026-03-20T00:46:48.638Z"
+    }
+  }
+}

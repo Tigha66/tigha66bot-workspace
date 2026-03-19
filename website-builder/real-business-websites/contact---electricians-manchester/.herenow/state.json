@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "quiet-zenith-xsbw": {
+      "siteUrl": "https://quiet-zenith-xsbw.here.now/",
+      "claimToken": "ca91b656ff4dd236da1ece87031209e79c758a7e25daacd20f5dd2ceeeacc4f8",
+      "claimUrl": "https://here.now/claim?slug=quiet-zenith-xsbw&token=ca91b656ff4dd236da1ece87031209e79c758a7e25daacd20f5dd2ceeeacc4f8",
+      "expiresAt": "2026-03-20T00:46:53.292Z"
+    }
+  }
+}

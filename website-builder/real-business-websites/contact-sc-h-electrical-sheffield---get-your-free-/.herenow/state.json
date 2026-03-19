@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "misty-garden-e8f7": {
+      "siteUrl": "https://misty-garden-e8f7.here.now/",
+      "claimToken": "83c8128dbd479be1cb82bcb7243a945bdb1c20aad98fc900adf32a8c4dd6598b",
+      "claimUrl": "https://here.now/claim?slug=misty-garden-e8f7&token=83c8128dbd479be1cb82bcb7243a945bdb1c20aad98fc900adf32a8c4dd6598b",
+      "expiresAt": "2026-03-20T00:47:29.517Z"
+    }
+  }
+}

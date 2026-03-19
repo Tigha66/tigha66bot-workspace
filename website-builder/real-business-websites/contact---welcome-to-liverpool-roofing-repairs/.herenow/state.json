@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "velvet-arbor-tvtf": {
+      "siteUrl": "https://velvet-arbor-tvtf.here.now/",
+      "claimToken": "02e69b9614359fb1657072d816e54ee0702e7d9c0b19d2d766fc9300081d28c3",
+      "claimUrl": "https://here.now/claim?slug=velvet-arbor-tvtf&token=02e69b9614359fb1657072d816e54ee0702e7d9c0b19d2d766fc9300081d28c3",
+      "expiresAt": "2026-03-20T00:47:06.003Z"
+    }
+  }
+}

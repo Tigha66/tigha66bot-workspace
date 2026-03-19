@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "trusty-mortar-3srh": {
+      "siteUrl": "https://trusty-mortar-3srh.here.now/",
+      "claimToken": "eadd0fe6ea1a40a8163bebc2ec48a290468f948de39cb1b27965f408fa0e38ac",
+      "claimUrl": "https://here.now/claim?slug=trusty-mortar-3srh&token=eadd0fe6ea1a40a8163bebc2ec48a290468f948de39cb1b27965f408fa0e38ac",
+      "expiresAt": "2026-03-20T00:47:18.022Z"
+    }
+  }
+}

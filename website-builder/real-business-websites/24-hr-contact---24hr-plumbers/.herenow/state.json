@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "vivid-beacon-ty9x": {
+      "siteUrl": "https://vivid-beacon-ty9x.here.now/",
+      "claimToken": "b24bb82e027ea0488aa1862432a8071f04264844974b16add9ab62631b5a2170",
+      "claimUrl": "https://here.now/claim?slug=vivid-beacon-ty9x&token=b24bb82e027ea0488aa1862432a8071f04264844974b16add9ab62631b5a2170",
+      "expiresAt": "2026-03-20T00:46:43.939Z"
+    }
+  }
+}

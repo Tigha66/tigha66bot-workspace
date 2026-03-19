@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "saffron-poplar-8k7r": {
+      "siteUrl": "https://saffron-poplar-8k7r.here.now/",
+      "claimToken": "e16bc870067930a7759ef8aea4e6d7ca8a4197fd72df17916b1fd5988d74aea5",
+      "claimUrl": "https://here.now/claim?slug=saffron-poplar-8k7r&token=e16bc870067930a7759ef8aea4e6d7ca8a4197fd72df17916b1fd5988d74aea5",
+      "expiresAt": "2026-03-20T00:47:00.526Z"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "wander-walrus-w3qj": {
+      "siteUrl": "https://wander-walrus-w3qj.here.now/",
+      "claimToken": "c4632b676134d1e797c4c6f6775c565f034c9aff5a980e81bc1fe077ef49a14a",
+      "claimUrl": "https://here.now/claim?slug=wander-walrus-w3qj&token=c4632b676134d1e797c4c6f6775c565f034c9aff5a980e81bc1fe077ef49a14a",
+      "expiresAt": "2026-03-20T00:47:53.067Z"
+    }
+  }
+}

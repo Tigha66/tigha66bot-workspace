@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "fierce-dory-ewv3": {
+      "siteUrl": "https://fierce-dory-ewv3.here.now/",
+      "claimToken": "cf6dbb6c3c2d4f05e5cb74aa34f895f1f3580ea96f37c43589f9475af8e45ec8",
+      "claimUrl": "https://here.now/claim?slug=fierce-dory-ewv3&token=cf6dbb6c3c2d4f05e5cb74aa34f895f1f3580ea96f37c43589f9475af8e45ec8",
+      "expiresAt": "2026-03-20T00:48:02.704Z"
+    }
+  }
+}

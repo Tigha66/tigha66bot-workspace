@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "oaken-sparrow-2vfd": {
+      "siteUrl": "https://oaken-sparrow-2vfd.here.now/",
+      "claimToken": "ef2dfc4688ac45b1b6fa70eb9453f71e68e080a392aad2ca5243aa202a958552",
+      "claimUrl": "https://here.now/claim?slug=oaken-sparrow-2vfd&token=ef2dfc4688ac45b1b6fa70eb9453f71e68e080a392aad2ca5243aa202a958552",
+      "expiresAt": "2026-03-20T00:47:34.094Z"
+    }
+  }
+}

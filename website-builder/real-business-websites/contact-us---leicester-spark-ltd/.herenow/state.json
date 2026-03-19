@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "azure-hutch-rf6g": {
+      "siteUrl": "https://azure-hutch-rf6g.here.now/",
+      "claimToken": "57e187828b2c30defa97b990f237e891f604968310b905622ed71c6b0061139b",
+      "claimUrl": "https://here.now/claim?slug=azure-hutch-rf6g&token=57e187828b2c30defa97b990f237e891f604968310b905622ed71c6b0061139b",
+      "expiresAt": "2026-03-20T00:47:50.837Z"
+    }
+  }
+}

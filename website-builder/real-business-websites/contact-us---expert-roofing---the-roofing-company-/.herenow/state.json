@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "jovial-sandal-ke3p": {
+      "siteUrl": "https://jovial-sandal-ke3p.here.now/",
+      "claimToken": "fda5b6319a206bb20105fdd32f4e13a50270b1878c391d7089c4c11f2eacde37",
+      "claimUrl": "https://here.now/claim?slug=jovial-sandal-ke3p&token=fda5b6319a206bb20105fdd32f4e13a50270b1878c391d7089c4c11f2eacde37",
+      "expiresAt": "2026-03-20T00:47:46.255Z"
+    }
+  }
+}

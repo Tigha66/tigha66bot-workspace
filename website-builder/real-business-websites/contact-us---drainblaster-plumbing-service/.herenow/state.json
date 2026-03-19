@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "wander-huckle-9eqp": {
+      "siteUrl": "https://wander-huckle-9eqp.here.now/",
+      "claimToken": "0ec5271f9b2af94615e2fc6b46e0802c4200f2ac92dd3dfed69f2ac3c35b5c72",
+      "claimUrl": "https://here.now/claim?slug=wander-huckle-9eqp&token=0ec5271f9b2af94615e2fc6b46e0802c4200f2ac92dd3dfed69f2ac3c35b5c72",
+      "expiresAt": "2026-03-20T00:47:41.397Z"
+    }
+  }
+}

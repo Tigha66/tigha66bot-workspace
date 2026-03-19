@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "sacred-anchor-zkvx": {
+      "siteUrl": "https://sacred-anchor-zkvx.here.now/",
+      "claimToken": "29334e654cbbb846186c355afe36e90e1e11cd8b519847469c71aee66bd1dbfb",
+      "claimUrl": "https://here.now/claim?slug=sacred-anchor-zkvx&token=29334e654cbbb846186c355afe36e90e1e11cd8b519847469c71aee66bd1dbfb",
+      "expiresAt": "2026-03-20T00:47:31.610Z"
+    }
+  }
+}

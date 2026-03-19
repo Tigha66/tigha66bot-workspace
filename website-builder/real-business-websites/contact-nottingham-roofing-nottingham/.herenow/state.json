@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "fierce-acorn-ammr": {
+      "siteUrl": "https://fierce-acorn-ammr.here.now/",
+      "claimToken": "917eb0e17e105c1e664865aebdbfa5751f7cee0ed5f25aee3ef1d7c02005842a",
+      "claimUrl": "https://here.now/claim?slug=fierce-acorn-ammr&token=917eb0e17e105c1e664865aebdbfa5751f7cee0ed5f25aee3ef1d7c02005842a",
+      "expiresAt": "2026-03-20T00:47:24.993Z"
+    }
+  }
+}

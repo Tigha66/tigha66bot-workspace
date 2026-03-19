@@ -1,0 +1,10 @@
+{
+  "publishes": {
+    "dusty-citrus-rypm": {
+      "siteUrl": "https://dusty-citrus-rypm.here.now/",
+      "claimToken": "3df8a35b65f000786b7a435d036ca73bbbd5c9ccb1f7cc40956b703ff0c0ef7b",
+      "claimUrl": "https://here.now/claim?slug=dusty-citrus-rypm&token=3df8a35b65f000786b7a435d036ca73bbbd5c9ccb1f7cc40956b703ff0c0ef7b",
+      "expiresAt": "2026-03-20T00:48:14.721Z"
+    }
+  }
+}

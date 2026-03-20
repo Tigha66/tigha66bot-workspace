@@ -1,0 +1,39 @@
+{
+  "campaign": "Revenue Pipeline",
+  "lastUpdated": "2026-03-19T05:52:00Z",
+  "summary": {
+    "projected": 125000,
+    "closed": 87500,
+    "inPipeline": 37500,
+    "closeRate": 70.0,
+    "averageDealSize": 5200
+  },
+  "bySource": [
+    {"source": "LeadFlow AI", "projected": 45000, "closed": 32000, "percentage": 36.6},
+    {"source": "Website Outreach", "projected": 35000, "closed": 28500, "percentage": 28.0},
+    {"source": "Agency Partners", "projected": 30000, "closed": 18000, "percentage": 24.0},
+    {"source": "Referrals", "projected": 15000, "closed": 9000, "percentage": 12.0}
+  ],
+  "pipeline": [
+    {"deal": "Enterprise Dashboard", "value": 15000, "stage": "proposal", "probability": 60, "expectedClose": "2026-03-25", "source": "LeadFlow AI"},
+    {"deal": "E-commerce Redesign", "value": 8500, "stage": "negotiation", "probability": 80, "expectedClose": "2026-03-22", "source": "Website Outreach"},
+    {"deal": "SaaS Integration", "value": 12000, "stage": "discovery", "probability": 40, "expectedClose": "2026-04-05", "source": "Agency Partners"},
+    {"deal": "Marketing Automation", "value": 6000, "stage": "proposal", "probability": 55, "expectedClose": "2026-03-28", "source": "LeadFlow AI"},
+    {"deal": "White-label Project", "value": 9500, "stage": "negotiation", "probability": 75, "expectedClose": "2026-03-24", "source": "Agency Partners"},
+    {"deal": "Landing Page Suite", "value": 4500, "stage": "initial-contact", "probability": 25, "expectedClose": "2026-04-10", "source": "Referrals"},
+    {"deal": "API Development", "value": 11000, "stage": "discovery", "probability": 45, "expectedClose": "2026-04-01", "source": "Website Outreach"},
+    {"deal": "Mobile App MVP", "value": 18000, "stage": "proposal", "probability": 50, "expectedClose": "2026-03-30", "source": "LeadFlow AI"}
+  ],
+  "closedDeals": [
+    {"deal": "Startup Website", "value": 5500, "closedDate": "2026-03-15", "source": "Website Outreach"},
+    {"deal": "Agency Overflow", "value": 8000, "closedDate": "2026-03-12", "source": "Agency Partners"},
+    {"deal": "Email Campaign", "value": 4200, "closedDate": "2026-03-10", "source": "LeadFlow AI"},
+    {"deal": "Brand Refresh", "value": 6800, "closedDate": "2026-03-08", "source": "Referrals"},
+    {"deal": "E-commerce Setup", "value": 9200, "closedDate": "2026-03-05", "source": "Website Outreach"}
+  ],
+  "monthlyProjection": [
+    {"month": "Mar 2026", "projected": 45000, "closed": 33500},
+    {"month": "Apr 2026", "projected": 38000, "closed": 0},
+    {"month": "May 2026", "projected": 42000, "closed": 0}
+  ]
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tropical Lawn & Landscape | Miami Landscaping Services</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #228B22;
+            --primary-dark: #1A6B1A;
+            --secondary: #FFD700;
+            --accent: #FF6B35;
+            --white: #FFFFFF;
+            --light-gray: #F5F7FA;
+            --dark-gray: #2C3E50;
+            --text-gray: #5A6C7D;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--dark-gray); }
+        nav { background: var(--white); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--dark-gray); font-weight: 500; }
+        .nav-cta { background: var(--primary); color: var(--white); padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: var(--white); padding: 100px 5%; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.3rem; margin-bottom: 40px; opacity: 0.95; }
+        .btn { padding: 16px 32px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 1.1rem; display: inline-block; margin: 10px; }
+        .btn-primary { background: var(--secondary); color: var(--dark-gray); }
+        .btn-secondary { background: var(--white); color: var(--primary); }
+        .trust-badges { background: var(--light-gray); padding: 40px 5%; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .badge { text-align: center; padding: 20px; background: var(--white); border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .badge-icon { font-size: 2.5rem; margin-bottom: 10px; }
+        .badge h3 { color: var(--primary); font-size: 1.5rem; }
+        .section { padding: 80px 5%; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--dark-gray); margin-bottom: 15px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .service-card { background: var(--light-gray); padding: 30px; border-radius: 10px; border-left: 4px solid var(--primary); }
+        .service-card h3 { color: var(--primary); margin-bottom: 15px; }
+        .service-card ul { list-style: none; }
+        .service-card li { padding: 8px 0; padding-left: 25px; position: relative; }
+        .service-card li::before { content: '🌴'; position: absolute; left: 0; }
+        .why-choose { background: var(--dark-gray); color: var(--white); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .feature { text-align: center; }
+        .feature-icon { font-size: 3rem; margin-bottom: 20px; }
+        .feature h3 { color: var(--secondary); margin-bottom: 15px; }
+        .gallery { background: var(--white); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .gallery-item { background: linear-gradient(135deg, var(--primary), var(--secondary)); height: 250px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+        .cta-section { background: linear-gradient(135deg, var(--secondary), #FFC700); color: var(--dark-gray); padding: 80px 5%; text-align: center; }
+        .contact-form { max-width: 800px; margin: 0 auto; background: var(--light-gray); padding: 40px; border-radius: 10px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #E0E6ED; border-radius: 5px; }
+        .submit-btn { width: 100%; background: var(--primary); color: var(--white); padding: 16px; border: none; border-radius: 5px; font-size: 1.1rem; font-weight: bold; cursor: pointer; }
+        footer { background: var(--primary-dark); color: var(--white); padding: 60px 5% 30px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 40px; }
+        .footer-section h3 { color: var(--secondary); margin-bottom: 20px; }
+        .footer-section p { line-height: 2; opacity: 0.8; }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">🌴 Tropical Lawn</div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#maintenance">Maintenance</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#quote" class="nav-cta">Free Quote</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Miami's Premier Landscaping Company</h1>
+        <p>Lawn Care, Landscaping, Irrigation & Hardscaping. Licensed & Insured. 4.4★ Rated.</p>
+        <div>
+            <a href="#quote" class="btn btn-primary">Get Free Quote</a>
+            <a href="tel:305XXXXXXX" class="btn btn-secondary">📞 (305) XXX-XXXX</a>
+        </div>
+    </section>
+
+    <div class="trust-badges">
+        <div class="badge">
+            <div class="badge-icon">⭐</div>
+            <h3>4.4★</h3>
+            <p>Google Reviews</p>
+        </div>
+        <div class="badge">
+            <div class="badge-icon">👥</div>
+            <h3>1.8K</h3>
+            <p>Facebook Fans</p>
+        </div>
+        <div class="badge">
+            <div class="badge-icon">✓</div>
+            <h3>Licensed</h3>
+            <p>& Insured</p>
+        </div>
+        <div class="badge">
+            <div class="badge-icon">🏆</div>
+            <h3>Family</h3>
+            <p>Owned</p>
+        </div>
+    </div>
+
+    <section class="section" id="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Complete landscaping solutions for South Florida</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🌿 Lawn Care</h3>
+                <ul>
+                    <li>Weekly mowing</li>
+                    <li>Edging & trimming</li>
+                    <li>Fertilization</li>
+                    <li>Weed control</li>
+                    <li>Aeration</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>🌺 Landscaping Design</h3>
+                <ul>
+                    <li>Landscape design</li>
+                    <li>Plant installation</li>
+                    <li>Mulching</li>
+                    <li>Tropical gardens</li>
+                    <li>Native plants</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>💧 Irrigation Systems</h3>
+                <ul>
+                    <li>System installation</li>
+                    <li>Repairs & maintenance</li>
+                    <li>Sprinkler heads</li>
+                    <li>Timer programming</li>
+                    <li>Water-efficient solutions</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>🧱 Hardscaping</h3>
+                <ul>
+                    <li>Paver installation</li>
+                    <li>Retaining walls</li>
+                    <li>Walkways</li>
+                    <li>Patios</li>
+                    <li>Driveways</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>🌳 Tree Services</h3>
+                <ul>
+                    <li>Tree trimming</li>
+                    <li>Palm maintenance</li>
+                    <li>Stump removal</li>
+                    <li>Hedge trimming</li>
+                    <li>Storm cleanup</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>🌀 Storm Preparation</h3>
+                <ul>
+                    <li>Hurricane prep</li>
+                    <li>Debris removal</li>
+                    <li>Emergency service</li>
+                    <li>Property protection</li>
+                    <li>Post-storm cleanup</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section gallery" id="gallery">
+        <div class="section-title">
+            <h2>Our Work</h2>
+            <p>Before & After Transformations</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">🏡</div>
+            <div class="gallery-item">🌴</div>
+            <div class="gallery-item">🌺</div>
+            <div class="gallery-item">🧱</div>
+            <div class="gallery-item">💧</div>
+            <div class="gallery-item">✨</div>
+        </div>
+    </section>
+
+    <section class="section why-choose">
+        <div class="section-title">
+            <h2>Why Choose Tropical Lawn?</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🌴</div>
+                <h3>Local Experts</h3>
+                <p>We know South Florida's unique climate and soil conditions.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💚</div>
+                <h3>Eco-Friendly</h3>
+                <p>Organic fertilizers and water-efficient solutions available.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📅</div>
+                <h3>Reliable Service</h3>
+                <p>Consistent scheduling. We show up when we say we will.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Competitive Pricing</h3>
+                <p>Quality service at fair prices. Free estimates always.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="quote">
+        <h2>Get Your Free Quote</h2>
+        <p>Transform your outdoor space today</p>
+        <a href="#contact" class="btn btn-secondary">Request Quote</a>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Request a Free Estimate</h2>
+            <p>Fill in the form or call (305) XXX-XXXX</p>
+        </div>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(305) XXX-XXXX">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+                <label for="service">Service Interested In *</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service...</option>
+                    <option value="lawn-care">Lawn Care</option>
+                    <option value="landscaping">Landscaping Design</option>
+                    <option value="irrigation">Irrigation System</option>
+                    <option value="hardscaping">Hardscaping</option>
+                    <option value="tree-service">Tree Services</option>
+                    <option value="maintenance">Maintenance Plan</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="property">Property Type *</label>
+                <select id="property" name="property" required>
+                    <option value="">Select...</option>
+                    <option value="residential">Residential</option>
+                    <option value="commercial">Commercial</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="address">Property Address</label>
+                <input type="text" id="address" name="address" placeholder="Street address, Miami, FL">
+            </div>
+            <div class="form-group">
+                <label for="message">Tell Us About Your Project</label>
+                <textarea id="message" name="message" placeholder="Describe what you're looking for..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">📧 Get Free Quote</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Tropical Lawn & Landscape</h3>
+                <p>1234 SW 8th Street</p>
+                <p>Miami, FL 33135</p>
+                <p>📞 (305) XXX-XXXX</p>
+            </div>
+            <div class="footer-section">
+                <h3>Service Hours</h3>
+                <p>Mon - Fri: 7:00 AM - 6:00 PM</p>
+                <p>Saturday: 8:00 AM - 4:00 PM</p>
+                <p>Sunday: Closed</p>
+            </div>
+            <div class="footer-section">
+                <h3>Service Areas</h3>
+                <p>Miami-Dade County</p>
+                <p>Coral Gables</p>
+                <p>Kendall</p>
+                <p>Homestead</p>
+            </div>
+            <div class="footer-section">
+                <h3>Maintenance Plans</h3>
+                <p>Weekly Service</p>
+                <p>Bi-Weekly Service</p>
+                <p>Monthly Service</p>
+                <p>One-Time Projects</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Tropical Lawn & Landscape Miami. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

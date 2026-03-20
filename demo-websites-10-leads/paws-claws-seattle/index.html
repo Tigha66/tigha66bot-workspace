@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paws & Claws Pet Grooming | Seattle</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #FF6B6B;
+            --primary-dark: #E55A5A;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --white: #FFFFFF;
+            --light-gray: #F7F9FC;
+            --dark-gray: #2C3E50;
+            --text-gray: #5A6C7D;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--dark-gray); }
+        nav { background: var(--white); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--dark-gray); font-weight: 500; }
+        .nav-cta { background: var(--secondary); color: var(--white); padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold; }
+        .hero { background: linear-gradient(135deg, var(--secondary), #3DBDB5); color: var(--white); padding: 100px 5%; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.3rem; margin-bottom: 40px; opacity: 0.95; }
+        .btn { padding: 16px 32px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 1.1rem; display: inline-block; margin: 10px; }
+        .btn-primary { background: var(--primary); color: var(--white); }
+        .btn-secondary { background: var(--white); color: var(--secondary); }
+        .trust-badges { background: var(--light-gray); padding: 40px 5%; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .badge { text-align: center; padding: 20px; background: var(--white); border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .badge-icon { font-size: 2.5rem; margin-bottom: 10px; }
+        .badge h3 { color: var(--primary); font-size: 1.5rem; }
+        .section { padding: 80px 5%; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--dark-gray); margin-bottom: 15px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .service-card { background: var(--light-gray); padding: 30px; border-radius: 15px; text-align: center; border: 3px solid transparent; transition: all 0.3s; }
+        .service-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .service-icon { font-size: 3.5rem; margin-bottom: 15px; }
+        .service-card h3 { color: var(--primary); margin-bottom: 15px; }
+        .service-card .price { color: var(--secondary); font-weight: bold; font-size: 1.2rem; margin-top: 15px; }
+        .why-choose { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: var(--white); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .feature { text-align: center; }
+        .feature-icon { font-size: 3rem; margin-bottom: 20px; }
+        .feature h3 { margin-bottom: 15px; color: var(--accent); }
+        .gallery { background: var(--white); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; max-width: 1200px; margin: 0 auto; }
+        .gallery-item { background: linear-gradient(135deg, var(--accent), #FFD93D); height: 200px; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 4rem; transition: transform 0.3s; }
+        .gallery-item:hover { transform: scale(1.05); }
+        .testimonials { background: var(--light-gray); }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .testimonial-card { background: var(--white); padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+        .stars { color: #FFD700; font-size: 1.5rem; }
+        .cta-section { background: linear-gradient(135deg, var(--accent), #FFD93D); color: var(--dark-gray); padding: 80px 5%; text-align: center; }
+        .contact-form { max-width: 800px; margin: 0 auto; background: var(--white); padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #E0E6ED; border-radius: 8px; }
+        .submit-btn { width: 100%; background: var(--primary); color: var(--white); padding: 16px; border: none; border-radius: 25px; font-size: 1.1rem; font-weight: bold; cursor: pointer; }
+        footer { background: var(--dark-gray); color: var(--white); padding: 60px 5% 30px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 40px; }
+        .footer-section h3 { color: var(--secondary); margin-bottom: 20px; }
+        .footer-section p { line-height: 2; opacity: 0.8; }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">🐾 Paws & Claws</div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#book" class="nav-cta">Book Now</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Seattle's Favorite Pet Grooming</h1>
+        <p>Professional grooming with love and care. 4.8★ rated. Instagram @PawsClawsSeattle.</p>
+        <div>
+            <a href="#book" class="btn btn-primary">Book Appointment</a>
+            <a href="#services" class="btn btn-secondary">View Services</a>
+        </div>
+    </section>
+
+    <div class="trust-badges">
+        <div class="badge">
+            <div class="badge-icon">⭐</div>
+            <h3>4.8★</h3>
+            <p>Google Reviews</p>
+        </div>
+        <div class="badge">
+            <div class="badge-icon">📷</div>
+            <h3>3.2K</h3>
+            <p>Instagram Followers</p>
+        </div>
+        <div class="badge">
+            <div class="badge-icon">🏆</div>
+            <h3>Certified</h3>
+            <p>Groomers</p>
+        </div>
+        <div class="badge">
+            <div class="badge-icon">💚</div>
+            <h3>Pet-Safe</h3>
+            <p>Products</p>
+        </div>
+    </div>
+
+    <section class="section" id="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Full-service grooming for dogs and cats</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🛁</div>
+                <h3>Full Groom</h3>
+                <p>Bath, haircut, nail trim, ear cleaning</p>
+                <p class="price">From $65</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚿</div>
+                <h3>Bath & Tidy</h3>
+                <p>Bath, blow-dry, face & paw trim</p>
+                <p class="price">From $45</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✂️</div>
+                <h3>Haircut & Styling</h3>
+                <p>Full haircut with breed-specific styling</p>
+                <p class="price">From $75</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💅</div>
+                <h3>Nail Trim</h3>
+                <p>Nail clipping and filing</p>
+                <p class="price">$20</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🦷</div>
+                <h3>Teeth Cleaning</h3>
+                <p>Gentle dental brushing</p>
+                <p class="price">$25</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🐱</div>
+                <h3>Cat Grooming</h3>
+                <p>Specialized cat grooming services</p>
+                <p class="price">From $70</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section gallery" id="gallery">
+        <div class="section-title">
+            <h2>Happy Pets Gallery</h2>
+            <p>Follow us on Instagram @PawsClawsSeattle</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">🐕</div>
+            <div class="gallery-item">🐩</div>
+            <div class="gallery-item">🐈</div>
+            <div class="gallery-item">🐕‍🦺</div>
+            <div class="gallery-item">🦮</div>
+            <div class="gallery-item">🐾</div>
+        </div>
+    </section>
+
+    <section class="section why-choose">
+        <div class="section-title">
+            <h2>Why Pets Love Us</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🎓</div>
+                <h3>Certified Groomers</h3>
+                <p>Professional training and years of experience with all breeds.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌿</div>
+                <h3>Pet-Safe Products</h3>
+                <p>Only premium, non-toxic shampoos and conditioners.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💙</div>
+                <h3>Gentle Care</h3>
+                <p>Patient, loving approach. We treat every pet like family.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎁</div>
+                <h3>Loyalty Rewards</h3>
+                <p>Earn points with every visit. First-time discount available!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials" id="reviews">
+        <div class="section-title">
+            <h2>Happy Pet Parents</h2>
+            <p>3.2K+ followers on Instagram</p>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>Best groomers in Seattle! My golden doodle always looks amazing. The team is so patient and kind.</p>
+                <p><strong>— Sarah M.</strong></p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>My anxious rescue dog actually gets excited to go here. That says everything!</p>
+                <p><strong>— Mike T.</strong></p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>Professional, friendly, and they do an incredible job. Highly recommend!</p>
+                <p><strong>— Jessica L.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="book">
+        <h2>Book Your Pet's Spa Day</h2>
+        <p>First-time customers get 15% off!</p>
+        <a href="#contact" class="btn btn-secondary">Book Now</a>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Make an Appointment</h2>
+            <p>Or call us: (206) XXX-XXXX</p>
+        </div>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(206) XXX-XXXX">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+                <label for="pet">Pet's Name *</label>
+                <input type="text" id="pet" name="pet" required placeholder="Your pet's name">
+            </div>
+            <div class="form-group">
+                <label for="pet-type">Pet Type *</label>
+                <select id="pet-type" name="pet-type" required>
+                    <option value="">Select...</option>
+                    <option value="dog-small">Dog (Small, under 20lbs)</option>
+                    <option value="dog-medium">Dog (Medium, 20-50lbs)</option>
+                    <option value="dog-large">Dog (Large, 50+ lbs)</option>
+                    <option value="cat">Cat</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="service">Service Interested In *</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service...</option>
+                    <option value="full-groom">Full Groom</option>
+                    <option value="bath-tidy">Bath & Tidy</option>
+                    <option value="haircut">Haircut & Styling</option>
+                    <option value="nail-trim">Nail Trim</option>
+                    <option value="teeth">Teeth Cleaning</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Special Requests or Notes</label>
+                <textarea id="message" name="message" placeholder="Any special instructions, behavior notes, or preferences..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">📧 Book Appointment</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Paws & Claws Pet Grooming</h3>
+                <p>890 Pike Street</p>
+                <p>Seattle, WA 98101</p>
+                <p>📞 (206) XXX-XXXX</p>
+            </div>
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                <p>Saturday: 10:00 AM - 5:00 PM</p>
+                <p>Sunday: By Appointment</p>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <p>Full Grooming</p>
+                <p>Bath & Tidy</p>
+                <p>Nail Care</p>
+                <p>Teeth Cleaning</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p>Instagram: @PawsClawsSeattle</p>
+                <p>Facebook: /PawsClawsSeattle</p>
+                <p>3.2K+ Happy Followers</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Paws & Claws Pet Grooming Seattle. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

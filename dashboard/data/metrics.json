@@ -1,0 +1,67 @@
+{
+  "campaign": "Daily & Weekly Metrics",
+  "lastUpdated": "2026-03-19T05:52:00Z",
+  "today": {
+    "date": "2026-03-19",
+    "emailsSent": 25,
+    "emailsOpened": 14,
+    "replies": 3,
+    "conversions": 2,
+    "meetingsBooked": 1,
+    "dealsClosed": 0,
+    "revenue": 0,
+    "followUpsCompleted": 2,
+    "followUpsPending": 1
+  },
+  "thisWeek": {
+    "weekStart": "2026-03-16",
+    "weekEnd": "2026-03-22",
+    "emailsSent": 138,
+    "emailsOpened": 87,
+    "replies": 23,
+    "conversions": 9,
+    "meetingsBooked": 5,
+    "dealsClosed": 2,
+    "revenue": 10700,
+    "followUpsCompleted": 8,
+    "followUpsPending": 7
+  },
+  "lastWeek": {
+    "weekStart": "2026-03-09",
+    "weekEnd": "2026-03-15",
+    "emailsSent": 152,
+    "emailsOpened": 98,
+    "replies": 28,
+    "conversions": 11,
+    "meetingsBooked": 6,
+    "dealsClosed": 3,
+    "revenue": 18500,
+    "followUpsCompleted": 12,
+    "followUpsPending": 0
+  },
+  "weeklyTrend": [
+    {"week": "Feb 16-22", "emailsSent": 120, "conversions": 7, "revenue": 14200},
+    {"week": "Feb 23-28", "emailsSent": 135, "conversions": 9, "revenue": 16800},
+    {"week": "Mar 01-07", "emailsSent": 145, "conversions": 10, "revenue": 19500},
+    {"week": "Mar 08-14", "emailsSent": 152, "conversions": 11, "revenue": 18500},
+    {"week": "Mar 15-21", "emailsSent": 138, "conversions": 9, "revenue": 10700}
+  ],
+  "goals": {
+    "weeklyEmails": 150,
+    "weeklyConversions": 10,
+    "weeklyRevenue": 20000,
+    "monthlyRevenue": 80000
+  },
+  "progress": {
+    "weeklyEmailsProgress": 92,
+    "weeklyConversionsProgress": 90,
+    "weeklyRevenueProgress": 53.5,
+    "monthlyRevenueProgress": 41.9
+  },
+  "leadSources": [
+    {"source": "LeadFlow AI", "leads": 42, "conversions": 18, "revenue": 32000},
+    {"source": "Website Outreach", "leads": 15, "conversions": 4, "revenue": 28500},
+    {"source": "Agency Partners", "leads": 27, "conversions": 11, "revenue": 18000},
+    {"source": "Referrals", "leads": 8, "conversions": 3, "revenue": 9000}
+  ]
+}

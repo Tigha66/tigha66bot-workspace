@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Spice Garden | Authentic Indian Cuisine Leeds</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #8B1538;
+            --primary-dark: #5C0F26;
+            --secondary: #D4AF37;
+            --accent: #FF6B35;
+            --white: #FFFFFF;
+            --cream: #FFF8F0;
+            --dark-gray: #2C1810;
+            --text-gray: #6B5B4F;
+        }
+        body { font-family: 'Georgia', 'Times New Roman', serif; line-height: 1.6; color: var(--dark-gray); background: var(--cream); }
+        nav { background: var(--white); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.6rem; font-weight: bold; color: var(--primary); }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--dark-gray); font-weight: 500; }
+        .nav-cta { background: var(--secondary); color: var(--white); padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: var(--white); padding: 100px 5%; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.3rem; margin-bottom: 40px; opacity: 0.95; }
+        .btn { padding: 16px 32px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 1.1rem; display: inline-block; margin: 10px; }
+        .btn-primary { background: var(--secondary); color: var(--white); }
+        .btn-secondary { background: var(--white); color: var(--primary); }
+        .section { padding: 80px 5%; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--dark-gray); margin-bottom: 15px; }
+        .menu-preview { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .menu-item { background: var(--white); padding: 25px; border-radius: 10px; box-shadow: 0 5px 20px rgba(139, 21, 56, 0.1); }
+        .menu-item h3 { color: var(--primary); margin-bottom: 10px; }
+        .menu-item .price { color: var(--secondary); font-weight: bold; font-size: 1.2rem; }
+        .features { background: var(--dark-gray); color: var(--white); padding: 80px 5%; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .feature { text-align: center; }
+        .feature-icon { font-size: 3rem; margin-bottom: 20px; }
+        .feature h3 { color: var(--secondary); margin-bottom: 15px; }
+        .testimonials { background: var(--white); }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .testimonial-card { background: var(--cream); padding: 30px; border-radius: 10px; }
+        .stars { color: var(--secondary); font-size: 1.5rem; }
+        .cta-section { background: linear-gradient(135deg, var(--secondary), #B8941F); color: var(--white); padding: 80px 5%; text-align: center; }
+        .contact-form { max-width: 800px; margin: 0 auto; background: var(--white); padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #E0D4C8; border-radius: 5px; }
+        .submit-btn { width: 100%; background: var(--primary); color: var(--white); padding: 16px; border: none; border-radius: 5px; font-size: 1.1rem; font-weight: bold; cursor: pointer; }
+        footer { background: var(--dark-gray); color: var(--white); padding: 60px 5% 30px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 40px; }
+        .footer-section h3 { color: var(--secondary); margin-bottom: 20px; }
+        .footer-section p { line-height: 2; opacity: 0.8; }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">🌶️ The Spice Garden</div>
+        <ul class="nav-links">
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#book" class="nav-cta">Book Table</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Authentic Indian Cuisine in Leeds</h1>
+        <p>Traditional recipes, fresh ingredients, unforgettable flavours. Rated 4.0★ on TripAdvisor.</p>
+        <div>
+            <a href="#book" class="btn btn-primary">Reserve a Table</a>
+            <a href="#menu" class="btn btn-secondary">View Menu</a>
+        </div>
+    </section>
+
+    <section class="section" id="menu">
+        <div class="section-title">
+            <h2>Popular Dishes</h2>
+            <p>Hand-picked favourites from our extensive menu</p>
+        </div>
+        <div class="menu-preview">
+            <div class="menu-item">
+                <h3>🍛 Chicken Tikka Masala</h3>
+                <p>Tender chicken in creamy tomato sauce with aromatic spices</p>
+                <p class="price">£12.95</p>
+            </div>
+            <div class="menu-item">
+                <h3>🍛 Lamb Rogan Josh</h3>
+                <p>Kashmiri lamb curry with fragrant spices and yoghurt</p>
+                <p class="price">£13.95</p>
+            </div>
+            <div class="menu-item">
+                <h3>🍛 Prawn Balti</h3>
+                <p>Fresh king prawns in traditional Balti sauce</p>
+                <p class="price">£14.95</p>
+            </div>
+            <div class="menu-item">
+                <h3>🥘 Vegetable Biryani</h3>
+                <p>Fragrant basmati rice with mixed vegetables and saffron</p>
+                <p class="price">£10.95</p>
+            </div>
+            <div class="menu-item">
+                <h3>🫓 Garlic Naan</h3>
+                <p>Freshly baked naan with garlic and coriander</p>
+                <p class="price">£3.50</p>
+            </div>
+            <div class="menu-item">
+                <h3>🍮 Gulab Jamun</h3>
+                <p>Traditional sweet dumplings in rose syrup</p>
+                <p class="price">£4.50</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="section-title">
+            <h2>Why Dine With Us?</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">👨‍🍳</div>
+                <h3>Authentic Recipes</h3>
+                <p>Traditional recipes passed down through generations of chefs.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌿</div>
+                <h3>Fresh Ingredients</h3>
+                <p>Daily fresh produce and authentic imported spices.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🚚</div>
+                <h3>Home Delivery</h3>
+                <p>Available on Deliveroo and UberEats across Leeds.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🍷</div>
+                <h3>Full Bar</h3>
+                <p>Extensive wine list and Indian beers to complement your meal.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials" id="reviews">
+        <div class="section-title">
+            <h2>What Our Guests Say</h2>
+            <p>234+ reviews on TripAdvisor</p>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>Best Indian food in Leeds! The lamb rogan josh is incredible. Service is always friendly and attentive.</p>
+                <p><strong>— Sarah T.</strong></p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★☆</div>
+                <p>Authentic flavours, generous portions. The balti dishes are cooked to perfection. Highly recommend!</p>
+                <p><strong>— James M.</strong></p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>Been coming here for years. Consistently excellent food and lovely atmosphere. Perfect for families.</p>
+                <p><strong>— Priya K.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="book">
+        <h2>Book Your Table</h2>
+        <p>Reserve now for an unforgettable dining experience</p>
+        <a href="#contact" class="btn btn-secondary">Book Now</a>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Make a Reservation</h2>
+            <p>Or call us: 0113 XXX XXXX</p>
+        </div>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="0113 XXX XXXX">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+                <label for="date">Date *</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Time *</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="guests">Number of Guests *</label>
+                <select id="guests" name="guests" required>
+                    <option value="">Select...</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6+">6+ Guests</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Special Requests</label>
+                <textarea id="message" name="message" placeholder="Allergies, special occasions, seating preferences..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">📧 Reserve Table</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>The Spice Garden</h3>
+                <p>23 Briggate</p>
+                <p>Leeds LS1 6HD</p>
+                <p>📞 0113 XXX XXXX</p>
+            </div>
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <p>Mon - Thu: 12:00 PM - 10:00 PM</p>
+                <p>Fri - Sat: 12:00 PM - 11:00 PM</p>
+                <p>Sun: 12:00 PM - 9:30 PM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Order Online</h3>
+                <p>Deliveroo</p>
+                <p>UberEats</p>
+                <p>Just Eat</p>
+            </div>
+            <div class="footer-section">
+                <h3>Private Dining</h3>
+                <p>Available for parties</p>
+                <p>Catering services</p>
+                <p>Event bookings</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Spice Garden Indian Cuisine Leeds. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

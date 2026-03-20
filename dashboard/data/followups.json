@@ -1,0 +1,133 @@
+{
+  "campaign": "Follow-up Schedules",
+  "lastUpdated": "2026-03-19T05:52:00Z",
+  "today": "2026-03-19",
+  "followUps": [
+    {
+      "id": 1,
+      "company": "TechStart Inc",
+      "contact": "hello@techstart.io",
+      "type": "email-reply",
+      "priority": "high",
+      "dueDate": "2026-03-19",
+      "status": "pending",
+      "notes": "Interested in AI automation package",
+      "campaign": "LeadFlow AI"
+    },
+    {
+      "id": 2,
+      "company": "Brand Builders",
+      "contact": "info@brandbuilders.co",
+      "type": "partnership-call",
+      "priority": "medium",
+      "dueDate": "2026-03-20",
+      "status": "scheduled",
+      "notes": "Second outreach, discuss white-label terms",
+      "campaign": "Agency Outreach"
+    },
+    {
+      "id": 3,
+      "company": "Creative Studios",
+      "contact": "hello@creativestudios.io",
+      "type": "contract-review",
+      "priority": "high",
+      "dueDate": "2026-03-21",
+      "status": "pending",
+      "notes": "Review partnership agreement draft",
+      "campaign": "Agency Outreach"
+    },
+    {
+      "id": 4,
+      "company": "SaaS Builder",
+      "contact": "founder@saasbuilder.io",
+      "type": "proposal-followup",
+      "priority": "high",
+      "dueDate": "2026-03-21",
+      "status": "pending",
+      "notes": "Follow up on $8k proposal sent last week",
+      "campaign": "Website Outreach"
+    },
+    {
+      "id": 5,
+      "company": "Digital Solutions",
+      "contact": "info@digitalsol.com",
+      "type": "email-nurture",
+      "priority": "low",
+      "dueDate": "2026-03-22",
+      "status": "scheduled",
+      "notes": "Send case study, they opened last email",
+      "campaign": "LeadFlow AI"
+    },
+    {
+      "id": 6,
+      "company": "Web Architects",
+      "contact": "team@webarchitects.com",
+      "type": "check-in",
+      "priority": "medium",
+      "dueDate": "2026-03-23",
+      "status": "scheduled",
+      "notes": "Weekly partner check-in, discuss new projects",
+      "campaign": "Agency Outreach"
+    },
+    {
+      "id": 7,
+      "company": "Marketing Hub",
+      "contact": "ceo@marketinghub.co",
+      "type": "proposal-followup",
+      "priority": "high",
+      "dueDate": "2026-03-24",
+      "status": "scheduled",
+      "notes": "Proposal at 60% probability, push for close",
+      "campaign": "Website Outreach"
+    },
+    {
+      "id": 8,
+      "company": "Digital Dynamics",
+      "contact": "partners@digitaldynamics.com",
+      "type": "project-kickoff",
+      "priority": "medium",
+      "dueDate": "2026-03-25",
+      "status": "scheduled",
+      "notes": "Kickoff call for new white-label project",
+      "campaign": "Agency Outreach"
+    },
+    {
+      "id": 9,
+      "company": "Innovate Co",
+      "contact": "contact@innovate.co",
+      "type": "demo-schedule",
+      "priority": "medium",
+      "dueDate": "2026-03-25",
+      "status": "pending",
+      "notes": "They replied, schedule product demo",
+      "campaign": "LeadFlow AI"
+    },
+    {
+      "id": 10,
+      "company": "Growth Partners",
+      "contact": "partners@growthpartners.io",
+      "type": "monthly-review",
+      "priority": "low",
+      "dueDate": "2026-03-26",
+      "status": "scheduled",
+      "notes": "Monthly performance review meeting",
+      "campaign": "Agency Outreach"
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "today": 1,
+    "thisWeek": 7,
+    "nextWeek": 3,
+    "byPriority": {
+      "high": 4,
+      "medium": 4,
+      "low": 2
+    },
+    "byStatus": {
+      "pending": 4,
+      "scheduled": 6,
+      "completed": 0
+    }
+  }
+}

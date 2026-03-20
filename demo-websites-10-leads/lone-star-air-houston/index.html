@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lone Star Air Conditioning | Houston HVAC 24/7</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #0033A0;
+            --primary-dark: #002270;
+            --secondary: #BF0D3E;
+            --accent: #FF6B35;
+            --white: #FFFFFF;
+            --light-gray: #F5F7FA;
+            --dark-gray: #2C3E50;
+            --text-gray: #5A6C7D;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--dark-gray); }
+        .emergency-bar { background: var(--secondary); color: var(--white); padding: 12px; text-align: center; font-weight: bold; position: sticky; top: 0; z-index: 1001; }
+        nav { background: var(--white); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 50px; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        .logo span { color: var(--secondary); }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--dark-gray); font-weight: 500; }
+        .nav-cta { background: var(--secondary); color: var(--white); padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: var(--white); padding: 100px 5%; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.3rem; margin-bottom: 40px; opacity: 0.95; }
+        .btn { padding: 16px 32px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 1.1rem; display: inline-block; margin: 10px; }
+        .btn-primary { background: var(--secondary); color: var(--white); }
+        .btn-secondary { background: var(--white); color: var(--primary); }
+        .trust-badges { background: var(--light-gray); padding: 40px 5%; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .badge { text-align: center; padding: 20px; background: var(--white); border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .badge-icon { font-size: 2.5rem; margin-bottom: 10px; }
+        .badge h3 { color: var(--primary); font-size: 1.5rem; }
+        .section { padding: 80px 5%; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--dark-gray); margin-bottom: 15px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .service-card { background: var(--light-gray); padding: 30px; border-radius: 10px; border-left: 4px solid var(--secondary); }
+        .service-card h3 { color: var(--primary); margin-bottom: 15px; }
+        .service-card ul { list-style: none; }
+        .service-card li { padding: 8px 0; padding-left: 25px; position: relative; }
+        .service-card li::before { content: '★'; position: absolute; left: 0; color: var(--secondary); }
+        .why-choose { background: var(--dark-gray); color: var(--white); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .feature { text-align: center; }
+        .feature-icon { font-size: 3rem; margin-bottom: 20px; }
+        .feature h3 { color: var(--secondary); margin-bottom: 15px; }
+        .cta-section { background: linear-gradient(135deg, var(--secondary), #A00A35); color: var(--white); padding: 80px 5%; text-align: center; }
+        .contact-form { max-width: 800px; margin: 0 auto; background: var(--light-gray); padding: 40px; border-radius: 10px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #E0E6ED; border-radius: 5px; }
+        .submit-btn { width: 100%; background: var(--primary); color: var(--white); padding: 16px; border: none; border-radius: 5px; font-size: 1.1rem; font-weight: bold; cursor: pointer; }
+        footer { background: var(--primary-dark); color: var(--white); padding: 60px 5% 30px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 40px; }
+        .footer-section h3 { color: var(--secondary); margin-bottom: 20px; }
+        .footer-section p { line-height: 2; opacity: 0.8; }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="emergency-bar">🔥 24/7 EMERGENCY SERVICE: (713) XXX-XXXX</div>
+    <nav>
+        <div class="logo">Lone Star<span>Air</span></div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#maintenance">Maintenance</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="tel:713XXXXXXX" class="nav-cta">📞 Call Now</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Houston's Trusted HVAC Experts</h1>
+        <p>AC Repair, Installation & Heating. Family-Owned. Licensed & Insured. 4.5★ on Yelp.</p>
+        <div>
+            <a href="tel:713XXXXXXX" class="btn btn-primary">📞 Emergency Service</a>
+            <a href="#contact" class="btn btn-secondary">Get Free Estimate</a>
+        </div>
+    </section>
+
+    <div class="trust-badges">
+        <div class="badge">
+            <div class="badge-icon">⭐</div>
+            <h3>4.5★</h3>
+            <p>67 Yelp Reviews</p>
+        </div>
+        <div class="badge">
+            <div class="badge-icon">🏆</div>
+            <h3>BBB</h3>
+            <p>Accredited A+</p>
+        </div>
+        <div class="badge">
+            <div class="badge-icon">✓</div>
+            <h3>Licensed</h3>
+            <p>& Insured</p>
+        </div>
+        <div class="badge">
+            <div class="badge-icon">🏠</div>
+            <h3>Family</h3>
+            <p>Owned</p>
+        </div>
+    </div>
+
+    <section class="section" id="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Complete HVAC solutions for Greater Houston</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>❄️ AC Repair</h3>
+                <ul>
+                    <li>Emergency repairs</li>
+                    <li>Refrigerant leaks</li>
+                    <li>Compressor repair</li>
+                    <li>Thermostat issues</li>
+                    <li>Same-day service</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>🔧 AC Installation</h3>
+                <ul>
+                    <li>New system installation</li>
+                    <li>System replacement</li>
+                    <li>Energy-efficient upgrades</li>
+                    <li>Ductwork installation</li>
+                    <li>Free estimates</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>🔥 Heating Services</h3>
+                <ul>
+                    <li>Furnace repair</li>
+                    <li>Heater installation</li>
+                    <li>Heat pump service</li>
+                    <li>Emergency heating</li>
+                    <li>Winter maintenance</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>📋 Maintenance Plans</h3>
+                <ul>
+                    <li>Seasonal tune-ups</li>
+                    <li>Priority service</li>
+                    <li>Discounts on repairs</li>
+                    <li>Extended warranty</li>
+                    <li>From $19.99/month</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>💰 Financing Available</h3>
+                <ul>
+                    <li>0% APR options</li>
+                    <li>Flexible terms</li>
+                    <li>Quick approval</li>
+                    <li>All credit types</li>
+                    <li>Apply online</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>🏢 Commercial HVAC</h3>
+                <ul>
+                    <li>Commercial AC</li>
+                    <li>Rooftop units</li>
+                    <li>Preventive maintenance</li>
+                    <li>Emergency service</li>
+                    <li>Service contracts</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section why-choose">
+        <div class="section-title">
+            <h2>Why Choose Lone Star Air?</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🤠</div>
+                <h3>Texas-Trusted</h3>
+                <p>Family-owned and operated. We treat every customer like family.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>24/7 Emergency</h3>
+                <p>AC broke in the Houston heat? We're here day or night.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💷</div>
+                <h3>Upfront Pricing</h3>
+                <p>No surprises. You approve the price before we start work.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <h3>Satisfaction Guaranteed</h3>
+                <p>100% satisfaction guarantee on all repairs and installations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Stay Cool This Summer</h2>
+        <p>Schedule your AC tune-up today and beat the Houston heat</p>
+        <a href="#contact" class="btn btn-secondary">Schedule Service</a>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Get Your Free Estimate</h2>
+            <p>Fill in the form or call (713) XXX-XXXX</p>
+        </div>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(713) XXX-XXXX">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+                <label for="service">Service Needed *</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service...</option>
+                    <option value="ac-repair">AC Repair</option>
+                    <option value="ac-install">AC Installation</option>
+                    <option value="heating">Heating Service</option>
+                    <option value="maintenance">Maintenance Plan</option>
+                    <option value="emergency">Emergency Service</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" id="zipcode" name="zipcode" placeholder="77027">
+            </div>
+            <div class="form-group">
+                <label for="message">Describe Your Issue</label>
+                <textarea id="message" name="message" placeholder="Tell us about your HVAC needs..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">📧 Send Request</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Lone Star Air Conditioning</h3>
+                <p>4567 Westheimer Rd</p>
+                <p>Houston, TX 77027</p>
+                <p>📞 (713) XXX-XXXX</p>
+            </div>
+            <div class="footer-section">
+                <h3>Service Hours</h3>
+                <p>Mon - Fri: 7:00 AM - 7:00 PM</p>
+                <p>Saturday: 8:00 AM - 5:00 PM</p>
+                <p>Sunday: Emergency Only</p>
+            </div>
+            <div class="footer-section">
+                <h3>Service Areas</h3>
+                <p>Greater Houston</p>
+                <p>The Woodlands</p>
+                <p>Sugar Land</p>
+                <p>Katy & Cypress</p>
+            </div>
+            <div class="footer-section">
+                <h3>Certifications</h3>
+                <p>✓ BBB Accredited A+</p>
+                <p>✓ Licensed & Insured</p>
+                <p>✓ NATE Certified</p>
+                <p>✓ EPA Certified</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lone Star Air Conditioning Houston. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

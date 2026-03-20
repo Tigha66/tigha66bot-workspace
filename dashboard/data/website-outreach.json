@@ -1,0 +1,38 @@
+{
+  "campaign": "Website Outreach Campaign",
+  "lastUpdated": "2026-03-19T05:52:00Z",
+  "metrics": {
+    "sent": 60,
+    "delivered": 58,
+    "opened": 41,
+    "replied": 15,
+    "meetingsBooked": 8,
+    "deals": 4,
+    "bounced": 2
+  },
+  "rates": {
+    "openRate": 70.7,
+    "replyRate": 36.6,
+    "meetingRate": 53.3,
+    "closeRate": 50.0
+  },
+  "deals": [
+    {"company": "WebFlow Masters", "value": 4500, "status": "closed", "closeDate": "2026-03-15"},
+    {"company": "E-commerce Plus", "value": 6200, "status": "closed", "closeDate": "2026-03-12"},
+    {"company": "SaaS Builder", "value": 8000, "status": "negotiation", "closeDate": null},
+    {"company": "Agency Pro", "value": 3500, "status": "closed", "closeDate": "2026-03-10"},
+    {"company": "Startup Hub", "value": 5000, "status": "closed", "closeDate": "2026-03-08"}
+  ],
+  "weeklyStats": [
+    {"week": "Week 1", "sent": 15, "replied": 5, "meetings": 2, "deals": 1},
+    {"week": "Week 2", "sent": 18, "replied": 7, "meetings": 3, "deals": 1},
+    {"week": "Week 3", "sent": 14, "replied": 4, "meetings": 2, "deals": 1},
+    {"week": "Week 4", "sent": 13, "replied": 5, "meetings": 3, "deals": 1}
+  ],
+  "pipeline": [
+    {"company": "Cloud Nine", "stage": "initial-contact", "value": 4000, "probability": 20},
+    {"company": "DevShop", "stage": "discovery", "value": 5500, "probability": 40},
+    {"company": "Marketing Hub", "stage": "proposal", "value": 7000, "probability": 60},
+    {"company": "Tech Ventures", "stage": "negotiation", "value": 9000, "probability": 80}
+  ]
+}

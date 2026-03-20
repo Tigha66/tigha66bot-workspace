@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Tracker Dashboard</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            color: #e4e4e4;
+        }
+
+        .dashboard {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .last-updated {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .metric-card h3 {
+            color: #888;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .metric-card .value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .metric-card .change {
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+
+        .metric-card .change.positive {
+            color: #10b981;
+        }
+
+        .metric-card .change.negative {
+            color: #ef4444;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .chart-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chart-card h3 {
+            color: #e4e4e4;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .section-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-card h3 {
+            color: #e4e4e4;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-badge.active-partner {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+
+        .status-badge.negotiating {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+        }
+
+        .status-badge.pending {
+            background: rgba(107, 114, 128, 0.2);
+            color: #6b7280;
+        }
+
+        .agency-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .agency-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            transition: background 0.3s;
+        }
+
+        .agency-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .agency-info h4 {
+            color: #e4e4e4;
+            margin-bottom: 4px;
+        }
+
+        .agency-info p {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .agency-stats {
+            text-align: right;
+        }
+
+        .agency-stats .revenue {
+            color: #10b981;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .agency-stats .projects {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .followup-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .followup-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border-left: 4px solid;
+        }
+
+        .followup-item.priority-high {
+            border-left-color: #ef4444;
+        }
+
+        .followup-item.priority-medium {
+            border-left-color: #f59e0b;
+        }
+
+        .followup-item.priority-low {
+            border-left-color: #6b7280;
+        }
+
+        .followup-date {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 70px;
+        }
+
+        .followup-date .day {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #e4e4e4;
+        }
+
+        .followup-date .month {
+            font-size: 0.75rem;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        .followup-details h4 {
+            color: #e4e4e4;
+            margin-bottom: 4px;
+        }
+
+        .followup-details p {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .pipeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+        .pipeline-info h4 {
+            color: #e4e4e4;
+            margin-bottom: 4px;
+        }
+
+        .pipeline-info p {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .pipeline-value {
+            text-align: right;
+        }
+
+        .pipeline-value .amount {
+            color: #10b981;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .pipeline-value .probability {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+            transition: width 0.5s;
+        }
+
+        .revenue-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .revenue-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .revenue-card h4 {
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .revenue-card .amount {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .revenue-card.projected .amount {
+            color: #667eea;
+        }
+
+        .revenue-card.closed .amount {
+            color: #10b981;
+        }
+
+        .revenue-card.pipeline .amount {
+            color: #f59e0b;
+        }
+
+        .goal-progress {
+            margin-top: 20px;
+        }
+
+        .goal-item {
+            margin-bottom: 16px;
+        }
+
+        .goal-item label {
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .auto-refresh {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .refresh-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .refresh-dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .charts-grid, .section-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .revenue-summary {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        // Helper to format currency
+        const formatCurrency = (amount) => {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(amount);
+        };
+
+        // Helper to format date
+        const formatDate = (dateStr) => {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        };
+
+        // Dashboard Component
+        function Dashboard() {
+            const [data, setData] = useState({
+                leadflow: null,
+                website: null,
+                agency: null,
+                revenue: null,
+                followups: null,
+                metrics: null
+            });
+            const [lastRefresh, setLastRefresh] = useState(new Date());
+            const chartRefs = useRef({});
+
+            // Load all data files
+            const loadData = async () => {
+                try {
+                    const files = [
+                        'leadflow-emails.json',
+                        'website-outreach.json',
+                        'agency-outreach.json',
+                        'revenue-pipeline.json',
+                        'followups.json',
+                        'metrics.json'
+                    ];
+
+                    const loadedData = {};
+                    for (const file of files) {
+                        const response = await fetch(`data/${file}`);
+                        const jsonData = await response.json();
+                        const key = file.replace('.json', '').replace('-', '');
+                        loadedData[key] = jsonData;
+                    }
+
+                    setData(loadedData);
+                    setLastRefresh(new Date());
+                } catch (error) {
+                    console.error('Error loading data:', error);
+                }
+            };
+
+            // Initial load and auto-refresh every 30 seconds
+            useEffect(() => {
+                loadData();
+                const interval = setInterval(loadData, 30000);
+                return () => clearInterval(interval);
+            }, []);
+
+            // Destroy charts on unmount
+            useEffect(() => {
+                return () => {
+                    Object.values(chartRefs.current).forEach(chart => {
+                        if (chart) chart.destroy();
+                    });
+                };
+            }, []);
+
+            // Create charts when data loads
+            useEffect(() => {
+                if (!data.leadflow || !data.metrics) return;
+
+                // Email Performance Chart
+                const emailCtx = document.getElementById('emailChart');
+                if (emailCtx && chartRefs.current.email) chartRefs.current.email.destroy();
+                
+                if (emailCtx) {
+                    chartRefs.current.email = new Chart(emailCtx, {
+                        type: 'line',
+                        data: {
+                            labels: data.leadflow.dailyStats.map(d => formatDate(d.date)),
+                            datasets: [
+                                {
+                                    label: 'Sent',
+                                    data: data.leadflow.dailyStats.map(d => d.sent),
+                                    borderColor: '#667eea',
+                                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                                    fill: true,
+                                    tension: 0.4
+                                },
+                                {
+                                    label: 'Opened',
+                                    data: data.leadflow.dailyStats.map(d => d.opened),
+                                    borderColor: '#10b981',
+                                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                                    fill: true,
+                                    tension: 0.4
+                                },
+                                {
+                                    label: 'Converted',
+                                    data: data.leadflow.dailyStats.map(d => d.converted),
+                                    borderColor: '#f59e0b',
+                                    backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                                    fill: true,
+                                    tension: 0.4
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    labels: { color: '#e4e4e4' }
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                                    ticks: { color: '#888' }
+                                },
+                                x: {
+                                    grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                                    ticks: { color: '#888' }
+                                }
+                            }
+                        }
+                    });
+                }
+
+                // Conversion Funnel Chart
+                const funnelCtx = document.getElementById('funnelChart');
+                if (funnelCtx && chartRefs.current.funnel) chartRefs.current.funnel.destroy();
+
+                if (funnelCtx) {
+                    chartRefs.current.funnel = new Chart(funnelCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Sent', 'Opened', 'Replied', 'Converted'],
+                            datasets: [{
+                                label: 'LeadFlow AI',
+                                data: [
+                                    data.leadflow.metrics.sent,
+                                    data.leadflow.metrics.opened,
+                                    data.leadflow.metrics.replied,
+                                    data.leadflow.metrics.converted
+                                ],
+                                backgroundColor: [
+                                    'rgba(102, 126, 234, 0.8)',
+                                    'rgba(16, 185, 129, 0.8)',
+                                    'rgba(59, 130, 246, 0.8)',
+                                    'rgba(245, 158, 11, 0.8)'
+                                ],
+                                borderColor: [
+                                    '#667eea',
+                                    '#10b981',
+                                    '#3b82f6',
+                                    '#f59e0b'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { display: false }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                                    ticks: { color: '#888' }
+                                },
+                                x: {
+                                    grid: { display: false },
+                                    ticks: { color: '#888' }
+                                }
+                            }
+                        }
+                    });
+                }
+
+                // Revenue Projection Chart
+                const revenueCtx = document.getElementById('revenueChart');
+                if (revenueCtx && chartRefs.current.revenue) chartRefs.current.revenue.destroy();
+
+                if (revenueCtx && data.revenue) {
+                    chartRefs.current.revenue = new Chart(revenueCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: data.revenue.monthlyProjection.map(m => m.month),
+                            datasets: [
+                                {
+                                    label: 'Projected',
+                                    data: data.revenue.monthlyProjection.map(m => m.projected),
+                                    backgroundColor: 'rgba(102, 126, 234, 0.8)',
+                                    borderColor: '#667eea',
+                                    borderWidth: 2
+                                },
+                                {
+                                    label: 'Closed',
+                                    data: data.revenue.monthlyProjection.map(m => m.closed),
+                                    backgroundColor: 'rgba(16, 185, 129, 0.8)',
+                                    borderColor: '#10b981',
+                                    borderWidth: 2
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    labels: { color: '#e4e4e4' }
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                                    ticks: { 
+                                        color: '#888',
+                                        callback: (value) => '$' + value / 1000 + 'k'
+                                    }
+                                },
+                                x: {
+                                    grid: { display: false },
+                                    ticks: { color: '#888' }
+                                }
+                            }
+                        }
+                    });
+                }
+
+                // Lead Sources Chart
+                const sourcesCtx = document.getElementById('sourcesChart');
+                if (sourcesCtx && chartRefs.current.sources) chartRefs.current.sources.destroy();
+
+                if (sourcesCtx && data.metrics) {
+                    chartRefs.current.sources = new Chart(sourcesCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: data.metrics.leadSources.map(s => s.source),
+                            datasets: [{
+                                data: data.metrics.leadSources.map(s => s.revenue),
+                                backgroundColor: [
+                                    'rgba(102, 126, 234, 0.8)',
+                                    'rgba(16, 185, 129, 0.8)',
+                                    'rgba(245, 158, 11, 0.8)',
+                                    'rgba(239, 68, 68, 0.8)'
+                                ],
+                                borderColor: [
+                                    '#667eea',
+                                    '#10b981',
+                                    '#f59e0b',
+                                    '#ef4444'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: { color: '#e4e4e4' }
+                                }
+                            }
+                        }
+                    });
+                }
+
+                // Weekly Trend Chart
+                const trendCtx = document.getElementById('trendChart');
+                if (trendCtx && chartRefs.current.trend) chartRefs.current.trend.destroy();
+
+                if (trendCtx && data.metrics) {
+                    chartRefs.current.trend = new Chart(trendCtx, {
+                        type: 'line',
+                        data: {
+                            labels: data.metrics.weeklyTrend.map(w => w.week),
+                            datasets: [
+                                {
+                                    label: 'Revenue',
+                                    data: data.metrics.weeklyTrend.map(w => w.revenue),
+                                    borderColor: '#10b981',
+                                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                                    fill: true,
+                                    tension: 0.4
+                                },
+                                {
+                                    label: 'Conversions',
+                                    data: data.metrics.weeklyTrend.map(w => w.conversions * 1000),
+                                    borderColor: '#f59e0b',
+                                    backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                                    fill: true,
+                                    tension: 0.4
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    labels: { color: '#e4e4e4' }
+                                }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                                    ticks: { 
+                                        color: '#888',
+                                        callback: (value) => '$' + value / 1000 + 'k'
+                                    }
+                                },
+                                x: {
+                                    grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                                    ticks: { color: '#888' }
+                                }
+                            }
+                        }
+                    });
+                }
+
+            }, [data]);
+
+            if (!data.leadflow) {
+                return (
+                    <div style={{ textAlign: 'center', padding: '100px', color: '#888' }}>
+                        <div className="refresh-dot" style={{ width: '40px', height: '40px', margin: '0 auto 20px' }}></div>
+                        <p>Loading dashboard...</p>
+                    </div>
+                );
+            }
+
+            return (
+                <div className="dashboard">
+                    {/* Header */}
+                    <div className="header">
+                        <div>
+                            <h1>🚀 Campaign Tracker Dashboard</h1>
+                            <p className="last-updated">Last updated: {lastRefresh.toLocaleTimeString()}</p>
+                        </div>
+                        <div className="auto-refresh">
+                            <div className="refresh-indicator">
+                                <div className="refresh-dot"></div>
+                                <span>Auto-refreshing every 30s</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Key Metrics */}
+                    <div className="metrics-grid">
+                        <div className="metric-card">
+                            <h3>Total Emails Sent</h3>
+                            <div className="value">{data.leadflow.metrics.sent + data.website.metrics.sent}</div>
+                            <div className="change positive">↑ 12% vs last week</div>
+                        </div>
+                        <div className="metric-card">
+                            <h3>Total Conversions</h3>
+                            <div className="value">{data.leadflow.metrics.converted + data.website.metrics.deals}</div>
+                            <div className="change positive">↑ 8% vs last week</div>
+                        </div>
+                        <div className="metric-card">
+                            <h3>Revenue Closed</h3>
+                            <div className="value">{formatCurrency(data.revenue.summary.closed)}</div>
+                            <div className="change positive">↑ 15% vs last week</div>
+                        </div>
+                        <div className="metric-card">
+                            <h3>Pipeline Value</h3>
+                            <div className="value">{formatCurrency(data.revenue.summary.inPipeline)}</div>
+                            <div className="change negative">↓ 3% vs last week</div>
+                        </div>
+                        <div className="metric-card">
+                            <h3>Active Agencies</h3>
+                            <div className="value">{data.agency.summary.activePartners}</div>
+                            <div className="change positive">Stable</div>
+                        </div>
+                        <div className="metric-card">
+                            <h3>Follow-ups Today</h3>
+                            <div className="value">{data.followups.summary.today}</div>
+                            <div className="change">{data.followups.summary.thisWeek} this week</div>
+                        </div>
+                    </div>
+
+                    {/* Charts Row 1 */}
+                    <div className="charts-grid">
+                        <div className="chart-card">
+                            <h3>📧 Email Performance (7 Days)</h3>
+                            <div className="chart-container">
+                                <canvas id="emailChart"></canvas>
+                            </div>
+                        </div>
+                        <div className="chart-card">
+                            <h3>🎯 Conversion Funnel</h3>
+                            <div className="chart-container">
+                                <canvas id="funnelChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Charts Row 2 */}
+                    <div className="charts-grid">
+                        <div className="chart-card">
+                            <h3>💰 Revenue Projection</h3>
+                            <div className="chart-container">
+                                <canvas id="revenueChart"></canvas>
+                            </div>
+                        </div>
+                        <div className="chart-card">
+                            <h3>📊 Lead Sources</h3>
+                            <div className="chart-container">
+                                <canvas id="sourcesChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Charts Row 3 */}
+                    <div className="chart-card full-width">
+                        <h3>📈 Weekly Trend</h3>
+                        <div className="chart-container">
+                            <canvas id="trendChart"></canvas>
+                        </div>
+                    </div>
+
+                    {/* Revenue Summary */}
+                    <div className="section-card" style={{ marginBottom: '30px' }}>
+                        <h3>💵 Revenue Pipeline Overview</h3>
+                        <div className="revenue-summary">
+                            <div className="revenue-card projected">
+                                <h4>Projected</h4>
+                                <div className="amount">{formatCurrency(data.revenue.summary.projected)}</div>
+                            </div>
+                            <div className="revenue-card closed">
+                                <h4>Closed</h4>
+                                <div className="amount">{formatCurrency(data.revenue.summary.closed)}</div>
+                            </div>
+                            <div className="revenue-card pipeline">
+                                <h4>In Pipeline</h4>
+                                <div className="amount">{formatCurrency(data.revenue.summary.inPipeline)}</div>
+                            </div>
+                        </div>
+
+                        <h4 style={{ color: '#888', marginBottom: '16px' }}>Active Deals</h4>
+                        {data.revenue.pipeline.slice(0, 5).map((deal, index) => (
+                            <div className="pipeline-item" key={index}>
+                                <div className="pipeline-info">
+                                    <h4>{deal.deal}</h4>
+                                    <p>{deal.stage} • {deal.source}</p>
+                                    <div className="progress-bar">
+                                        <div className="progress-bar-fill" style={{ width: `${deal.probability}%` }}></div>
+                                    </div>
+                                </div>
+                                <div className="pipeline-value">
+                                    <div className="amount">{formatCurrency(deal.value)}</div>
+                                    <div className="probability">{deal.probability}% probability</div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Agency & Follow-ups */}
+                    <div className="section-grid">
+                        <div className="section-card">
+                            <h3>🤝 White-Label Agencies</h3>
+                            <div className="agency-list">
+                                {data.agency.agencies.map((agency, index) => (
+                                    <div className="agency-item" key={index}>
+                                        <div className="agency-info">
+                                            <h4>{agency.name}</h4>
+                                            <p>{agency.contact}</p>
+                                            <span className={`status-badge ${agency.status}`}>{agency.status.replace('-', ' ')}</span>
+                                        </div>
+                                        <div className="agency-stats">
+                                            <div className="revenue">{formatCurrency(agency.revenue)}</div>
+                                            <div className="projects">{agency.projectsClosed}/{agency.projectsSent} projects</div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="section-card">
+                            <h3>📅 Follow-up Schedule</h3>
+                            <div className="followup-list">
+                                {data.followups.followUps.slice(0, 8).map((followup) => (
+                                    <div className={`followup-item priority-${followup.priority}`} key={followup.id}>
+                                        <div className="followup-date">
+                                            <div className="day">{new Date(followup.dueDate).getDate()}</div>
+                                            <div className="month">{new Date(followup.dueDate).toLocaleDateString('en-US', { month: 'short' })}</div>
+                                        </div>
+                                        <div className="followup-details">
+                                            <h4>{followup.company}</h4>
+                                            <p>{followup.type} • {followup.campaign}</p>
+                                            <p style={{ fontSize: '0.75rem', marginTop: '4px' }}>{followup.notes}</p>
+                                        </div>
+                                        <span className={`status-badge ${followup.status === 'pending' ? 'pending' : 'active-partner'}`} style={{ marginLeft: 'auto' }}>
+                                            {followup.status}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Goals Progress */}
+                    <div className="section-card">
+                        <h3>🎯 Weekly Goals Progress</h3>
+                        <div className="goal-progress">
+                            <div className="goal-item">
+                                <label>
+                                    <span>Emails Sent</span>
+                                    <span>{data.metrics.thisWeek.emailsSent} / {data.metrics.goals.weeklyEmails}</span>
+                                </label>
+                                <div className="progress-bar">
+                                    <div className="progress-bar-fill" style={{ width: `${data.metrics.progress.weeklyEmailsProgress}%` }}></div>
+                                </div>
+                            </div>
+                            <div className="goal-item">
+                                <label>
+                                    <span>Conversions</span>
+                                    <span>{data.metrics.thisWeek.conversions} / {data.metrics.goals.weeklyConversions}</span>
+                                </label>
+                                <div className="progress-bar">
+                                    <div className="progress-bar-fill" style={{ width: `${data.metrics.progress.weeklyConversionsProgress}%` }}></div>
+                                </div>
+                            </div>
+                            <div className="goal-item">
+                                <label>
+                                    <span>Weekly Revenue</span>
+                                    <span>{formatCurrency(data.metrics.thisWeek.revenue)} / {formatCurrency(data.metrics.goals.weeklyRevenue)}</span>
+                                </label>
+                                <div className="progress-bar">
+                                    <div className="progress-bar-fill" style={{ width: `${data.metrics.progress.weeklyRevenueProgress}%` }}></div>
+                                </div>
+                            </div>
+                            <div className="goal-item">
+                                <label>
+                                    <span>Monthly Revenue</span>
+                                    <span>{formatCurrency(data.revenue.summary.closed)} / {formatCurrency(data.metrics.goals.monthlyRevenue)}</span>
+                                </label>
+                                <div className="progress-bar">
+                                    <div className="progress-bar-fill" style={{ width: `${data.metrics.progress.monthlyRevenueProgress}%` }}></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        // Render the app
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<Dashboard />);
+    </script>
+</body>
+</html>

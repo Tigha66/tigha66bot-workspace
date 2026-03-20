@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martinez & Associates | Bronx Law Firm</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #1B263B;
+            --primary-dark: #0F1623;
+            --secondary: #C5A059;
+            --accent: #8B0000;
+            --white: #FFFFFF;
+            --light-gray: #F5F7FA;
+            --dark-gray: #2C3E50;
+            --text-gray: #5A6C7D;
+        }
+        body { font-family: 'Georgia', 'Times New Roman', serif; line-height: 1.6; color: var(--dark-gray); }
+        .top-bar { background: var(--primary); color: var(--white); padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        nav { background: var(--white); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.4rem; font-weight: bold; color: var(--primary); }
+        .logo span { color: var(--secondary); }
+        .nav-links { display: flex; gap: 25px; list-style: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .nav-links a { text-decoration: none; color: var(--dark-gray); font-weight: 500; font-size: 0.95rem; }
+        .nav-cta { background: var(--secondary); color: var(--white); padding: 12px 24px; border-radius: 3px; text-decoration: none; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .hero { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: var(--white); padding: 100px 5%; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.3rem; margin-bottom: 40px; opacity: 0.95; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .btn { padding: 16px 32px; border-radius: 3px; text-decoration: none; font-weight: bold; font-size: 1.1rem; display: inline-block; margin: 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .btn-primary { background: var(--secondary); color: var(--white); }
+        .btn-secondary { background: var(--white); color: var(--primary); }
+        .section { padding: 80px 5%; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--dark-gray); margin-bottom: 15px; }
+        .section-title p { color: var(--text-gray); font-size: 1.1rem; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .practice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .practice-card { background: var(--light-gray); padding: 35px; border-radius: 5px; border-top: 4px solid var(--secondary); }
+        .practice-card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.3rem; }
+        .practice-card ul { list-style: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .practice-card li { padding: 8px 0; padding-left: 25px; position: relative; }
+        .practice-card li::before { content: '⚖'; position: absolute; left: 0; color: var(--secondary); }
+        .why-choose { background: var(--primary); color: var(--white); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .feature { text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .feature-icon { font-size: 3rem; margin-bottom: 20px; }
+        .feature h3 { color: var(--secondary); margin-bottom: 15px; }
+        .attorneys { background: var(--white); }
+        .attorney-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto; }
+        .attorney-card { text-align: center; padding: 30px; background: var(--light-gray); border-radius: 10px; }
+        .attorney-card h3 { color: var(--primary); margin-bottom: 10px; }
+        .attorney-card .title { color: var(--secondary); font-weight: bold; margin-bottom: 15px; }
+        .cta-section { background: linear-gradient(135deg, var(--secondary), #A68545); color: var(--white); padding: 80px 5%; text-align: center; }
+        .contact-form { max-width: 800px; margin: 0 auto; background: var(--light-gray); padding: 40px; border-radius: 5px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #E0E6ED; border-radius: 3px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .submit-btn { width: 100%; background: var(--primary); color: var(--white); padding: 16px; border: none; border-radius: 3px; font-size: 1.1rem; font-weight: bold; cursor: pointer; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        footer { background: var(--primary-dark); color: var(--white); padding: 60px 5% 30px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 40px; }
+        .footer-section h3 { color: var(--secondary); margin-bottom: 20px; }
+        .footer-section p { line-height: 2; opacity: 0.8; }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <span>📍 567 Grand Concourse, Bronx, NY 10451</span>
+        <span>📞 Free Consultation: (718) XXX-XXXX</span>
+    </div>
+    <nav>
+        <div class="logo">Martinez <span>& Associates</span></div>
+        <ul class="nav-links">
+            <li><a href="#practice">Practice Areas</a></li>
+            <li><a href="#attorneys">Attorneys</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#consultation" class="nav-cta">Free Consultation</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Fighting for Your Rights in the Bronx</h1>
+        <p>Experienced legal representation. Personal Injury, Family Law, Criminal Defense & Immigration. Se Habla Español.</p>
+        <div>
+            <a href="#consultation" class="btn btn-primary">Free Case Evaluation</a>
+            <a href="tel:718XXXXXXX" class="btn btn-secondary">📞 (718) XXX-XXXX</a>
+        </div>
+    </section>
+
+    <section class="section" id="practice">
+        <div class="section-title">
+            <h2>Practice Areas</h2>
+            <p>Comprehensive legal services for the Bronx community</p>
+        </div>
+        <div class="practice-grid">
+            <div class="practice-card">
+                <h3>🚗 Personal Injury</h3>
+                <ul>
+                    <li>Car accidents</li>
+                    <li>Slip and fall</li>
+                    <li>Workplace injuries</li>
+                    <li>Medical malpractice</li>
+                    <li>Wrongful death</li>
+                </ul>
+            </div>
+            <div class="practice-card">
+                <h3>👨‍👩‍👧 Family Law</h3>
+                <ul>
+                    <li>Divorce proceedings</li>
+                    <li>Child custody</li>
+                    <li>Child support</li>
+                    <li>Spousal support</li>
+                    <li>Domestic violence</li>
+                </ul>
+            </div>
+            <div class="practice-card">
+                <h3>⚖ Criminal Defense</h3>
+                <ul>
+                    <li>DUI/DWI</li>
+                    <li>Drug offenses</li>
+                    <li>Assault charges</li>
+                    <li>Theft crimes</li>
+                    <li>Expungements</li>
+                </ul>
+            </div>
+            <div class="practice-card">
+                <h3>🛂 Immigration Law</h3>
+                <ul>
+                    <li>Green cards</li>
+                    <li>Citizenship</li>
+                    <li>Work visas</li>
+                    <li>Deportment defense</li>
+                    <li>Family petitions</li>
+                </ul>
+            </div>
+            <div class="practice-card">
+                <h3>🏠 Real Estate</h3>
+                <ul>
+                    <li>Closings</li>
+                    <li>Landlord-tenant</li>
+                    <li>Evictions</li>
+                    <li>Property disputes</li>
+                    <li>Contract review</li>
+                </ul>
+            </div>
+            <div class="practice-card">
+                <h3>💼 Employment Law</h3>
+                <ul>
+                    <li>Wrongful termination</li>
+                    <li>Discrimination</li>
+                    <li>Harassment</li>
+                    <li>Wage disputes</li>
+                    <li>Workers' comp</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section why-choose">
+        <div class="section-title">
+            <h2>Why Choose Martinez & Associates?</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🏆</div>
+                <h3>20+ Years Experience</h3>
+                <p>Decades of combined experience fighting for clients in the Bronx.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🗣️</div>
+                <h3>Bilingual Team</h3>
+                <p>Full English and Spanish support. Se Habla Español.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>No Win, No Fee</h3>
+                <p>Personal injury cases handled on contingency. No recovery, no fee.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📞</div>
+                <h3>24/7 Availability</h3>
+                <p>Emergency legal support when you need it most.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section attorneys" id="attorneys">
+        <div class="section-title">
+            <h2>Our Attorneys</h2>
+            <p>Experienced legal professionals dedicated to your case</p>
+        </div>
+        <div class="attorney-grid">
+            <div class="attorney-card">
+                <h3>Martinez, Esq.</h3>
+                <p class="title">Founding Partner</p>
+                <p>20+ years experience. Bar admitted: NY, Federal Courts.</p>
+            </div>
+            <div class="attorney-card">
+                <h3>Associate Attorney</h3>
+                <p class="title">Family Law Specialist</p>
+                <p>15 years experience. Bar admitted: NY, NJ.</p>
+            </div>
+            <div class="attorney-card">
+                <h3>Associate Attorney</h3>
+                <p class="title">Criminal Defense</p>
+                <p>12 years experience. Former prosecutor.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="consultation">
+        <h2>Free Case Evaluation</h2>
+        <p>No obligation consultation. We're here to help.</p>
+        <a href="#contact" class="btn btn-secondary">Contact Us Now</a>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Request a Free Consultation</h2>
+            <p>Fill in the form or call (718) XXX-XXXX</p>
+        </div>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(718) XXX-XXXX">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+                <label for="practice">Practice Area *</label>
+                <select id="practice" name="practice" required>
+                    <option value="">Select a practice area...</option>
+                    <option value="personal-injury">Personal Injury</option>
+                    <option value="family-law">Family Law</option>
+                    <option value="criminal-defense">Criminal Defense</option>
+                    <option value="immigration">Immigration</option>
+                    <option value="real-estate">Real Estate</option>
+                    <option value="employment">Employment Law</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="language">Preferred Language</label>
+                <select id="language" name="language">
+                    <option value="english">English</option>
+                    <option value="spanish">Español</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Brief Description of Your Case</label>
+                <textarea id="message" name="message" placeholder="Tell us about your legal matter..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">📧 Send Request</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Martinez & Associates</h3>
+                <p>567 Grand Concourse</p>
+                <p>Bronx, NY 10451</p>
+                <p>📞 (718) XXX-XXXX</p>
+            </div>
+            <div class="footer-section">
+                <h3>Office Hours</h3>
+                <p>Mon - Fri: 9:00 AM - 7:00 PM</p>
+                <p>Saturday: 10:00 AM - 4:00 PM</p>
+                <p>Sunday: By Appointment</p>
+            </div>
+            <div class="footer-section">
+                <h3>Practice Areas</h3>
+                <p>Personal Injury</p>
+                <p>Family Law</p>
+                <p>Criminal Defense</p>
+                <p>Immigration</p>
+            </div>
+            <div class="footer-section">
+                <h3>Payment Options</h3>
+                <p>Free Consultation</p>
+                <p>Contingency Fees</p>
+                <p>Payment Plans</p>
+                <p>Credit Cards Accepted</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Martinez & Associates. All rights reserved. Attorney Advertising.</p>
+        </div>
+    </footer>
+</body>
+</html>

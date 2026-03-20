@@ -1,0 +1,73 @@
+{
+  "campaign": "White-Label Agency Outreach",
+  "lastUpdated": "2026-03-19T05:52:00Z",
+  "agencies": [
+    {
+      "name": "Digital Dynamics",
+      "contact": "partners@digitaldynamics.com",
+      "status": "active-partner",
+      "projectsSent": 12,
+      "projectsClosed": 8,
+      "revenue": 24000,
+      "lastContact": "2026-03-18",
+      "nextFollowUp": "2026-03-25"
+    },
+    {
+      "name": "Creative Studios",
+      "contact": "hello@creativestudios.io",
+      "status": "negotiating",
+      "projectsSent": 5,
+      "projectsClosed": 2,
+      "revenue": 6500,
+      "lastContact": "2026-03-17",
+      "nextFollowUp": "2026-03-21"
+    },
+    {
+      "name": "Web Architects",
+      "contact": "team@webarchitects.com",
+      "status": "active-partner",
+      "projectsSent": 8,
+      "projectsClosed": 6,
+      "revenue": 18000,
+      "lastContact": "2026-03-16",
+      "nextFollowUp": "2026-03-23"
+    },
+    {
+      "name": "Brand Builders",
+      "contact": "info@brandbuilders.co",
+      "status": "pending",
+      "projectsSent": 2,
+      "projectsClosed": 0,
+      "revenue": 0,
+      "lastContact": "2026-03-14",
+      "nextFollowUp": "2026-03-20"
+    },
+    {
+      "name": "Growth Partners",
+      "contact": "partners@growthpartners.io",
+      "status": "active-partner",
+      "projectsSent": 15,
+      "projectsClosed": 11,
+      "revenue": 33000,
+      "lastContact": "2026-03-19",
+      "nextFollowUp": "2026-03-26"
+    }
+  ],
+  "summary": {
+    "totalAgencies": 5,
+    "activePartners": 3,
+    "negotiating": 1,
+    "pending": 1,
+    "totalProjectsSent": 42,
+    "totalProjectsClosed": 27,
+    "totalRevenue": 81500,
+    "closeRate": 64.3
+  },
+  "monthlyTrend": [
+    {"month": "Nov 2025", "revenue": 12000, "projects": 4},
+    {"month": "Dec 2025", "revenue": 18500, "projects": 6},
+    {"month": "Jan 2026", "revenue": 22000, "projects": 8},
+    {"month": "Feb 2026", "revenue": 15000, "projects": 5},
+    {"month": "Mar 2026", "revenue": 14000, "projects": 4}
+  ]
+}

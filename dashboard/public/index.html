@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadFlow AI - Business Dashboard</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc',
+                            400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1',
+                            800: '#075985', 900: '#0c4a6e',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #d946ef 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 50%, #d946ef 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .blob {
+            border-radius: 9999px;
+            filter: blur(100px);
+            opacity: 0.5;
+            position: absolute;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -12px rgba(14, 165, 233, 0.3);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-white to-blue-50 min-h-screen">
+    <!-- Animated background -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="blob w-[600px] h-[600px] bg-gradient-radial from-primary-400/30 to-transparent top-[-200px] left-[-200px] animate-float"></div>
+        <div class="blob w-[500px] h-[500px] bg-gradient-radial from-accent-400/30 to-transparent bottom-[-100px] right-[-100px] animate-float" style="animation-delay: -3s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full glass z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-11 h-11 gradient-bg rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                        <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold gradient-text">LeadFlow AI</h1>
+                        <p class="text-xs text-slate-600 font-medium">Business Dashboard</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-2 text-sm text-slate-600">
+                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span>All Systems Operational</span>
+                    </div>
+                    <a href="https://github.com/Tigha66" target="_blank" class="text-slate-600 hover:text-slate-900">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h1 class="text-5xl md:text-6xl font-black mb-4">
+                    Business <span class="gradient-text">Overview</span>
+                </h1>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Track all your projects, websites, and revenue streams in one place
+                </p>
+            </div>
+
+            <!-- Revenue Stats -->
+            <div class="grid md:grid-cols-4 gap-6 mb-12" id="revenue-stats">
+                <!-- Stats will be loaded here -->
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Active Projects</h2>
+                <div class="grid md:grid-cols-2 gap-6" id="projects-grid">
+                    <!-- Projects will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Deployed Websites -->
+            <div class="mb-12">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-3xl font-bold text-slate-900">Deployed Websites</h2>
+                    <div class="flex items-center space-x-4">
+                        <a href="https://gilded-mesa-8gg9.here.now/" target="_blank" class="btn-primary text-white px-6 py-3 rounded-xl font-semibold shadow-lg flex items-center space-x-2">
+                            <i data-lucide="external-link" class="w-5 h-5"></i>
+                            <span>View Portfolio</span>
+                        </a>
+                        <a href="https://github.com/Tigha66/website-builder-service" target="_blank" class="glass px-6 py-3 rounded-xl font-semibold flex items-center space-x-2">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="glass rounded-3xl p-6" id="websites-grid">
+                    <!-- Websites will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Quick Actions</h2>
+                <div class="grid md:grid-cols-3 gap-6" id="quick-actions">
+                    <!-- Actions will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Load data from API
+        async function loadDashboard() {
+            try {
+                // Load revenue stats
+                const statsResponse = await fetch('/api/stats');
+                const stats = await statsResponse.json();
+                renderRevenueStats(stats);
+                renderQuickActions(stats);
+
+                // Load projects
+                const projectsResponse = await fetch('/api/projects');
+                const projects = await projectsResponse.json();
+                renderProjects(projects);
+
+                // Load websites
+                const websitesResponse = await fetch('/api/websites');
+                const websites = await websitesResponse.json();
+                renderWebsites(websites);
+            } catch (error) {
+                console.error('Error loading dashboard:', error);
+            }
+        }
+
+        function renderRevenueStats(stats) {
+            const container = document.getElementById('revenue-stats');
+            container.innerHTML = `
+                <div class="glass rounded-3xl p-6 card-hover">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center text-white">
+                            <i data-lucide="dollar-sign" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm text-slate-600 font-medium">Total Pipeline</div>
+                            <div class="text-2xl font-black gradient-text">${stats.totalPipeline}</div>
+                        </div>
+                    </div>
+                </div>
+                ${stats.breakdown.map(item => `
+                    <div class="glass rounded-3xl p-6 card-hover">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center text-white">
+                                <i data-lucide="trending-up" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-slate-600 font-medium">${item.name}</div>
+                                <div class="text-2xl font-black text-slate-900">${item.value}</div>
+                            </div>
+                        </div>
+                        <div class="text-sm text-slate-500">${item.timeline}</div>
+                    </div>
+                `).join('')}
+            `;
+            lucide.createIcons();
+        }
+
+        function renderProjects(projects) {
+            const container = document.getElementById('projects-grid');
+            container.innerHTML = Object.entries(projects).map(([key, project]) => `
+                <div class="glass rounded-3xl p-6 card-hover">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center text-white">
+                                <i data-lucide="${getProjectIcon(key)}" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900">${project.name}</h3>
+                                <div class="flex items-center space-x-2 mt-1">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                    <span class="text-sm text-slate-600">${project.status}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="${project.github}" target="_blank" class="text-slate-400 hover:text-slate-600">
+                            <i data-lucide="github" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                    
+                    <p class="text-slate-600 mb-4">${project.description}</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        ${getProjectMetrics(project)}
+                    </div>
+                    
+                    ${project.portfolio ? `
+                        <a href="${project.portfolio}" target="_blank" class="text-primary-600 font-semibold hover:text-primary-700 flex items-center space-x-2">
+                            <span>View Portfolio</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    ` : ''}
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function getProjectIcon(key) {
+            const icons = {
+                leadflow: 'mail',
+                websiteBuilder: 'globe',
+                agencyProgram: 'users',
+                autoLeadGen: 'cpu'
+            };
+            return icons[key] || 'briefcase';
+        }
+
+        function getProjectMetrics(project) {
+            const metrics = project.metrics;
+            return Object.entries(metrics).map(([key, value]) => `
+                <div class="bg-white bg-opacity-50 rounded-xl p-3">
+                    <div class="text-2xl font-bold text-slate-900">${value}</div>
+                    <div class="text-xs text-slate-600 capitalize">${key.replace(/([A-Z])/g, ' $1').trim()}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderWebsites(websites) {
+            const container = document.getElementById('websites-grid');
+            container.innerHTML = `
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <div class="text-4xl font-black gradient-text mb-1">${websites.total}</div>
+                        <div class="text-slate-600">Total Websites Deployed</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sm text-slate-600">Showing ${websites.displayed} of ${websites.total}</div>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    ${websites.websites.map(site => `
+                        <a href="${site.url}" target="_blank" class="bg-white bg-opacity-50 rounded-xl p-4 card-hover block">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center text-white">
+                                    <i data-lucide="globe" class="w-5 h-5"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="font-semibold text-slate-900 truncate">${site.name}</div>
+                                    <div class="text-xs text-slate-600">${site.niche} • ${site.city}</div>
+                                </div>
+                            </div>
+                            <div class="text-xs text-primary-600 truncate">${site.url}</div>
+                        </a>
+                    `).join('')}
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="${websites.github}" target="_blank" class="text-slate-600 hover:text-slate-900 inline-flex items-center space-x-2">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                        <span>View all ${websites.total} websites on GitHub</span>
+                    </a>
+                </div>
+            `;
+            lucide.createIcons();
+        }
+
+        function renderQuickActions(stats) {
+            const container = document.getElementById('quick-actions');
+            container.innerHTML = stats.quickWins.map((action, index) => `
+                <div class="glass rounded-3xl p-6 card-hover">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br ${index === 0 ? 'from-green-400 to-emerald-500' : index === 1 ? 'from-blue-400 to-cyan-500' : 'from-purple-400 to-pink-500'} rounded-xl flex items-center justify-center text-white">
+                            <i data-lucide="${index === 0 ? 'zap' : index === 1 ? 'mail' : 'search'}" class="w-6 h-6"></i>
+                        </div>
+                        <span class="px-3 py-1 ${index === 0 ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800'} rounded-full text-xs font-bold">${action.priority}</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">${action.action}</h3>
+                    <div class="flex items-center justify-between">
+                        <div class="text-sm text-slate-600">${action.time}</div>
+                        <div class="text-sm font-bold text-green-600">${action.potential}</div>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        // Load dashboard on page load
+        loadDashboard();
+    </script>
+</body>
+</html>
